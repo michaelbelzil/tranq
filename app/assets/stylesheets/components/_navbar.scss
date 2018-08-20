@@ -1,5 +1,5 @@
 .navbar{
-  background: red;
+  background: blue;
   height: Calc(100vh - 20px);
   width : 200px;
   float:right;
@@ -12,7 +12,10 @@
 .navbar__list__item {
    list-style-type: none;
    text-align:center;
-   width:50%;
+   width: 50%;
+   img {
+    width: 35px;
+   }
 }
 .navbar__specific--parent{
    height: Calc(100% - 80px);
