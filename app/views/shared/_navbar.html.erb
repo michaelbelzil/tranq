@@ -1,58 +1,28 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+<div class ="navbar">
 
-    <% if user_signed_in? %>
+  <ul class ="navbar__list">
+    <li class ="navbar__list__item"><a id="feed_option" href="#"><i class="fa fa-apple"></i></a></li>
+    <li class ="navbar__list__item"><a id="decoration_option" href="#"><i class="fas fa-table"></i></a></li>
+    <li class ="navbar__list__item"><a id="friend_option" href="#"><i class="fa fa-car"></i></a></li>
+    <li class ="navbar__list__item"><a id="setting_option" href="#"><i class="fa fa-wrench"></i></a></li>
+  </ul>
 
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
+  <div class="navbar__specific--parent">
+    <ul class ="navbar__specific">
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+    </ul>
   </div>
 </div>
 
+<div class="content row expanded">
+dkjlksjhfkjdvh kfjhkgvjghkgjhkhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhjkhkjhkjhkjhkjhkjhkjhkjhjh
+</div>
