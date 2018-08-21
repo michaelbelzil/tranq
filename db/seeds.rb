@@ -16,6 +16,11 @@ hat1 = Item.create(category: "head", photo: "https://www.freepngimg.com/download
 hat1.save
 hat2 = Item.create(category: "head", photo: "http://clipart-library.com/images/8iGb5EB8T.png", user_id: "1")
 hat2.save
+neck1 = Item.create(category: "head", photo: "https://toppng.com/public/uploads/preview/red-scarf-11530963189hbg2ctif4k.png", user_id: "1")
+neck1.save
+neck2 = Item.create(category: "head", photo: "https://vignette.wikia.nocookie.net/roblox/images/b/bb/Snowman_Scarf.png/revision/latest?cb=20170212230925", user_id: "1")
+neck2.save
+
 body1 = Item.create(category: "body", photo: "http://clipart-library.com/data_images/541439.png", user_id: "3")
 body1.save
 plant1 = Item.create(category: "plant", photo: "http://clipart-library.com/images/gie57jLeT.jpg" , user_id: "3")
