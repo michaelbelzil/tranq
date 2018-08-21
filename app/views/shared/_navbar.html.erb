@@ -61,22 +61,13 @@
           <img class = "toolbar__item toolbar__item--hand" src="https://i.pinimg.com/originals/84/78/86/84788676c8054ddb035b2886d8c217f8.png"/>
         </a>
       </li>
+      <li class ="navbar__specific--setting navbar__specific__item">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= image_tag("button_logout.png") %>
+        <% end %>
+      </li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
     </ul>
   </div>
-</div>
-
-<div class="content row expanded main-tranq">
-  <div class ="space">
-    <div class = "added__items"></div>
-    <%= image_tag('tranq_home.png', id: "tranq") %>
-  </div>
-<h1>Current Tranq/User data:</h1> <%= @tranq.attributes %>
-<h1>Clicking the BIG marshmallow now feeds Tranq. The routing needs fixing though.</h1>
-<h2>Clicking the small icons changes the mode and adds it to params. This routing appears to be correct, but it's not connected to any logic yet.</h2>
-
-
-
-
 </div>
