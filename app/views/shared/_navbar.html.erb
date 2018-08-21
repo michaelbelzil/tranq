@@ -12,12 +12,25 @@
 
   <div class="navbar__specific--parent">
     <ul class ="navbar__specific">
+      <!-- Feed mode items -->
       <li class ="navbar__specific--feed navbar__specific__item">
         <%= link_to tranq_feed_path(@tranq), method: :patch do %>
           <%= image_tag("button_marshmallow.png") %>
         <% end %>
       </li>
 
+      <!-- Decorate mode items -->
+      <%= render "items/categories" %>
+
+      <div class="head_items" id="active">
+        <%= render "items/head_items", head_items: @heads %>
+      </div>
+      <div class="neck_items">
+        <%= render "items/neck_items", neck_items: @necks %>
+      </div>
+      <div class="face_items">
+        <%= render "items/face_items", face_items: @faces %>
+      </div>
 
 
       <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--generic navbar__specific__item--generic--hat">
@@ -30,8 +43,6 @@
           <img class = "navbar__specific--decorate" src="https://cdn3.vectorstock.com/i/1000x1000/14/67/cartoon-home-furniture-table-vector-741467.jpg"/>
         </a>
       </li>
-
-
       <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat">
         <a class = "toolbar__item toolbar__item--hat" href="#home">
         </a>
@@ -46,7 +57,6 @@
           <img class = "toolbar__item toolbar__item--hat" src="http://www.pngmart.com/files/6/Hat-PNG-Clipart-383x279.png"/>
         </a>
       </li>
-
       <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hand">
         <a class = "toolbar__item toolbar__item--hand" href="#home">
         </a>
@@ -61,13 +71,17 @@
           <img class = "toolbar__item toolbar__item--hand" src="https://i.pinimg.com/originals/84/78/86/84788676c8054ddb035b2886d8c217f8.png"/>
         </a>
       </li>
+      <!-- Friends mode items -->
+
+      <li class ="navbar__specific--friend navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific--friend navbar__specific__item"><a href="#home"></i></a></li>
+
+      <!-- Setting mode item -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <%= link_to destroy_user_session_path, method: :delete do %>
           <%= image_tag("button_logout.png") %>
         <% end %>
       </li>
-      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
-      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
     </ul>
   </div>
 </div>
