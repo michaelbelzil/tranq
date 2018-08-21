@@ -37,9 +37,9 @@
         </a>
       </li>
       <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat">
-        <a href="#home">
-          <img class = "toolbar__item toolbar__item--hat" src="https://www.freepngimg.com/download/hat/4-hat-png-image.png"/>
-        </a>
+        <%= link_to tranq_path(@tranq), method: :patch do %>
+        <%=  image_tag "https://www.freepngimg.com/download/hat/4-hat-png-image.png", class: "toolbar__item toolbar__item--hat" %>
+        <% end %>
       </li>
       <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat ">
         <a href="#home">
