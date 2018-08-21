@@ -17,3 +17,19 @@ hat1.save
 hat2 = Item.create(category: "head", photo: "http://clipart-library.com/images/8iGb5EB8T.png", user_id: "1")
 hat2.save
 
+couch1 = Item.create(category: "couch", photo: "http://pngimg.com/uploads/sofa/sofa_PNG6933.png", user_id: "1")
+couch1.save
+couch2 = Item.create(category: "couch", photo: "http://www.pngall.com/wp-content/uploads/2016/04/Couch-Download-PNG.png", user_id: "1")
+couch2.save
+table1 = Item.create(category: "table", photo: "http://pngimg.com/uploads/table/table_PNG6998.png", user_id: "1")
+table1.save
+table2 = Item.create(category: "table", photo: "http://www.pngall.com/wp-content/uploads/2016/04/Table-Download-PNG.png", user_id: "1")
+table2.save
+side_table1 = Item.create(category: "side_table", photo: "https://png.pngtree.com/element_pic/17/01/01/0c5d9c3a9b896566d78ba5362320977f.jpg", user_id: "1")
+side_table1.save
+side_table2 = Item.create(category: "side_table", photo: "http://mudanzascompartidas.info/wp-content/uploads/2015/12/paraguero.png", user_id: "1")
+side_table2.save
+lamp1 = Item.create(category: "lamp", photo: "https://vignette.wikia.nocookie.net/warehouse13/images/4/47/Leg_Lamp.PNG/revision/latest?cb=20131021194904", user_id: "1")
+lamp1.save
+lamp2 = Item.create(category: "lamp", photo: "https://images.vexels.com/media/users/3/127183/isolated/preview/3c38623c01ddc3ad951a134e46d15f6b-blue-flat-lamp-stand-by-vexels.png", user_id: "1")
+lamp2.save
