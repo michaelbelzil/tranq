@@ -1,13 +1,14 @@
 .space{
   width: Calc(100% - 215px);
   background: red;
+  position:relative;
 }
 
 .toolbar__item{
   width: 100%;
 }
 #tranq{
-  width: 80%;
+  width: 100%;
 }
 .navbar__specific__item{
   overflow: hidden;
@@ -21,11 +22,13 @@
 
 
 // For each type of element
-.toolbar__item--hat{
-  top: 10%;
-  left: 50%;
+.added__items .toolbar__item--hat{
+  top: 8%;
+  left: 17%;
+  width: 18%;
 }
-.toolbar__item--hand{
-  top: 30%;
-  left: 30%;
+.added__items .toolbar__item--hand{
+  top: 63%;
+  left: 57%;
+  width: 5%;
 }
