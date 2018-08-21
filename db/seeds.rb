@@ -21,7 +21,7 @@ body1.save
 plant1 = Item.create(category: "plant", photo: "http://clipart-library.com/images/gie57jLeT.jpg" , user_id: "3")
 plant1.save
 plant2 = Item.create(cateogory: "plant", photo: "http://clipart-library.com/images/8izrpG9LT.png", user_id: "3")
-
+plant2.save
 couch1 = Item.create(category: "couch", photo: "http://pngimg.com/uploads/sofa/sofa_PNG6933.png", user_id: "1")
 couch1.save
 couch2 = Item.create(category: "couch", photo: "http://www.pngall.com/wp-content/uploads/2016/04/Couch-Download-PNG.png", user_id: "1")
