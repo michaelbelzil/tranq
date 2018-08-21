@@ -40,11 +40,21 @@
   list-style-type: none;
   width: 80%;
   height: 100px;
-  background: $tranq1;
   margin: 10px 10%;
+  display:none;
+  background: white;
 }
 
 .main-tranq {
   background-position: center;
   background-size: cover;
+}
+
+
+.navbar__specific--feed{
+  display: flex;
+}
+
+img.navbar__specific--decorate{
+  width: 100%;
 }

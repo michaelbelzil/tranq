@@ -1,7 +1,9 @@
+//Main tools
+
 $( "#feed_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
     if($(this).hasClass("navbar__specific--feed")){
-      $(this).show();
+      $(this).css('display', 'flex');
     }else{
       $(this).hide()
     }
@@ -9,8 +11,8 @@ $( "#feed_option" ).click(function() {
 });
 $( "#decoration_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
-    if($(this).hasClass("navbar__specific--decorate")){
-      $(this).show();
+    if($(this).hasClass("navbar__specific__item--generic")){
+      $(this).css('display', 'flex');
     }else{
       $(this).hide()
     }
@@ -19,7 +21,7 @@ $( "#decoration_option" ).click(function() {
 $( "#friend_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
     if($(this).hasClass("navbar__specific--friend")){
-      $(this).show();
+      $(this).css('display', 'flex');
     }else{
       $(this).hide()
     }
@@ -28,9 +30,23 @@ $( "#friend_option" ).click(function() {
 $( "#setting_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
     if($(this).hasClass("navbar__specific--setting")){
-      $(this).show();
+      $(this).css('display', 'flex');
     }else{
       $(this).hide()
     }
   });
+});
+
+//Select inside decorate
+$( ".navbar__specific__item--generic" ).each(function() {
+    $(this).on("click", function(){
+      str = $(this).attr('class').match(/navbar__specific__item--generic-[\w-][\w-]*\b/)[0].split("--")[2];
+      className = ".navbar__specific__item--" + str;
+      $(className).each(function(){
+        $(this).css('display', 'flex');
+      });
+      $(".navbar__specific__item--generic").each(function(){
+        $(this).hide();
+      })
+    });
 });
