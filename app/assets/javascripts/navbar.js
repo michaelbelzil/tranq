@@ -1,4 +1,3 @@
-console.log("hola");
 $( "#feed_option" ).click(function() {
   $( ".navbar" ).css("background-color", "red");
 });

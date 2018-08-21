@@ -1,0 +1,20 @@
+.space{
+  width: Calc(100% - 215px);
+  background: red;
+}
+
+.toolbar__item{
+  width: 100%;
+}
+#tranq{
+  width: 80%;
+}
+.navbar__specific__item{
+  overflow: hidden;
+}
+
+.added__items .toolbar__item{
+  margin: 5px;
+  width: 200px;
+  position: absolute;
+}
