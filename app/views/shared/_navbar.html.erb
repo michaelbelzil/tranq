@@ -4,18 +4,20 @@
 <div class ="navbar">
 
   <ul class ="navbar__list">
-    <li class ="navbar__list__item"><a id="feed_option" href="#"><%= image_tag("button_marshmallow.png") %></a></li>
-    <li class ="navbar__list__item"><a id="decoration_option" href="#"><%= image_tag("button_couch.png") %></a></li>
-    <li class ="navbar__list__item"><a id="friend_option" href="#"><%= image_tag("button_balloon.png") %></a></li>
-    <li class ="navbar__list__item"><a id="setting_option" href="#"><%= image_tag("button_wrench.png") %></a></li>
+    <li class ="navbar__list__item"><a id="feed_option" href="?mode=feed"><%= image_tag("button_marshmallow.png") %></a></li>
+    <li class ="navbar__list__item"><a id="decoration_option" href="?mode=decorate"><%= image_tag("button_couch.png") %></a></li>
+    <li class ="navbar__list__item"><a id="friend_option" href="?mode=visit"><%= image_tag("button_balloon.png") %></a></li>
+    <li class ="navbar__list__item"><a id="setting_option" href="?mode=settings"><%= image_tag("button_wrench.png") %></a></li>
   </ul>
 
   <div class="navbar__specific--parent">
     <ul class ="navbar__specific">
+      <li class ="navbar__specific__item"><%= link_to tranq_feed_path(@tranq), method: :patch do %>
+  <%= image_tag("button_marshmallow.png") %>
+<% end %></li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
-    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
-    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
-    <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
+      <li class ="navbar__specific__item"><a href="#home"></i></a></li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
       <li class ="navbar__specific__item"><a href="#home"></i></a></li>
@@ -24,5 +26,9 @@
 </div>
 
 <div class="content row expanded">
-dkjlksjhfkjdvh kfjhkgvjghkgjhkhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhkjhjkhkjhkjhkjhkjhkjhkjhkjhjh
+<h1>Current Tranq/User data:</h1> <%= @tranq.attributes %>
+<h1>Clicking the BIG marshmallow now feeds Tranq. The routing needs fixing though.</h1>
+<h2>Clicking the small icons changes the mode and adds it to params. This routing appears to be correct, but it's not connected to any logic yet.</h2>
 </div>
+
+
