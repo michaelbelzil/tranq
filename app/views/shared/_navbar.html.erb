@@ -26,9 +26,28 @@
 </div>
 
 <div class="content row expanded">
+
+  <div class="container">
+    <div class = "toolbar">
+      <img class = "toolbar__item toolbar__item--hat" src="https://www.freepngimg.com/download/hat/4-hat-png-image.png"/>
+      <img class = "toolbar__item toolbar__item--hat" src="http://www.pngmart.com/files/6/Hat-PNG-Clipart-383x279.png"/>
+      <a href="/cv-template.doc" title="CV template" download>Download</a>
+      <button><input type="file" id="myFile"></button>
+    </div>
+    <div class ="space">
+      <div class = "added__items"></div>
+      <img id ="tranq" src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c396.png"/>
+    </div>
+
+  </div>
+
 <h1>Current Tranq/User data:</h1> <%= @tranq.attributes %>
 <h1>Clicking the BIG marshmallow now feeds Tranq. The routing needs fixing though.</h1>
 <h2>Clicking the small icons changes the mode and adds it to params. This routing appears to be correct, but it's not connected to any logic yet.</h2>
+
+
+
+
 </div>
 
 

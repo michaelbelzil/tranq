@@ -1,0 +1,51 @@
+.container{
+  display:flex
+}
+.toolbar{
+  background: red;
+  width: 250px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.toolbar__item{
+  margin: 5px;
+  width: 200px;
+}
+
+.space{
+  height: 500px;
+  width: 500px;
+  background: blue;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  position:relative;
+  .toolbar__item{
+    position:absolute;
+    top: 5px;
+    left: 90px;
+    width:250px;
+  }
+}
+#tranq{
+  width: 400px;
+}
+
+a, button{
+  border: 1px solid blue;
+  border-radius: 5px;
+  background: blue;
+  color:white;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.tranq-accessories{
+  position:absolute;
+}
+.tranq-accessories{
+  top: -10px;
+  left: 35px;
+}
+
