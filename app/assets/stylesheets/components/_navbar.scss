@@ -1,5 +1,7 @@
 .navbar{
-  background: blue;
+  background: rgb(70,67,75);
+  background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
+  border: 8px solid $graydark1;
   height: Calc(100vh - 20px);
   width : 200px;
   float:right;
@@ -38,6 +40,11 @@
   list-style-type: none;
   width: 80%;
   height: 100px;
-  background: green;
+  background: $tranq1;
   margin: 10px 10%;
+}
+
+.main-tranq {
+  background-position: center;
+  background-size: cover;
 }

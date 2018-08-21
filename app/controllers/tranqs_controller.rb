@@ -4,6 +4,7 @@ class TranqsController < ApplicationController
   end
 
   def update
+
   end
 
   def feed
