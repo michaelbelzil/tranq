@@ -16,7 +16,7 @@ class User < ApplicationRecord
   belongs_to :lamp, :class_name => 'Item', foreign_key: :lamp_item_id, optional: true
   belongs_to :plant, :class_name => 'Item', foreign_key: :plant_item_id, optional: true
 
-  validate :items_are_correct_category
+  # validate :items_are_correct_category
 
   def items_are_correct_category
     unless self.head.category == nil || self.head.category == "head"
