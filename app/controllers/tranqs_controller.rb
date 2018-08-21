@@ -4,8 +4,18 @@ class TranqsController < ApplicationController
 
     # items
     @items = Item.all
-    @plants = Item.plant_items
     @heads = Item.head_items
+    @faces = Item.face_items
+    @necks = Item.neck_items
+    @bodies = Item.body_items
+    @couches = Item.couch_items
+    @tables = Item.table_items
+    @side_tables = Item.side_table_items
+    @lamps = Item.lamp_items
+    @plants = Item.plant_items
+    @floors = Item.floor_items
+    @walls = Item.wall_items
+
 
     # friends
     @friends = User.all.sample(5)
@@ -16,19 +26,21 @@ class TranqsController < ApplicationController
 
     case params[:category]
     when "head" then update_head
+    when "face" then update_face
     when "neck" then update_neck
-    when "face" then update_face
-    when "face" then update_face
-    when "face" then update_face
-    when "face" then update_face
-    when "face" then update_face
-    # when "neck" then update_neck
+    when "body" then update_body
+    when "couch" then update_couch
+    when "table" then update_table
+    when "side_table" then update_side_table
+    when "lamp" then update_lamp
+    when "plant" then update_plant
+    when "floor" then update_floor
+    when "wall" then update_wall
     else
       raise
     end
 
-
-    params[:item_id]
+    # params[:item_id]
   end
 
   def feed
@@ -43,13 +55,54 @@ class TranqsController < ApplicationController
     @tranq.save
   end
 
+  def update_face
+    @tranq.face = @item
+    @tranq.save
+  end
+
   def update_neck
     @tranq.neck = @item
     @tranq.save
   end
 
-  def update_face
+  def update_body
+    @tranq.body = @item
+    @tranq.save
+  end
 
+  def update_couch
+    @tranq.couch = @item
+    @tranq.save
+  end
+
+  def update_table
+    @tranq.table = @item
+    @tranq.save
+  end
+
+  def update_side_table
+    @tranq.side_table = @item
+    @tranq.save
+  end
+
+  def update_lamp
+    @tranq.lamp = @item
+    @tranq.save
+  end
+
+  def update_plant
+    @tranq.plant = @item
+    @tranq.save
+  end
+
+  def update_floor
+    @tranq.floor = @item
+    @tranq.save
+  end
+
+  def update_wall
+    @tranq.wall = @item
+    @tranq.save
   end
 
   def set_tranq
