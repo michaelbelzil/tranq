@@ -1,1 +1,7 @@
-_side_table_items.html.erb
+<% side_table_items.each do |side_table_item| %>
+  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--side_table">
+    <%= link_to tranq_path(@tranq, item_id: side_table_item.id, category: side_table_item.category), method: :patch do %>
+      <%= image_tag(side_table_item.photo, class: "toolbar__item toolbar__item--side_table")  %>
+    <% end %>
+  </li>
+<% end %>

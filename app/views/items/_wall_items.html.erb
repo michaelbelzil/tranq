@@ -1,1 +1,7 @@
-_wall_items.html.erb
+<% wall_items.each do |wall_item| %>
+  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--wall">
+    <%= link_to tranq_path(@tranq, item_id: wall_item.id, category: wall_item.category), method: :patch do %>
+      <%= image_tag(wall_item.photo, class: "toolbar__item toolbar__item--wall")  %>
+    <% end %>
+  </li>
+<% end %>

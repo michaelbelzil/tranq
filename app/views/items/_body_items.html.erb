@@ -1,1 +1,7 @@
-_body_items.html.erb
+<% body_items.each do |body_item| %>
+  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--body">
+    <%= link_to tranq_path(@tranq, item_id: body_item.id, category: body_item.category), method: :patch do %>
+      <%= image_tag(body_item.photo, class: "toolbar__item toolbar__item--body")  %>
+    <% end %>
+  </li>
+<% end %>
