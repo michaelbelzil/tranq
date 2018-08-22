@@ -1,31 +1,14 @@
 html, body{
   min-height: 100%;
 }
-body{
-  padding: 20px;
-  background-image: linear-gradient(to bottom, #ebedee 30%, #ebedee, #ebedee, #222 80%);
-  color: #333;
-  background-size: 100% 400%;
-  background-position: 100% 0%;
-  transition: all 4s;
-
-
-  &.night{
-    background-position: 100% 100%;
-    color: #fff;
-  }
-  &.day{
-    background-position: 0% 0%;
-  }
-
-}
 .toggle-img {
   height: 50px;
   width: 50px;
   transition: all 3s ease-in-out;
   position: absolute;
   top: 15px;
-  left: 15px;
+  left: 25px;
+  z-index: 1;
 }
 .d-none {
   display: none;
