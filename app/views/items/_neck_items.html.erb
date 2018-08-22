@@ -1,7 +1,0 @@
-<% neck_items.each do |neck_item| %>
-  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--neck">
-    <%= link_to tranq_path(@tranq, item_id: neck_item.id, category: neck_item.category), method: :patch do %>
-      <%= image_tag(neck_item.photo, class: "toolbar__item toolbar__item--neck")  %>
-    <% end %>
-  </li>
-<% end %>

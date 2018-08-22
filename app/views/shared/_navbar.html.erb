@@ -29,76 +29,50 @@
       <%= render "items/categories" %>
 
       <div class="head_items">
-        <%= render "items/head_items", head_items: @heads %>
+        <%= render "items/items", items: @heads %>
       </div>
       <div class="face_items">
-        <%= render "items/face_items", face_items: @faces %>
+        <%= render "items/items", items: @faces %>
       </div>
       <div class="neck_items">
-        <%= render "items/neck_items", neck_items: @necks %>
+        <%= render "items/items", items: @necks %>
       </div>
       <div class="body_items">
-        <%= render "items/body_items", body_items: @bodies %>
+        <%= render "items/items", items: @bodies %>
       </div>
       <div class="couch_items">
-        <%= render "items/couch_items", couch_items: @couches %>
+        <%= render "items/items", items: @couches %>
       </div>
       <div class="table_items">
-        <%= render "items/table_items", table_items: @tables %>
+        <%= render "items/items", items: @tables %>
       </div>
       <div class="side_table_items">
-        <%= render "items/side_table_items", side_table_items: @side_tables %>
+        <%= render "items/items", items: @side_tables %>
       </div>
       <div class="lamp_items">
-        <%= render "items/lamp_items", lamp_items: @lamps %>
+        <%= render "items/items", items: @lamps %>
       </div>
       <div class="plant_items">
-        <%= render "items/plant_items", plant_items: @plants %>
+        <%= render "items/items", items: @plants %>
       </div>
       <div class="floor_items">
-        <%= render "items/floor_items", floor_items: @floors %>
+        <%= render "items/items", items: @floors %>
       </div>
       <div class="wall_items">
-        <%= render "items/wall_items", wall_items: @walls %>
+        <%= render "items/items", items: @walls %>
       </div>
 
 
-
-
-      <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat">
-        <a class = "toolbar__item toolbar__item--hat" href="#home">
-        </a>
-      </li>
-      <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat">
-        <%= link_to tranq_path(@tranq), method: :patch do %>
-        <%=  image_tag "https://www.freepngimg.com/download/hat/4-hat-png-image.png", class: "toolbar__item toolbar__item--hat" %>
-        <% end %>
-      </li>
-      <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hat ">
-        <a href="#home">
-          <img class = "toolbar__item toolbar__item--hat" src="http://www.pngmart.com/files/6/Hat-PNG-Clipart-383x279.png"/>
-        </a>
-      </li>
-      <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hand">
-        <a class = "toolbar__item toolbar__item--hand" href="#home">
-        </a>
-      </li>
-      <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--hand">
-        <a href="#home">
-          <img class = "toolbar__item toolbar__item--hand" src="https://vignette.wikia.nocookie.net/es.pokemon/images/1/1b/Pok%C3%A9mon_GO_Plus_con_pulsera.png/revision/latest?cb=20150910125055"/>
-        </a>
-      </li>
-      <li class ="navbar__specific--decorate navbar__specific--decorate navbar__specific__item navbar__specific__item--hand">
-        <a href="#home">
-          <img class = "toolbar__item toolbar__item--hand" src="https://i.pinimg.com/originals/84/78/86/84788676c8054ddb035b2886d8c217f8.png"/>
-        </a>
-      </li>
       <!-- Friends mode items -->
+      <% @friends.each do |friend| %>
+        <li class ="navbar__specific--friend navbar__specific__item">
+          <%= link_to "Clubhouse #{friend.id}", tranq_path(friend) %>
+        </li>
+      <% end  %>
 
       <li class ="navbar__specific--friend navbar__specific__item"><a href="#home"></i></a></li>
-      <li class ="navbar__specific--friend navbar__specific__item"><a href="#home"></i></a></li>
 
-      <!-- Setting mode item -->
+      <!-- Setting mode items -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <%= link_to destroy_user_session_path, method: :delete do %>
           <%= image_tag("button_logout.png") %>

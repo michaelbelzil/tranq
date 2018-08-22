@@ -1,7 +1,0 @@
-<% floor_items.each do |floor_item| %>
-  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--floor">
-    <%= link_to tranq_path(@tranq, item_id: floor_item.id, category: floor_item.category), method: :patch do %>
-      <%= image_tag(floor_item.photo, class: "toolbar__item toolbar__item--floor")  %>
-    <% end %>
-  </li>
-<% end %>
