@@ -21,11 +21,8 @@
       <!-- Feed mode items -->
       <li class="navbar__specific__item navbar__specific--feed">
         <%= link_to tranq_feed_path(@tranq), method: :patch do %>
-        <div style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
+          <div style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
-      </li>
-      <li>
-       <h1><%= @tranq.last_fed %></h1>
       </li>
 
       <!-- Decorate mode items -->
@@ -69,16 +66,16 @@
       <!-- Friends mode items -->
       <% @friends.each do |friend| %>
         <li class ="navbar__specific--friend navbar__specific__item">
-          <%= link_to "Clubhouse #{friend.id}", tranq_path(friend) %>
+          <%= link_to tranq_path(friend) do %>
+            <div>Clubhouse #<%= friend.id %></div>
+          <% end %>
         </li>
       <% end  %>
-
-      <li class ="navbar__specific--friend navbar__specific__item"><a href="#home"></i></a></li>
 
       <!-- Setting mode items -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <%= image_tag("button_logout.png") %>
+          <div style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
         <% end %>
       </li>
     </ul>
