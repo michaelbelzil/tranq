@@ -9,46 +9,5 @@
   position:relative;
 }
 
-.toolbar__item{
-  width: 100%;
-}
-#tranq{
-  width: 100%;
-}
-.navbar__specific__item{
-  overflow: hidden;
-}
-
-.added__items .toolbar__item{
-  margin: 5px;
-  width: 200px;
-  position: absolute;
-}
 
 
-// For each type of element
-.added__items .toolbar__item--head{
-  top: 8%;
-  left: 17%;
-  width: 18%;
-}
-.added__items .toolbar__item--neck{
-  top: 17%;
-  left: 13%;
-  width: 33%;
-}
-.added__items .toolbar__item--hand{
-  top: 63%;
-  left: 57%;
-  width: 5%;
-}
-.added__items .toolbar__item--face{
-  top: 22%;
-  left: 22%;
-  width: 15%;
-}
-.added__items .toolbar__item--body{
-  width: 57%;
-  top: 30%;
-  left: 3%;
-}

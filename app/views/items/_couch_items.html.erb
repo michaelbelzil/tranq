@@ -1,7 +1,0 @@
-<% couch_items.each do |couch_item| %>
-  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--couch">
-    <%= link_to tranq_path(@tranq, item_id: couch_item.id, category: couch_item.category), method: :patch do %>
-      <%= image_tag(couch_item.photo, class: "toolbar__item toolbar__item--couch")  %>
-    <% end %>
-  </li>
-<% end %>

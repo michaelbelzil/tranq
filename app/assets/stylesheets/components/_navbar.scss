@@ -3,18 +3,19 @@
   background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
   border: 8px solid $graydark1;
   height: Calc(100vh - 16px);
-  width : 200px;
-  float:right;
+  width: 200px;
+  float: right;
 }
 .navbar__list{
-  display:flex;
+  display: flex;
   padding: 0;
   flex-wrap: wrap;
 }
 .navbar__list__item {
    list-style-type: none;
+   margin: 5%;
    text-align:center;
-   width: 50%;
+   width: 40%;
    img {
     width: 35px;
    }
@@ -37,19 +38,29 @@
   margin: 0;
 }
 .navbar__specific__item{
+  overflow: hidden;
   list-style-type: none;
   width: 80%;
   height: 100px;
   margin: 10px 10%;
-  display:none;
-  background: white;
+  display: none;
+  background: $tranq1;
+  border-radius: 25%;
+  opacity: 0.85;
+    &:hover {
+      opacity: 1.0;
+    }
+  a {
+    width: 100%;
+    border-radius: 25%;
+  }
+  div {
+    height: 100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
-
-.main-tranq {
-  background-position: center;
-  background-size: cover;
-}
-
 
 .navbar__specific--feed{
   display: flex;
@@ -57,4 +68,11 @@
 
 img.navbar__specific--decorate{
   width: 100%;
+}
+
+.toolbar__item{
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
