@@ -1,15 +1,17 @@
 .added__items .toolbar__item{
-  margin: 5px;
-  width: 200px;
+  // margin: 5px;
+  // width: 200px;
+  height: 8%;
   position: absolute;
 }
 
 
 // For each type of element
 .added__items .toolbar__item--head{
-  top: 8%;
-  left: 17%;
+  top: 16%;
+  left: 22%;
   width: 18%;
+  transform: rotate(-22deg);
 }
 .added__items .toolbar__item--neck{
   top: 17%;
