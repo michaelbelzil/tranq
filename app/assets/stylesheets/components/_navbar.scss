@@ -5,6 +5,7 @@
   height: Calc(100vh - 16px);
   width: 200px;
   float: right;
+  margin-bottom: 0;
 }
 .navbar__list{
   display: flex;
@@ -21,7 +22,7 @@
    }
 }
 .navbar__specific--parent{
-   height: Calc(100% - 80px);
+   height: Calc(100% - 180px);
    width: 100%;
    overflow: hidden;
    position: relative;
@@ -53,12 +54,16 @@
   a {
     width: 100%;
     border-radius: 25%;
+    text-decoration: none;
   }
   div {
     height: 100px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
