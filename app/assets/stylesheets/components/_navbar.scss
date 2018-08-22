@@ -41,8 +41,11 @@
   width: 80%;
   height: 100px;
   margin: 10px 10%;
-  display:none;
-  background: white;
+  display: none;
+  background: $tranq1;
+  a {
+    width: 100%;
+  }
 }
 
 .main-tranq {
@@ -57,4 +60,11 @@
 
 img.navbar__specific--decorate{
   width: 100%;
+}
+
+.toolbar__item{
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
