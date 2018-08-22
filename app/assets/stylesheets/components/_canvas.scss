@@ -1,0 +1,50 @@
+canvas { border: 1px solid #ccc }
+.draw__color{
+  display: flex;
+  height: 27px;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%
+}
+.color{
+  width: 100%;
+  margin: 0 5px;
+}
+
+#slider_track {
+  position: relative;
+  width: 94%;
+  margin: auto;
+  height: 4%;
+  top: 18%;
+  border-radius: 100px;
+  box-shadow: inset 0 0 1px 1px rgba(0,0,0,.4);
+}
+
+#slider {
+  position: absolute;
+  width: 5%;
+  height: 15%;
+  top: 12%;
+  left: 2%;
+  border-radius: 100px;
+  background: #E5E5E5;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,.4);
+}
+
+#slider_icon {
+  position: absolute;
+  width: 50%;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%,-50%);
+  user-select: none;  /* prevents browser from highlighting the icon when sliding */
+}
+
+/* a transparent surface that prevents browser from grabbing the icon when sliding */
+#slider_mask {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

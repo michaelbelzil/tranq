@@ -12,16 +12,21 @@ user2 = User.create(email: "email@email.com", password: "hunter2")
 user2.save
 god = User.create(email: "god@heaven.com", password: "hunter2")
 god.save
-hat1 = Item.create(category: "head", photo: "https://www.freepngimg.com/download/hat/4-hat-png-image.png", user_id: "1")
-hat1.save
-hat2 = Item.create(category: "head", photo: "http://clipart-library.com/images/8iGb5EB8T.png", user_id: "1")
-hat2.save
-neck1 = Item.create(category: "head", photo: "https://toppng.com/public/uploads/preview/red-scarf-11530963189hbg2ctif4k.png", user_id: "1")
-neck1.save
-neck2 = Item.create(category: "head", photo: "https://vignette.wikia.nocookie.net/roblox/images/b/bb/Snowman_Scarf.png/revision/latest?cb=20170212230925", user_id: "1")
-neck2.save
 
+head1 = Item.create(category: "head", photo: "https://www.freepngimg.com/download/hat/4-hat-png-image.png", user_id: "1")
+head1.save
+head2 = Item.create(category: "head", photo: "http://www.pngmart.com/files/6/Hat-PNG-Clipart-383x279.png", user_id: "1")
+head2.save
+face1 = Item.create(category: "face", photo: "http://pngimg.com/uploads/beard/beard_PNG55121.png", user_id: "1")
+face1.save
+face2 = Item.create(category: "face", photo: "https://vignette.wikia.nocookie.net/zelda/images/9/9e/Careta_de_la_Luna_MM.png/revision/latest?cb=20110220030102&path-prefix=es", user_id: "1")
+face2.save
+neck1 = Item.create(category: "neck", photo: "https://toppng.com/public/uploads/preview/red-scarf-11530963189hbg2ctif4k.png", user_id: "1")
+neck1.save
+neck2 = Item.create(category: "neck", photo: "https://vignette.wikia.nocookie.net/roblox/images/b/bb/Snowman_Scarf.png/revision/latest?cb=20170212230925", user_id: "1")
+neck2.save
 body1 = Item.create(category: "body", photo: "http://clipart-library.com/data_images/541439.png", user_id: "3")
+body1 = Item.create(category: "body", photo: "https://ya-market.org/sites/default/files/storage_public/node/ogmk_product/ogmk_image/01t.SAM_7577-amaru-network-alpaca-undyed-poncho_0.png", user_id: "3")
 body1.save
 plant1 = Item.create(category: "plant", photo: "http://clipart-library.com/images/gie57jLeT.jpg" , user_id: "3")
 plant1.save
