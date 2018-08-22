@@ -5,15 +5,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
       </div>
       <div class="modal-body">
+         <%= render 'partials/select' %>
          <div class="draw">
           <div id="palette_div">
             <div id="slider_track"></div>
               <div id="slider">
-                <img id="slider_icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/drawing_app_slider_icon.svg">
-              <div id="slider_mask"></div>
             </div>
             <div class="draw__color">
               <div class="color" id="red" style="background:red"></div>
@@ -30,19 +28,20 @@
 
           <canvas id="canvas" width="500" height="300"></canvas>
 
-          <div id="footer_div">
+          <div id="footer_canvas">
             <a id="clear" class="buttons">
-              <img class="footer_icons" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/drawing_app_clear_icon.svg">
+              <i class="fas fa-eraser"></i>
             </a>
             <a id="download" class="buttons">
-              <img class="footer_icons" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/409445/drawing_app_download_icon.svg">
+              <i class="fas fa-download"></i>
             </a>
             <a id="upload" class="buttons">
-              <input type='file' onchange="readURL(this);" />
-              <img id="blah" src="http://placehold.it/180" alt="your image" />
+
+              <label class="label-upload-photo" for="upload-photo"><i class="fas fa-upload"></i></label>
+              <input type="file" name="photo" id="upload-photo" />
             </a>
             <a id="save" class="buttons">
-              Save
+              <i class="fas fa-check"></i>
             </a>
           </div>
 
