@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 $('#draw_tool').on('click', function (e) {
     setTimeout(function(){
 
@@ -22,7 +14,7 @@ $('#draw_tool').on('click', function (e) {
       var mouseX;
       var sliderLeft = $("#slider").position().left;
       var sliderLeftMin = sliderLeft;
-      var sliderLeftMax = sliderLeft + $("#slider_track").width()*.965;
+      var sliderLeftMax = sliderLeft + $("#slider_track").width();
 
       //prep canvas for downloads with a white background
       clearCanvas();
@@ -38,10 +30,7 @@ $('#draw_tool').on('click', function (e) {
       //prep drawing
       var currentlyDrawing = false;
 
-
-
       ///---FUNCTIONS---///
-
 
       //slider
       function grab_slider(e) {
