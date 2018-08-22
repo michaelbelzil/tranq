@@ -1,10 +1,14 @@
 <%= render 'shared/flashes' %>
 <div class="show-wrapper">
   <%= render 'shared/navbar' %>
-  <div class="content row expanded main-tranq">
+  <div class="content expanded">
     <div class ="space">
       <div class = "added__items"></div>
-      <%= image_tag('tranq_home.png', id: "tranq") %>
+      <div>
+        <%= render 'shared/switch' %>
+        <%= image_tag('tranq_home.png', id: "tranq") %>
+        <div id="overlay"></div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,17 +1,26 @@
-.main-tranq {
-  background-position: center;
-  background-size: cover;
-}
-
-.space{
-  width: Calc(100% - 215px);
+.space {
+  width: Calc(100% - 200px);
   background: $tranq1;
-  position:relative;
+  position: relative;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
-#tranq{
+#overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: rgb(85,85,80);
+  background: radial-gradient(ellipse 681px 958px at 32% 43%, rgba(85,85,80,0.06486344537815125) 10%, rgba(0,0,0,0.700717787114846) 20%, rgba(47,46,35,0.9192051820728291) 35%, rgba(0,0,0,1) 55%);
+  transition: opacity 5s;
+}
+
+#tranq {
   width: 100%;
 }
-
-
 
