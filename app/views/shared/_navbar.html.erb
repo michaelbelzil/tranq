@@ -1,11 +1,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<div class ="navbar">
+<div class ="navbar" data-me="<%= current_user.id %>" data-friend="<%= @tranq.id %>" >
 
   <ul class ="navbar__list">
     <li class ="navbar__list__item"><a id="feed_option" href="#"><%= image_tag("button_marshmallow.png") %></a></li>
     <li class ="navbar__list__item"><a id="decoration_option" href="#"><%= image_tag("button_couch.png") %></a></li>
+
+    <li class ="navbar__list__item">
+      <%= link_to root_path, id: "home_option" do %>
+        <%= image_tag("button_logout.png") %>
+      <% end  %>
+    </li>
+
     <li class ="navbar__list__item"><a id="friend_option" href="#"><%= image_tag("button_balloon.png") %></a></li>
     <li class ="navbar__list__item"><a id="setting_option" href="#"><%= image_tag("button_wrench.png") %></a></li>
   </ul>
