@@ -1,31 +1,41 @@
-<div class="form-fixer">
-  <div class="form-wrapper text-center">
-    <div class="form-inputs">
-      <h2 class="form-header">Log in</h2>
-        <div class="form-group col-xs-12 col-sm-offset-5 col-sm-4">
-          <div class="card" style="width: 22rem;">
+<div class = "form">
+
+  <div class = "header">
+
+    <div class = "sign-up-container">
+      <h2>sign up</h2>
+      <div class = "underline-thick"></div>
+    </div>
+
+    <div class = "sign-in-container">
+      <h2>sign in</h2>
+      <div class = "underline-thick"></div>
+    </div>
+
+  </div>
+
+  <div class = "sign-in-form">
+
+    <h1>Sign in to continue.</h1>
 
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.input :email,
+              <%= f.input :email,
                       required: false,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
+                      <% end %>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= f.input :password,
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <% end %>
+    <button>
+      <div class = "button-text">sign in</div>
+    </button>
+    <a class = "forgot">forgot password?</h3>
 
-            <div class="form-actions">
-            <%= f.button :submit, "Log in" %>
-            <%= render "devise/shared/links" %>
-            </div>
-        <% end %>
-          </div>
-          </div>
-      </div>
   </div>
-</div>
-
 
 
 
