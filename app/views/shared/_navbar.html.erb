@@ -10,12 +10,6 @@
     <li class ="navbar__list__item"><a id="setting_option" href="#"><%= image_tag("button_wrench.png") %></a></li>
   </ul>
 
-
-  <button type="button" class="fa fa-pencil" id="draw_tool" data-toggle="modal" data-target="#myModal"></button>
-
-
-
-
   <div class="navbar__specific--parent">
     <ul class ="navbar__specific">
       <!-- Feed mode items -->
@@ -24,56 +18,69 @@
           <div class="navbar_button" style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
       </li>
-      <li class="navbar__specific__item navbar__specific--feed">
-        <div>my last fed: <%= current_user.last_fed.strftime("%H:%M:%S") %></div>
-      </li>
-      <li class="navbar__specific__item navbar__specific--feed">
-        <div>this page's last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
-      </li>
+      <% if current_user == @tranq %>
+        <li class="navbar__specific__item navbar__specific--feed">
+          <div>my last fed: <%= current_user.last_fed.strftime("%H:%M:%S") %></div>
+        </li>
+      <% else %>
+        <li class="navbar__specific__item navbar__specific--feed">
+          <% unless @tranq.last_fed.nil? %>
+            <div>this page's last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
+          <% end %>
+        </li>
+      <% end %>
 
       <!-- Decorate mode items -->
-      <%= render "items/categories" %>
+      <% if current_user == @tranq %>
+        <%= render "items/categories" %>
 
-      <div class="head_items">
-        <%= render "items/items", items: @heads %>
-      </div>
-      <div class="face_items">
-        <%= render "items/items", items: @faces %>
-      </div>
-      <div class="neck_items">
-        <%= render "items/items", items: @necks %>
-      </div>
-      <div class="body_items">
-        <%= render "items/items", items: @bodies %>
-      </div>
-      <div class="couch_items">
-        <%= render "items/items", items: @couches %>
-      </div>
-      <div class="table_items">
-        <%= render "items/items", items: @tables %>
-      </div>
-      <div class="side_table_items">
-        <%= render "items/items", items: @side_tables %>
-      </div>
-      <div class="lamp_items">
-        <%= render "items/items", items: @lamps %>
-      </div>
-      <div class="plant_items">
-        <%= render "items/items", items: @plants %>
-      </div>
-      <div class="floor_items">
-        <%= render "items/items", items: @floors %>
-      </div>
-      <div class="wall_items">
-        <%= render "items/items", items: @walls %>
-      </div>
-
+        <div class="head_items">
+          <%= render "items/items", items: @heads %>
+        </div>
+        <div class="face_items">
+          <%= render "items/items", items: @faces %>
+        </div>
+        <div class="neck_items">
+          <%= render "items/items", items: @necks %>
+        </div>
+        <div class="body_items">
+          <%= render "items/items", items: @bodies %>
+        </div>
+        <div class="couch_items">
+          <%= render "items/items", items: @couches %>
+        </div>
+        <div class="table_items">
+          <%= render "items/items", items: @tables %>
+        </div>
+        <div class="side_table_items">
+          <%= render "items/items", items: @side_tables %>
+        </div>
+        <div class="lamp_items">
+          <%= render "items/items", items: @lamps %>
+        </div>
+        <div class="plant_items">
+          <%= render "items/items", items: @plants %>
+        </div>
+        <div class="floor_items">
+          <%= render "items/items", items: @floors %>
+        </div>
+        <div class="wall_items">
+          <%= render "items/items", items: @walls %>
+        </div>
+      <% end %>
 
       <!-- Friends mode items -->
+      <% unless current_user == @tranq %>
+        <li class ="navbar__specific--friend navbar__specific__item">
+          <%= link_to tranq_path(current_user) do %>
+            <div class="navbar_button">Back to Clubhouse #<%= current_user.id %></div>
+          <% end %>
+        </li>
+      <% end %>
       <% @friends.each do |friend| %>
         <li class ="navbar__specific--friend navbar__specific__item">
           <%= link_to tranq_path(friend) do %>
-            <div class="navbar_button">Clubhouse #<%= friend.id %></div>
+            <div class="navbar_button">Visit Clubhouse #<%= friend.id %></div>
           <% end %>
         </li>
       <% end  %>
