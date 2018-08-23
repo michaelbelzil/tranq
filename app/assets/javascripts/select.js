@@ -75,19 +75,74 @@ function changeCanvas(elmnt) {
   var canvasJSON = [
     {
       "id": "option-head",
-      "url": "/assets/face_item_template_300x300.png",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063532/Template%20tranq/lxjtsjfsw5vdmy3hnlkz.png",
       "width": 300,
       "height": 300
     },
     {
-      "id": "option-plant",
-      "url": "/assets/plant_item_template_600x300.png",
+      "id": "option-face",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063334/Template%20tranq/ruy0b8cg0rfkbxz2x4zg.png",
       "width": 300,
+      "height": 300
+    },
+    {
+      "id": "option-neck",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063554/Template%20tranq/elxadqhevdx4hijblkbe.png",
+      "width": 400,
+      "height": 250
+    },
+    {
+      "id": "option-body",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063288/Template%20tranq/h12vjh3rydctjxd0nah1.png",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "id": "option-couch",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063312/Template%20tranq/ct5zcrslbqxbta0hxlbo.png",
+      "width": 1000,
+      "height": 500
+    },
+    {
+      "id": "option-table",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063622/Template%20tranq/jhpddmonipcqcq72tvif.png",
+      "width": 700,
+      "height": 350
+    },
+    {
+      "id": "option-side_table",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063597/Template%20tranq/aiyjqptug69oh6lpwu49.png",
+      "width": 350,
+      "height": 350
+    },
+    {
+      "id": "option-window",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063697/Template%20tranq/qocjyshrkpyruihprypw.png",
+      "width": 1000,
+      "height": 400
+    },
+    {
+      "id": "option-plant",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063578/Template%20tranq/ponr8h6y6t5llft2w5zg.png",
+      "width": 500,
+      "height": 700
+    },
+     {
+      "id": "option-floor",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063481/Template%20tranq/voym9esnppatif4vmbuc.png",
+      "width": 500,
+      "height": 250
+    },
+    {
+      "id": "option-wall",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063650/Template%20tranq/he2zjfqkmqohkat0gw4y.png",
+      "width": 500,
       "height": 600
     }
+
   ];
   item = canvasJSON.filter(
-      function(canvasJSON){ return canvasJSON.id == elmnt.id }
+    function(canvasJSON){ return canvasJSON.id == elmnt.id }
   );
   canvas = document.getElementById("canvas");
   background = canvas.parentElement;
