@@ -2,7 +2,6 @@
   <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--<%= item.category %>">
     <%= link_to tranq_path(@tranq, item_id: item.id, category: item.category), method: :patch do %>
       <div class="toolbar__item toolbar__item--<%= item.category %>" style="background-image: url('<%= image_path(item.photo) %>')">
-
       </div>
     <% end %>
   </li>
