@@ -4,7 +4,8 @@
 
 .alert {
   margin: 0 215px 0 0;
-  color: white;
+  color: $tranq1;
+  border-radius: 0;
 }
 .alert-info {
   background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
