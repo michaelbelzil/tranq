@@ -51,4 +51,9 @@
       </div>
     </div>
   </div>
+
+  <%= form_tag(items_create_path) do %>
+    <%= text_field_tag(:category, "head") %>
+    <%= submit_tag("Search") %>
+  <% end %>
 </div>

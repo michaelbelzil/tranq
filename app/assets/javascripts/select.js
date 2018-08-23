@@ -33,6 +33,7 @@ for (i = 0; i < x.length; i++) {
           }
           this.setAttribute("class", "same-as-selected");
           changeCanvas(this);
+          fillForm(this);
         }
       }
       h.click();
@@ -94,6 +95,10 @@ function changeCanvas(elmnt) {
   canvas.height  = item[0].height;
   background.style.backgroundImage = 'url(' + item[0].url + ')';
 
+}
+function fillForm(elmnt){
+  category = elmnt.id.slice(7);
+  document.getElementById('category').value = category;
 }
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/

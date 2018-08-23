@@ -49,6 +49,14 @@ class TranqsController < ApplicationController
     @tranq.save
   end
 
+  def create
+
+    # Unless @restaurant.valid?, #save will return false,
+    # and @restaurant is not persisted.
+    # TODO: present the form again with error messages.
+
+  end
+
   private
 
   def update_head
