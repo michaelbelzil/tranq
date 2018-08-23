@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 $('#draw_tool').on('click', function (e) {
     setTimeout(function(){
 
@@ -20,9 +12,10 @@ $('#draw_tool').on('click', function (e) {
 
       //prep slider
       var mouseX;
-      var sliderLeft = $("#slider").position().left;
-      var sliderLeftMin = sliderLeft;
-      var sliderLeftMax = sliderLeft + $("#slider_track").width()*.965;
+      var sliderLeft = 9;
+
+      var sliderLeftMin = 9;
+      var sliderLeftMax = 9 + $("#slider_track").width();
 
       //prep canvas for downloads with a white background
       clearCanvas();
@@ -39,9 +32,7 @@ $('#draw_tool').on('click', function (e) {
       var currentlyDrawing = false;
 
 
-
       ///---FUNCTIONS---///
-
 
       //slider
       function grab_slider(e) {
@@ -140,8 +131,8 @@ $('#draw_tool').on('click', function (e) {
 
 
       function saveCanvas() {
-        ctx.fillStyle = "transparent";
-        ctx.fillRect(0,0,canvas.width, canvas.height);
+        var dataURL = canvas.toDataURL();
+        debugger;
       }
 
       // Upload image

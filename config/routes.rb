@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'items/show'
   get 'items/new'
   get 'items/create'
+  post 'items/create'
   devise_for :users
   root to: 'pages#home'
   get 'tranqs/:id', to: 'tranqs#show', as: 'tranq'

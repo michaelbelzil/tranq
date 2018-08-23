@@ -19,6 +19,7 @@ class TranqsController < ApplicationController
 
     # friends
     @friends = User.all.sample(5)
+    @categories = Item.select(:category).map(&:category).uniq
   end
 
   def update
@@ -46,6 +47,14 @@ class TranqsController < ApplicationController
   def feed
     @tranq.last_fed = Time.now
     @tranq.save
+  end
+
+  def create
+
+    # Unless @restaurant.valid?, #save will return false,
+    # and @restaurant is not persisted.
+    # TODO: present the form again with error messages.
+
   end
 
   private
