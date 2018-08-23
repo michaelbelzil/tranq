@@ -19,6 +19,7 @@ class TranqsController < ApplicationController
 
     # friends
     @friends = User.all.sample(5)
+    @categories = Item.select(:category).map(&:category).uniq
   end
 
   def update
