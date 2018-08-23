@@ -43,8 +43,15 @@
               <input type="file" name="photo" id="upload-photo" />
             </a>
             <a id="save" class="buttons">
+
               <i class="fas fa-check"></i>
             </a>
+
+              <%= form_tag(items_create_path, style: "display: none;") do %>
+                <%= text_field_tag(:category, "head") %>
+                <%= text_field_tag(:photo) %>
+                <%= submit_tag "Submit ID", :id => "submit_modal" %>
+              <% end %>
           </div>
 
         </div>
@@ -52,8 +59,15 @@
     </div>
   </div>
 
-  <%= form_tag(items_create_path) do %>
-    <%= text_field_tag(:category, "head") %>
-    <%= submit_tag("Search") %>
-  <% end %>
+
+
+
+  <%#= simple_form_for Item.new, url: items_create_path, method: :post do |f| %>
+    <%#= f.input :category %>
+    <%#= f.input :photo %>
+    <%#= f.input :photo %>
+    <%#= f.input :photo_cache, as: :hidden %>
+    <%#= f.submit "add a review", class: "btn btn-primary" %>
+  <%# end %>
+
 </div>
