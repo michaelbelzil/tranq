@@ -1,4 +1,15 @@
 //Main tools
+me = $(".navbar").data( "me");
+friend = $(".navbar").data( "friend");
+
+if (me === friend) {
+  home = $('#home_option');
+  console.log(home);
+  home.parent().remove();
+} else {
+  couch = $('#decoration_option');
+  couch.parent().remove();
+}
 
 $( "#feed_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
