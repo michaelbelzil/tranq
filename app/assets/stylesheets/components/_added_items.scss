@@ -1,6 +1,5 @@
 
 .added__items .toolbar__item{
-  height: 8%;
   position: absolute;
 }
 
@@ -9,30 +8,86 @@
 .added__items .toolbar__item--head{
   top: 16%;
   left: 25%;
+  height: 8%;
   width: 15%;
   transform: rotate(-17deg);
 }
 
 .added__items .toolbar__item--face{
-  top: 22%;
-  left: 22%;
-  width: 15%;
-}
-
-.added__items .toolbar__item--body{
-  width: 57%;
-  top: 30%;
-  left: 3%;
+  top: 25%;
+  left: 32%;
+  height: 8%;
+  width: 4%;
+  transform: rotate(-30deg);
 }
 
 .added__items .toolbar__item--neck{
-  top: 17%;
-  left: 13%;
-  width: 33%;
+  top: 21%;
+  left: 21.5%;
+  height: 46%;
+  width: 28%;
+  transform: rotate(-17deg);
+}
+
+.added__items .toolbar__item--body{
+  top: 23%;
+  left: 24%;
+  height: 46%;
+  width: 28%;
+  transform: rotate(-17deg);
+}
+
+.added__items .toolbar__item--couch{
+  top: 38%;
+  left: 15%;
+  height: 39%;
+  width: 64%;
+  transform: rotate(0deg);
+}
+.added__items .toolbar__item--table{
+  top: 64%;
+  left: 32%;
+  height: 35%;
+  width: 35%;
+  transform: rotate(0deg);
+}
+
+.added__items .toolbar__item--side_table{
+  top: 46%;
+  left: 0%;
+  height: 26%;
+  width: 16%;
+  transform: rotate(0deg);
+}
+
+.added__items .toolbar__item--window{
+  top: 25%;
+  left: 27%;
+  height: 8%;
+  width: 57%;
+  transform: rotate(-17deg);
 }
 
 .added__items .toolbar__item--plant{
-  top: 63%;
-  left: 57%;
-  width: 5%;
+  top: 44%;
+  left: 77%;
+  height: 22%;
+  width: 15%;
+  transform: rotate(-1deg);
+}
+
+.added__items .toolbar__item--floor{
+  top: 75%;
+  left: 47%;
+  height: 8%;
+  width: 57%;
+  transform: rotate(-17deg);
+}
+
+.added__items .toolbar__item--wall{
+  top: 15%;
+  left: 67%;
+  height: 8%;
+  width: 57%;
+  transform: rotate(-17deg);
 }

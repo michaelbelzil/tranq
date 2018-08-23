@@ -44,7 +44,7 @@ side_table1 = Item.create(category: "side_table", photo: "https://png.pngtree.co
 side_table1.save
 side_table2 = Item.create(category: "side_table", photo: "http://mudanzascompartidas.info/wp-content/uploads/2015/12/paraguero.png", user_id: "1")
 side_table2.save
-lamp1 = Item.create(category: "lamp", photo: "https://vignette.wikia.nocookie.net/warehouse13/images/4/47/Leg_Lamp.PNG/revision/latest?cb=20131021194904", user_id: "1")
-lamp1.save
-lamp2 = Item.create(category: "lamp", photo: "https://images.vexels.com/media/users/3/127183/isolated/preview/3c38623c01ddc3ad951a134e46d15f6b-blue-flat-lamp-stand-by-vexels.png", user_id: "1")
-lamp2.save
+window1 = Item.create(category: "window", photo: "https://vignette.wikia.nocookie.net/warehouse13/images/4/47/Leg_Lamp.PNG/revision/latest?cb=20131021194904", user_id: "1")
+window1.save
+window2 = Item.create(category: "window", photo: "https://images.vexels.com/media/users/3/127183/isolated/preview/3c38623c01ddc3ad951a134e46d15f6b-blue-flat-lamp-stand-by-vexels.png", user_id: "1")
+window2.save

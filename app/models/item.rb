@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   scope :couch_items, -> { where(category: "couch") }
   scope :table_items, -> { where(category: "table") }
   scope :side_table_items, -> { where(category: "side_table") }
-  scope :lamp_items, -> { where(category: "lamp") }
+  scope :window_items, -> { where(category: "window") }
   scope :plant_items, -> { where(category: "plant") }
   scope :floor_items, -> { where(category: "floor") }
   scope :wall_items, -> { where(category: "wall") }
