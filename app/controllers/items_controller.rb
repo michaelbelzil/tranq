@@ -9,19 +9,18 @@ class ItemsController < ApplicationController
   end
 
   def create
+
     item = Item.new(item_params)
     item.user_id = current_user.id
-    raise
-    @item.save
-    # Unless @restaurant.valid?, #save will return false,
-    # and @restaurant is not persisted.
-    # TODO: present the form again with error messages.
+    item.save
+    current_user.update(item.category => item)
+    redirect_to tranq_path(current_user)
 
   end
 
   private
 
   def item_params
-    params.permit(:category)
+    params.permit(:category, :photo)
   end
 end

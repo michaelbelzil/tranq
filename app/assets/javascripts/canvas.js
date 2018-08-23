@@ -131,8 +131,9 @@ $('#draw_tool').on('click', function (e) {
 
 
       function saveCanvas() {
-        var dataURL = canvas.toDataURL();
-        debugger;
+        var url = canvas.toDataURL();
+        $('#photo').val(url);
+        $("#submit_modal").trigger('click');
       }
 
       // Upload image
