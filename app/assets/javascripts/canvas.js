@@ -133,7 +133,17 @@ $('#draw_tool').on('click', function (e) {
       function saveCanvas() {
         var url = canvas.toDataURL();
         $('#photo').val(url);
-        $("#submit_modal").trigger('click');
+
+
+
+        var blank = document.createElement('canvas');
+        blank.width = canvas.width;
+        blank.height = canvas.height;
+
+        if(canvas.toDataURL() != blank.toDataURL()){
+          $("#submit_modal").trigger('click');
+        }
+
       }
 
       // Upload image
