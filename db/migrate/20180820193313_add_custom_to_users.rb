@@ -10,7 +10,7 @@ class AddCustomToUsers < ActiveRecord::Migration[5.2]
     add_reference :users, :couch_item
     add_reference :users, :table_item
     add_reference :users, :side_table_item
-    add_reference :users, :lamp_item
+    add_reference :users, :window_item
     add_reference :users, :plant_item
     add_reference :users, :floor_item
     add_reference :users, :wall_item
