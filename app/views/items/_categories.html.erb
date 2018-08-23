@@ -1,4 +1,10 @@
 <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--generic navbar__specific__item--generic--head">
+  <%= link_to tranq_path(@tranq) do %>
+    <div class="toolbar__item" style="background-image: url('<%= image_path(button_draw.png) %>')">
+    </div>
+  <% end %>
+</li>
+<li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--generic navbar__specific__item--generic--head">
   <a href="#home">
     <img class = "navbar__specific--decorate" src="https://openclipart.org/download/216151/Head.svg"/>
   </a>

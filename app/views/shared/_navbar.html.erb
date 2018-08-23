@@ -20,9 +20,15 @@
     <ul class ="navbar__specific">
       <!-- Feed mode items -->
       <li class="navbar__specific__item navbar__specific--feed">
-        <%= link_to tranq_feed_path(@tranq), method: :patch do %>
+        <%= link_to tranq_feed_path(current_user.id), method: :patch do %>
           <div style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
+      </li>
+      <li class="navbar__specific__item navbar__specific--feed">
+        <div>my last fed: <%= current_user.last_fed.strftime("%H:%M:%S") %></div>
+      </li>
+      <li class="navbar__specific__item navbar__specific--feed">
+        <div>this page's last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
       </li>
 
       <!-- Decorate mode items -->
