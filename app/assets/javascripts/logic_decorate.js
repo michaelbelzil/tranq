@@ -12,7 +12,6 @@ $( ".toolbar__item").each(function() {
       // turn the array back into a string
       return classes_to_remove.join(" ");
     });
-
     var $img = $(event.currentTarget).clone();
     $(".added__items").append($img);
   });
