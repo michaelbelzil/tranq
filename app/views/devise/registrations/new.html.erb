@@ -1,11 +1,23 @@
-<div class="form-fixer">
-  <div class="form-wrapper text-center">
-    <h2 class="form-header">Sign up</h2>
-      <div class="form-group col-xs-12 col-sm-offset-4 col-sm-4">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
+<div class = "form">
 
-          <div class="form-inputs">
+  <div class = "header">
+
+    <div class = "sign-up-container">
+          <%= link_to "Sign up", new_registration_path(resource_name) %>
+      <div class = "underline-thick"></div>
+    </div>
+
+    <div class = "sign-in-container">
+      <%= link_to "Log in", new_session_path(resource_name) %>
+      <div class = "underline-thick"></div>
+    </div>
+  </div>
+
+<div class = "sign-in-form">
+
+  <h1>Sign up to continue.</h1>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= f.input :email,
                         required: true,
                         autofocus: true ,
@@ -17,14 +29,11 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-          </div>
 
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
           </div>
         <% end %>
-
-      <%= render "devise/shared/links" %>
     </div>
   </div>
-</div>
+
