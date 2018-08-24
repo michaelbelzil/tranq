@@ -23,7 +23,6 @@ class User < ApplicationRecord
   def starting_values
     self.happiness = 100
     self.last_fed = Time.now
-    self.tucked_in = false
   end
 
   def items_are_correct_category
