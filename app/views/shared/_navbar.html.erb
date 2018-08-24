@@ -20,7 +20,7 @@
     <ul class ="navbar__specific">
       <!-- Feed mode items -->
       <li class="navbar__specific__item navbar__specific--feed">
-        <%= link_to tranq_feed_path(@tranq), method: :patch do %>
+        <%= link_to tranq_feed_path(@tranq), method: :patch, remote: true do %>
           <div style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
       </li>

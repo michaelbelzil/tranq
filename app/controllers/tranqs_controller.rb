@@ -1,7 +1,6 @@
 class TranqsController < ApplicationController
   before_action :set_tranq, only: [:show, :update, :feed]
   def show
-
     # items
     @items = Item.all
     @heads = Item.head_items
@@ -19,6 +18,16 @@ class TranqsController < ApplicationController
 
     # friends
     @friends = User.all.sample(5)
+
+    # happiness
+
+    # @tranq.last_fed
+    @happiness = @tranq.compute_happiness
+
+  end
+
+  def get_happiness
+    @happiness = @tranq.compute_happiness
   end
 
   def update
@@ -44,8 +53,8 @@ class TranqsController < ApplicationController
   end
 
   def feed
-    @tranq.last_fed = Time.now
-    @tranq.save
+    @tranq.feed!
+    @happiness = @tranq.happiness
   end
 
   private
