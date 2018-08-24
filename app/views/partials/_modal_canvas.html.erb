@@ -10,7 +10,7 @@
          <%= render 'partials/select' %>
          <div class="draw">
           <div id="palette_div">
-            <div id="slider_track"></div>
+            <div id="slider_track"><div></div></div>
               <div id="slider">
             </div>
             <div class="draw__color">
@@ -20,12 +20,12 @@
               <div class="color" id="green" style="background:green"></div>
               <div class="color" id="yellow" style="background:yellow"></div>
               <div class="color" id="orange" style="background:orange"></div>
-              <div class="color" id="black" style="background:black"></div>
+              <div class="color color-selected" id="black" style="background:black"></div>
               <div class="color" id="gray" style="background:gray"></div>
               <div class="color" id="white" style="background:white"></div>
             </div>
           </div>
-          <div class="canvas_div" style="background-image: url(<%= asset_path 'face_item_template_300x300.png' %>)">
+          <div class="canvas_div" style="background-image: url('<%= asset_path 'template/head_item_template_400x300.png' %>')">
             <canvas id="canvas" width="300" height="300"></canvas>
           </div>
 
@@ -43,8 +43,15 @@
               <input type="file" name="photo" id="upload-photo" />
             </a>
             <a id="save" class="buttons">
+
               <i class="fas fa-check"></i>
             </a>
+
+              <%= form_tag(items_create_path, style: "display: none;") do %>
+                <%= text_field_tag(:category, "head") %>
+                <%= text_field_tag(:photo) %>
+                <%= submit_tag "Submit ID", :id => "submit_modal" %>
+              <% end %>
           </div>
 
         </div>
@@ -52,8 +59,15 @@
     </div>
   </div>
 
-  <%= form_tag(items_create_path) do %>
-    <%= text_field_tag(:category, "head") %>
-    <%= submit_tag("Search") %>
-  <% end %>
+
+
+
+  <%#= simple_form_for Item.new, url: items_create_path, method: :post do |f| %>
+    <%#= f.input :category %>
+    <%#= f.input :photo %>
+    <%#= f.input :photo %>
+    <%#= f.input :photo_cache, as: :hidden %>
+    <%#= f.submit "add a review", class: "btn btn-primary" %>
+  <%# end %>
+
 </div>

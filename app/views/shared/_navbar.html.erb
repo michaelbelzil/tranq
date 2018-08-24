@@ -26,15 +26,17 @@
         <% end %>
       </li>
       <% if current_user == @tranq %>
-        <li class="navbar__specific__item navbar__specific--feed">
-          <div>my last fed: <%= current_user.last_fed.strftime("%H:%M:%S") %></div>
-        </li>
+        <% unless @tranq.last_fed.nil? %>
+          <li class="navbar__specific__item navbar__specific--feed">
+            <div>My last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
+          </li>
+        <% end %>
       <% else %>
-        <li class="navbar__specific__item navbar__specific--feed">
-          <% unless @tranq.last_fed.nil? %>
+        <% unless @tranq.last_fed.nil? %>
+          <li class="navbar__specific__item navbar__specific--feed">
             <div>this page's last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
-          <% end %>
-        </li>
+          </li>
+        <% end %>
       <% end %>
 
       <!-- Decorate mode items -->
@@ -57,13 +59,13 @@
           <%= render "items/items", items: @couches %>
         </div>
         <div class="table_items">
-          <%= render "items/items", items: @tables %>
+          <%= render "items/items", items: @windows %>
         </div>
         <div class="side_table_items">
           <%= render "items/items", items: @side_tables %>
         </div>
-        <div class="lamp_items">
-          <%= render "items/items", items: @lamps %>
+        <div class="window_items">
+          <%= render "items/items", items: @windows %>
         </div>
         <div class="plant_items">
           <%= render "items/items", items: @plants %>
