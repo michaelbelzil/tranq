@@ -111,37 +111,9 @@ input {
   height: 2.5em;
 }
 
-button {
-  box-sizing: border-box;
-  outline: none;
-  border: 2px solid #bb7d80;
-  background: #f6eee3;
-  border-radius: 4px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 13px;
-  margin-bottom: 30px;
-  transition: transform .2s, box-shadow .2s;
-  transform: translate(-4px,-4px);
-  box-shadow: 4px 4px 0px 0px #946c74;
-  text-align: center;
-}
-
 .button-text {
   margin: 0;
   line-height: 1;
-}
-
-button:hover {
-  transform: translate(-6px,-6px);
-  box-shadow: 6px 6px 0px 0px #946c74;
-}
-
-button:active {
-  transition-delay:-.15s;
-  transform: translate(-2px,-2px);
-  box-shadow: 2px 2px 0px 0px #946c74;
 }
 
 .forgot {
