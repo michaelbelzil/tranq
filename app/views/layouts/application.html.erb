@@ -9,13 +9,8 @@
     <meta property="og:image" content="images/tranqprofile.jpg">
     <meta property="og:description" content="Tranq's Clubhouse is the website for people who love and respect Tranq.">
     <meta property="og:title" content="Tranq Dot Calm">
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= image_tag("images/icons-etc/apple-touch-icon.png") %>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<%= image_tag("images/icons-etc/favicon-32x32.png") %>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<%= image_tag("images/icons-etc/favicon-16x16.png") %>">
-    <link rel="manifest" href="images/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#000000">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#ffffff">
+    <%= favicon_link_tag 'icons-etc/favicon.ico' %>
+    <%= favicon_link_tag 'icons-etc/apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
