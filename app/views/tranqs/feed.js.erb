@@ -1,0 +1,12 @@
+console.log("<%= @happiness %>")
+
+var health = document.getElementById("health");
+health.style.width = "<%= @happiness %>%";
+
+var happinessPercentage = document.getElementById("js-happiness");
+happinessPercentage.innerHTML = "<%= @happiness %>"
+
+
+
+
+// setInterval(() => { health.style.width = `${(parseInt(health.style.width.slice(0, 2)) - 1) + '%'}` }, 100)

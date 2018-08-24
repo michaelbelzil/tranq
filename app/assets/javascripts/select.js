@@ -75,21 +75,21 @@ function changeCanvas(elmnt) {
   var canvasJSON = [
     {
       "id": "option-head",
-      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063532/Template%20tranq/lxjtsjfsw5vdmy3hnlkz.png",
-      "width": 300,
-      "height": 300
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535122631/Template%20tranq/eiycp8d2cetja9aunjnn.png",
+      "width": 400,
+      "height": 400
     },
     {
       "id": "option-face",
       "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063334/Template%20tranq/ruy0b8cg0rfkbxz2x4zg.png",
-      "width": 300,
-      "height": 300
+      "width": 400,
+      "height": 400
     },
     {
       "id": "option-neck",
       "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063554/Template%20tranq/elxadqhevdx4hijblkbe.png",
-      "width": 400,
-      "height": 250
+      "width": 480,
+      "height": 300
     },
     {
       "id": "option-body",
@@ -100,26 +100,26 @@ function changeCanvas(elmnt) {
     {
       "id": "option-couch",
       "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063312/Template%20tranq/ct5zcrslbqxbta0hxlbo.png",
-      "width": 1000,
-      "height": 500
+      "width": 700,
+      "height": 350
     },
     {
       "id": "option-table",
-      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063622/Template%20tranq/jhpddmonipcqcq72tvif.png",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535123094/Template%20tranq/oe6b02fz8aw6smbgnwu7.png",
       "width": 700,
       "height": 350
     },
     {
       "id": "option-side_table",
       "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063597/Template%20tranq/aiyjqptug69oh6lpwu49.png",
-      "width": 350,
-      "height": 350
+      "width": 400,
+      "height": 400
     },
     {
       "id": "option-window",
       "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063697/Template%20tranq/qocjyshrkpyruihprypw.png",
-      "width": 1000,
-      "height": 400
+      "width": 700,
+      "height": 280
     },
     {
       "id": "option-plant",
@@ -149,7 +149,9 @@ function changeCanvas(elmnt) {
   canvas.width  = item[0].width;
   canvas.height  = item[0].height;
   background.style.backgroundImage = 'url(' + item[0].url + ')';
-
+  var lastClass = $(".canvas_div").attr('class').split(' ').pop();
+  $(".canvas_div").removeClass(lastClass);
+  background.classList.add(item[0].id);
 }
 function fillForm(elmnt){
   category = elmnt.id.slice(7);

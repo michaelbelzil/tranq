@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'tranqs/:id/get_happiness', to: 'tranqs#get_happiness', as: 'update_happiness'
+
   get 'items/index'
   get 'items/show'
   get 'items/new'
