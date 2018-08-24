@@ -15,5 +15,4 @@ dayToggle.addEventListener("click", function() {
     dayToggle.classList.add("d-none");
     nightToggle.classList.remove("d-none");
     overlay.style.opacity = 1;
-
 })
