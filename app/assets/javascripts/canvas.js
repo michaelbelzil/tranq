@@ -1,3 +1,5 @@
+var currentColor = "black";
+
 $('#draw_tool').on('click', function (e) {
     setTimeout(function(){
 
@@ -21,12 +23,11 @@ $('#draw_tool').on('click', function (e) {
       clearCanvas();
 
       //prep markers
-      var markerWidth = 2;  // min = 2, max = 100
-      ctx.lineWidth = markerWidth;
+      sliderLeft = $("#slider").position().left;
+        updateMarker();
 
       //colors
       var colors = document.getElementsByClassName("color");  //an HTMLCollection of .class elements
-      var currentColor = "black";
 
       //prep drawing
       var currentlyDrawing = false;
@@ -58,6 +59,13 @@ $('#draw_tool').on('click', function (e) {
         updateMarker();
         currentlySliding = false;
       }
+      function click_slider(e) {
+        mouseX = e.pageX - $("#slider_track").offset().left + $("#slider_track").position().left;
+        $("#slider").css({left: mouseX});
+        sliderLeft = $("#slider").position().left;
+        updateMarker();
+
+      }
 
       function updateMarker() {
         //converts slider position to a proportional marker width of 2px-100px
@@ -73,6 +81,7 @@ $('#draw_tool').on('click', function (e) {
       }
 
       function selectColor(e) {
+
         currentColor = e.target.style.background;
       }
 
@@ -134,8 +143,6 @@ $('#draw_tool').on('click', function (e) {
         var url = canvas.toDataURL();
         $('#photo').val(url);
 
-
-
         var blank = document.createElement('canvas');
         blank.width = canvas.width;
         blank.height = canvas.height;
@@ -185,6 +192,8 @@ $('#draw_tool').on('click', function (e) {
       slider.addEventListener("touchstart", grab_slider);
       document.addEventListener("touchmove", drag_slider);
       document.addEventListener("touchend", drop_slider);
+
+      sliderTrack.addEventListener('click', click_slider);
 
       //color selection
       bindColors();

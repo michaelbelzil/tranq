@@ -1,7 +1,8 @@
 <div class = "added__items">
   <% @categories.each do |category| %>
     <% unless current_user.send(category).nil? %>
-      <div class= "toolbar__item toolbar__item--<%=category%>" style="background-image: url('<%= image_path(current_user.send(category).photo) %>')">
+      <div class= "toolbar__item toolbar__item--<%=category%>"">
+        <%= cl_image_tag @user.send(category).photo %>
       </div>
     <% end %>
   <% end %>
