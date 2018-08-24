@@ -75,13 +75,13 @@ function changeCanvas(elmnt) {
   var canvasJSON = [
     {
       "id": "option-head",
-      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535122631/Template%20tranq/eiycp8d2cetja9aunjnn.png",
-      "width": 400,
-      "height": 400
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png",
+      "width": 500,
+      "height": 375
     },
     {
       "id": "option-face",
-      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063334/Template%20tranq/ruy0b8cg0rfkbxz2x4zg.png",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535122631/Template%20tranq/eiycp8d2cetja9aunjnn.png",
       "width": 400,
       "height": 400
     },
