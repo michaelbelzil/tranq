@@ -1,18 +1,16 @@
 
 .added__items .toolbar__item{
   position: absolute;
-  width: calc(100%-200px);
 }
 
 
 // For each type of element
 .added__items .toolbar__item--head{
-  top: 11%;
-  left: 19%;
-  img{
-    width: 18%;
-  }
-
+    width: 25%;
+    height: 32%;
+    left: 19%;
+    background-size: 126px 105px;
+    top: 7%;
 }
 
 .added__items .toolbar__item--face{
