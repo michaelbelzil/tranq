@@ -20,11 +20,13 @@ class TranqsController < ApplicationController
     # friends
     @friends = User.all.sample(5)
     @categories = Item.select(:category).map(&:category).uniq
+    @user = User.find(params[:id])
+
   end
 
   def update
     @item = Item.find(params[:item_id])
-
+    @user = current_user
     case params[:category]
     when "head" then update_head
     when "face" then update_face
