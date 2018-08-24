@@ -25,19 +25,7 @@
           <div class="navbar_button" style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
       </li>
-      <% if current_user == @tranq %>
-        <% unless @tranq.last_fed.nil? %>
-          <li class="navbar__specific__item navbar__specific--feed">
-            <div>My last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
-          </li>
-        <% end %>
-      <% else %>
-        <% unless @tranq.last_fed.nil? %>
-          <li class="navbar__specific__item navbar__specific--feed">
-            <div>this page's last fed: <%= @tranq.last_fed.strftime("%H:%M:%S") %></div>
-          </li>
-        <% end %>
-      <% end %>
+
 
       <!-- Decorate mode items -->
       <% if current_user == @tranq %>
