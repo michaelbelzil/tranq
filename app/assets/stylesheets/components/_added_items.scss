@@ -1,16 +1,17 @@
 
 .added__items .toolbar__item{
   position: absolute;
+  background-size: 100% 100%;
 }
 
 
 // For each type of element
 .added__items .toolbar__item--head{
-    width: 25%;
-    height: 32%;
-    left: 19%;
-    background-size: 126px 105px;
-    top: 7%;
+  width: 25%;
+  height: 32%;
+  left: 19%;
+  top: 7%;
+
 }
 
 .added__items .toolbar__item--face{
@@ -55,34 +56,34 @@
 .added__items .toolbar__item--side_table{
   top: 46%;
   left: 0%;
-  height: 26%;
-  width: 16%;
+  height: 100%;
+  width: 100%;
 }
 
 .added__items .toolbar__item--window{
   top: 25%;
   left: 27%;
-  height: 8%;
-  width: 57%;
+  height: 100%;
+  width: 100%;
 }
 
 .added__items .toolbar__item--plant{
   top: 44%;
   left: 77%;
-  height: 22%;
-  width: 15%;
+  height: 100%;
+  width: 100%;
 }
 
 .added__items .toolbar__item--floor{
   top: 75%;
   left: 47%;
-  height: 8%;
-  width: 57%;
+  height: 100%;
+  width: 100%;
 }
 
 .added__items .toolbar__item--wall{
   top: 15%;
   left: 67%;
-  height: 8%;
-  width: 57%;
+  height: 100%;
+  width: 100%;
 }
