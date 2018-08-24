@@ -10,15 +10,16 @@ class TranqsController < ApplicationController
     @couches = Item.couch_items
     @tables = Item.table_items
     @side_tables = Item.side_table_items
-    @lamps = Item.lamp_items
+    @windows = Item.window_items
     @plants = Item.plant_items
     @floors = Item.floor_items
     @walls = Item.wall_items
 
-
+    
     # friends
     @friends = User.all.sample(5)
-
+    @categories = Item.select(:category).map(&:category).uniq
+    @user = User.find(params[:id])
     # happiness
 
     # @tranq.last_fed
@@ -32,7 +33,7 @@ class TranqsController < ApplicationController
 
   def update
     @item = Item.find(params[:item_id])
-
+    @user = current_user
     case params[:category]
     when "head" then update_head
     when "face" then update_face
@@ -41,7 +42,7 @@ class TranqsController < ApplicationController
     when "couch" then update_couch
     when "table" then update_table
     when "side_table" then update_side_table
-    when "lamp" then update_lamp
+    when "window" then update_window
     when "plant" then update_plant
     when "floor" then update_floor
     when "wall" then update_wall
@@ -55,6 +56,14 @@ class TranqsController < ApplicationController
   def feed
     @tranq.feed!
     @happiness = @tranq.happiness
+  end
+
+  def create
+
+    # Unless @restaurant.valid?, #save will return false,
+    # and @restaurant is not persisted.
+    # TODO: present the form again with error messages.
+
   end
 
   private
@@ -94,8 +103,8 @@ class TranqsController < ApplicationController
     @tranq.save
   end
 
-  def update_lamp
-    @tranq.lamp = @item
+  def update_window
+    @tranq.window = @item
     @tranq.save
   end
 

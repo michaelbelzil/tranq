@@ -1,5 +1,18 @@
 //Main tools
+me = $(".navbar").data( "me");
+friend = $(".navbar").data( "friend");
 
+// Couch / House button toggle
+if (me === friend) {
+  home = $('#home_option');
+  console.log(home);
+  home.parent().remove();
+} else {
+  couch = $('#decoration_option');
+  couch.parent().remove();
+}
+
+// Filter navbar items according to mode
 $( "#feed_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
     if($(this).hasClass("navbar__specific--feed")){
@@ -37,7 +50,7 @@ $( "#setting_option" ).click(function() {
   });
 });
 
-//Select inside decorate
+//Select items from decorate mode categories
 $( ".navbar__specific__item--generic" ).each(function() {
     $(this).on("click", function(){
       str = $(this).attr('class').match(/navbar__specific__item--generic-[\w-][\w-]*\b/)[0].split("--")[2];

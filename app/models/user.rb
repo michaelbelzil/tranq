@@ -13,7 +13,7 @@ class User < ApplicationRecord
   belongs_to :side_table, :class_name => 'Item', foreign_key: :side_table_item_id, optional: true
   belongs_to :floor, :class_name => 'Item', foreign_key: :floor_item_id, optional: true
   belongs_to :wall, :class_name => 'Item', foreign_key: :wall_item_id, optional: true
-  belongs_to :lamp, :class_name => 'Item', foreign_key: :lamp_item_id, optional: true
+  belongs_to :window, :class_name => 'Item', foreign_key: :window_item_id, optional: true
   belongs_to :plant, :class_name => 'Item', foreign_key: :plant_item_id, optional: true
 
   validates :happiness, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }

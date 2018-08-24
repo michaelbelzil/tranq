@@ -1,37 +1,89 @@
+
 .added__items .toolbar__item{
-  // margin: 5px;
-  // width: 200px;
-  height: 8%;
   position: absolute;
 }
 
 
 // For each type of element
 .added__items .toolbar__item--head{
-  top: 16%;
-  left: 22%;
-  width: 18%;
-  transform: rotate(-22deg);
-}
-.added__items .toolbar__item--neck{
-  top: 17%;
-  left: 13%;
-  width: 33%;
+  top: 11%;
+  left: 19%;
+  img{
+    width: 18%;
+  }
+
 }
 
 .added__items .toolbar__item--face{
-  top: 22%;
-  left: 22%;
-  width: 15%;
+  top: 9%;
+  left: 20%;
+  img{
+    width: 22%;
+  }
+
 }
+
+.added__items .toolbar__item--neck{
+  top: 28%;
+  left: 22%;
+  img{
+    width: 24%;
+  }
+}
+
 .added__items .toolbar__item--body{
+  top: 28%;
+  left: 22%;
+  img{
+    width: 24%;
+  }
+}
+
+.added__items .toolbar__item--couch{
+  top: 26.3%;
+  left: 15%;
+  img{
+    width: 61.3%;
+  }
+}
+.added__items .toolbar__item--table{
+  top: 64%;
+  left: 32%;
+  height: 35%;
+  width: 35%;
+}
+
+.added__items .toolbar__item--side_table{
+  top: 46%;
+  left: 0%;
+  height: 26%;
+  width: 16%;
+}
+
+.added__items .toolbar__item--window{
+  top: 25%;
+  left: 27%;
+  height: 8%;
   width: 57%;
-  top: 30%;
-  left: 3%;
 }
 
 .added__items .toolbar__item--plant{
-  top: 63%;
-  left: 57%;
-  width: 5%;
+  top: 44%;
+  left: 77%;
+  height: 22%;
+  width: 15%;
+}
+
+.added__items .toolbar__item--floor{
+  top: 75%;
+  left: 47%;
+  height: 8%;
+  width: 57%;
+}
+
+.added__items .toolbar__item--wall{
+  top: 15%;
+  left: 67%;
+  height: 8%;
+  width: 57%;
 }

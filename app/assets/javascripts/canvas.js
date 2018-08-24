@@ -1,10 +1,4 @@
-
-
-
-
-
-
-
+var currentColor = "black";
 
 $('#draw_tool').on('click', function (e) {
     setTimeout(function(){
@@ -20,28 +14,26 @@ $('#draw_tool').on('click', function (e) {
 
       //prep slider
       var mouseX;
-      var sliderLeft = $("#slider").position().left;
-      var sliderLeftMin = sliderLeft;
-      var sliderLeftMax = sliderLeft + $("#slider_track").width()*.965;
+      var sliderLeft = 9;
+
+      var sliderLeftMin = 9;
+      var sliderLeftMax = 9 + $("#slider_track").width();
 
       //prep canvas for downloads with a white background
       clearCanvas();
 
       //prep markers
-      var markerWidth = 2;  // min = 2, max = 100
-      ctx.lineWidth = markerWidth;
+      sliderLeft = $("#slider").position().left;
+        updateMarker();
 
       //colors
       var colors = document.getElementsByClassName("color");  //an HTMLCollection of .class elements
-      var currentColor = "black";
 
       //prep drawing
       var currentlyDrawing = false;
 
 
-
       ///---FUNCTIONS---///
-
 
       //slider
       function grab_slider(e) {
@@ -67,6 +59,13 @@ $('#draw_tool').on('click', function (e) {
         updateMarker();
         currentlySliding = false;
       }
+      function click_slider(e) {
+        mouseX = e.pageX - $("#slider_track").offset().left + $("#slider_track").position().left;
+        $("#slider").css({left: mouseX});
+        sliderLeft = $("#slider").position().left;
+        updateMarker();
+
+      }
 
       function updateMarker() {
         //converts slider position to a proportional marker width of 2px-100px
@@ -82,6 +81,7 @@ $('#draw_tool').on('click', function (e) {
       }
 
       function selectColor(e) {
+
         currentColor = e.target.style.background;
       }
 
@@ -140,8 +140,17 @@ $('#draw_tool').on('click', function (e) {
 
 
       function saveCanvas() {
-        ctx.fillStyle = "transparent";
-        ctx.fillRect(0,0,canvas.width, canvas.height);
+        var url = canvas.toDataURL();
+        $('#photo').val(url);
+
+        var blank = document.createElement('canvas');
+        blank.width = canvas.width;
+        blank.height = canvas.height;
+
+        if(canvas.toDataURL() != blank.toDataURL()){
+          $("#submit_modal").trigger('click');
+        }
+
       }
 
       // Upload image
@@ -183,6 +192,8 @@ $('#draw_tool').on('click', function (e) {
       slider.addEventListener("touchstart", grab_slider);
       document.addEventListener("touchmove", drag_slider);
       document.addEventListener("touchend", drop_slider);
+
+      sliderTrack.addEventListener('click', click_slider);
 
       //color selection
       bindColors();

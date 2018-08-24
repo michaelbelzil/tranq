@@ -3,12 +3,14 @@
 * ------------------------------------- */
 
 .alert {
-  margin: 0;
-  text-align: center;
-  color: white;
+  margin: 0 215px 0 0;
+  color: $tranq1;
+  border-radius: 0;
+  border: 4px solid $graydark1;
+  border-right: none;
 }
 .alert-info {
-  background: $green;
+  background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
 }
 .alert-warning {
   background: $red;

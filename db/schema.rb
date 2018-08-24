@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_193343) do
     t.bigint "couch_item_id"
     t.bigint "table_item_id"
     t.bigint "side_table_item_id"
-    t.bigint "lamp_item_id"
+    t.bigint "window_item_id"
     t.bigint "plant_item_id"
     t.bigint "floor_item_id"
     t.bigint "wall_item_id"
@@ -61,13 +61,13 @@ ActiveRecord::Schema.define(version: 2018_08_20_193343) do
     t.index ["face_item_id"], name: "index_users_on_face_item_id"
     t.index ["floor_item_id"], name: "index_users_on_floor_item_id"
     t.index ["head_item_id"], name: "index_users_on_head_item_id"
-    t.index ["lamp_item_id"], name: "index_users_on_lamp_item_id"
     t.index ["neck_item_id"], name: "index_users_on_neck_item_id"
     t.index ["plant_item_id"], name: "index_users_on_plant_item_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["side_table_item_id"], name: "index_users_on_side_table_item_id"
     t.index ["table_item_id"], name: "index_users_on_table_item_id"
     t.index ["wall_item_id"], name: "index_users_on_wall_item_id"
+    t.index ["window_item_id"], name: "index_users_on_window_item_id"
   end
 
   add_foreign_key "favorites", "items"

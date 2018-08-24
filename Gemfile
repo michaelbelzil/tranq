@@ -20,6 +20,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+gem 'carrierwave-base64'
+gem "carrierwave-mongoid"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -30,5 +35,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', groups: [:development, :test]
 end

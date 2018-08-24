@@ -1,11 +1,15 @@
 .navbar{
-  background: rgb(70,67,75);
   background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
-  border: 8px solid $graydark1;
-  height: Calc(100vh - 16px);
-  width: 200px;
-  float: right;
+  border: 4px solid $graydark1;
+  border-radius: 0;
+  height: Calc(100vh);
+  width: 215px;
   margin-bottom: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+
 }
 .navbar__list{
   display: flex;
@@ -22,7 +26,7 @@
    }
 }
 .navbar__specific--parent{
-   height: Calc(100% - 180px);
+   height: Calc(100% - 160px);
    width: 100%;
    overflow: hidden;
    position: relative;
@@ -73,6 +77,11 @@
 
 img.navbar__specific--decorate{
   width: 100%;
+}
+
+.navbar_button {
+  width: 100%;
+  background: $tranq1;
 }
 
 .toolbar__item{
