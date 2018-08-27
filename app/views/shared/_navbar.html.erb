@@ -90,10 +90,14 @@
           <div class="navbar_button" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
         <% end %>
       </li>
+
       <li class ="navbar__specific--setting navbar__specific__item">
           <div class="navbar_button toggle-img" id="toggle-night" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
       <li class ="navbar__specific--setting navbar__specific__item">
           <div class="navbar_button d-none toggle-img" id="toggle-day" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+
+      <li class ="navbar__specific--setting navbar__specific__item" id="toggle-day" >
+          <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
 
       <li class ="navbar__specific--setting navbar__specific__item">
         <input type="button" value="PLAY"  onclick="play()">
