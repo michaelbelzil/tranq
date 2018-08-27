@@ -34,6 +34,7 @@ h2, button {
 a {
   &:hover {
     text-decoration: none;
+    color: $pinklight1;
   }
 }
 
@@ -104,9 +105,8 @@ h3, a {
 
 input {
   outline: none;
-  background: transparent;
-  color: $pinklight1;
-  border: 2px solid $pinklight1;
+  background: transparent !important;
+  color: $pinklight1 !important;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -119,15 +119,16 @@ input {
 .button-text {
   margin: 0;
   line-height: 1;
+  border: 4px double $pinklight1;
+  &:hover {
+    box-shadow: 2px 2px $pinklight1;
+  }
 }
 
 .forgot {
   cursor: pointer;
   display: block;
-}
-
-.forgot:hover {
-  color: $pinkdark1;
+  margin-top: 60px;
 }
 
 .underline-thick {
