@@ -18,13 +18,18 @@ class TranqsController < ApplicationController
 
     # friends
     @friends = User.all.sample(5)
-    @categories = Item.select(:category).map(&:category).uniq
+    @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
     @user = User.find(params[:id])
     # happiness
 
     # @tranq.last_fed
     @happiness = @tranq.compute_happiness
 
+  end
+
+  def visit
+    @friend = User.find(params[:friend_id])
+    @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
   end
 
   def get_happiness
@@ -59,7 +64,6 @@ class TranqsController < ApplicationController
   end
 
   def create
-
     # Unless @restaurant.valid?, #save will return false,
     # and @restaurant is not persisted.
     # TODO: present the form again with error messages.

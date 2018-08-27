@@ -3,19 +3,36 @@
 
 <div class ="navbar" data-me="<%= current_user.id %>" data-friend="<%= @tranq.id %>" >
 
-  <ul class ="navbar__list">
-    <li class ="navbar__list__item"><a id="feed_option" href="#"><%= image_tag("button_marshmallow.png") %></a></li>
-    <li class ="navbar__list__item"><a id="decoration_option" href="#"><%= image_tag("button_couch.png") %></a></li>
+    <ul class ="navbar__list">
+      <li class ="navbar__list__item">
+        <%= link_to(tranq_visit_path(current_user, friend_id: current_user.id), method: :patch, remote: true, id: "feed_option") do %>
+          <%= image_tag("button_marshmallow.png") %>
+        <% end %>
+      </li>
+      <li class ="navbar__list__item">
+        <%= link_to(tranq_visit_path(current_user, friend_id: current_user.id), method: :patch, remote: true, id: "decoration_option") do %>
+          <%= image_tag("button_couch.png") %>
+        <% end %>
+      </li>
+      <li class ="navbar__list__item">
+        <%= link_to root_path, id: "home_option" do %>
+          <%= image_tag("button_home.png") %>
+        <% end %>
+      </li>
 
-    <li class ="navbar__list__item">
-      <%= link_to root_path, id: "home_option" do %>
-        <%= image_tag("button_home.png") %>
-      <% end  %>
-    </li>
+      <li class ="navbar__list__item">
+        <a id="friend_option" href="#">
+          <%= image_tag("button_balloon.png") %>
+        </a>
+      </li>
+      <li class ="navbar__list__item">
+        <%= link_to(tranq_visit_path(current_user, friend_id: current_user.id), method: :patch, remote: true, id: "setting_option") do %>
+          <%= image_tag("button_wrench.png") %>
+        <% end %>
+      </li>
+    </ul>
 
-    <li class ="navbar__list__item"><a id="friend_option" href="#"><%= image_tag("button_balloon.png") %></a></li>
-    <li class ="navbar__list__item"><a id="setting_option" href="#"><%= image_tag("button_wrench.png") %></a></li>
-  </ul>
+
 
   <div class="navbar__specific--parent">
     <ul class ="navbar__specific">
@@ -75,14 +92,17 @@
         </li>
       <% end %>
       <% @friends.each do |friend| %>
-        <% unless friend == current_user %>
-          <li class ="navbar__specific--friend navbar__specific__item">
-            <%= link_to tranq_path(friend) do %>
-              <div class="navbar_button">Visit <%= friend.clubhouse_name %></div>
-            <% end %>
-          </li>
-        <% end %>
+        <li class ="navbar__specific--friend navbar__specific__item" data-friend-id="<%= friend.id %>">
+          <%= link_to(tranq_visit_path(current_user, friend_id: friend.id), method: :patch, remote: true) do %>
+            <div class="navbar_button friend_button">Visit <%= friend.clubhouse_name %></div>
+          <% end %>
+        </li>
       <% end  %>
+
+
+
+
+
 
       <!-- Setting mode items -->
       <li class ="navbar__specific--setting navbar__specific__item">

@@ -21,8 +21,21 @@ class User < ApplicationRecord
   after_initialize :starting_values
 
   def starting_values
-    self.happiness = 100
-    self.last_fed = Time.now
+    self.happiness ||= 100
+    self.last_fed ||= Time.now
+    self.tucked_in ||= true
+
+    self.head ||= Item.head_items.find { |element| element.owner == "blank" }
+    self.face ||= Item.face_items.find { |element| element.owner == "blank" }
+    self.neck ||= Item.neck_items.find { |element| element.owner == "blank" }
+    self.body ||= Item.body_items.find { |element| element.owner == "blank" }
+    self.couch ||= Item.couch_items.find { |element| element.owner == "blank" }
+    self.table ||= Item.table_items.find { |element| element.owner == "blank" }
+    self.side_table ||= Item.side_table_items.find { |element| element.owner == "blank" }
+    self.window ||= Item.window_items.find { |element| element.owner == "blank" }
+    self.plant ||= Item.plant_items.find { |element| element.owner == "blank" }
+    self.floor ||= Item.floor_items.find { |element| element.owner == "blank" }
+    self.wall ||= Item.wall_items.find { |element| element.owner == "blank" }
   end
 
   def items_are_correct_category
@@ -49,7 +62,5 @@ class User < ApplicationRecord
     save
     self.happiness
   end
-
 end
 
-# 864
