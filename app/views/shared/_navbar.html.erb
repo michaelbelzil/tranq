@@ -99,11 +99,6 @@
         </li>
       <% end  %>
 
-
-
-
-
-
       <!-- Setting mode items -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <%= link_to destroy_user_session_path, method: :delete do %>
@@ -113,9 +108,14 @@
       <li class ="navbar__specific--setting navbar__specific__item" id="toggle-day" >
           <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
       </li>
-      <li class ="navbar__specific--setting navbar__specific__item d-none" id="toggle-night">
+      <li class ="navbar__specific--setting navbar__specific__item" id="toggle-night" >
           <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
       </li>
+      <li class ="navbar__specific--setting navbar__specific__item">
+        <input type="button" value="PLAY"  onclick="play()">
+        <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
+      </li>
+
     </ul>
   </div>
 </div>
