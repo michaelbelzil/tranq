@@ -11,3 +11,10 @@
   margin: 10px 0px 0px 70px;
   padding-right: 20px;
 }
+
+.form-control {
+  &:focus {
+    border-color: $pinklight1;
+    box-shadow: 2px 2px $pinklight1;
+  }
+}
