@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_193343) do
+ActiveRecord::Schema.define(version: 2018_08_27_143526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_193343) do
     t.bigint "plant_item_id"
     t.bigint "floor_item_id"
     t.bigint "wall_item_id"
+    t.string "clubhouse_name"
     t.index ["body_item_id"], name: "index_users_on_body_item_id"
     t.index ["couch_item_id"], name: "index_users_on_couch_item_id"
     t.index ["email"], name: "index_users_on_email", unique: true
