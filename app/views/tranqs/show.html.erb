@@ -3,6 +3,8 @@
   <%= render 'shared/navbar' %>
   <div class="content expanded">
     <div class ="space">
+      <!-- lights off effect -->
+        <div id="overlay"></div>
       <%= render 'partials/added__items' %>
 
         <!-- progress bar -->
@@ -18,11 +20,11 @@
           <% end %>
         </div>
 
-        <!-- lights off effect -->
-        <div id="overlay"></div>
-      <div class="bg-msg">
-        <%= render 'partials/small_surprise' %>
-      </div>
+
+
+    </div>
+    <div class="bg-msg">
+      <%= render 'partials/small_surprise' %>
     </div>
   </div>
 </div>

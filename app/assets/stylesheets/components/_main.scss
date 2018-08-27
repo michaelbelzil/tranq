@@ -2,6 +2,7 @@
   width: Calc(100% - 215px);
   background: $tranq1;
   max-height: 100vh;
+  position: relative;
 }
 .added__items{
   position: relative;
@@ -15,7 +16,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: inherit;
   width: 100%;
   opacity: 0;
   background: rgb(85,85,80);
@@ -27,18 +28,36 @@
   width: 100%;
 }
 
+.show-wrapper {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 .bg-msg {
-  position: absolute;
+  opacity: 0.1;
+  transition: opacity 3s;
   display: flex;
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  bottom: 0;
+  top: 0;
   width: calc(100% - 215px);
   z-index: 1;
   padding: 2%;
+  padding-top: 0;
+  color: $graylight1;
+  &:hover {
+    opacity: 0.8;
+  }
   img {
     width: 100%;
     height: auto;
+
+  }
+  .surprise-text {
+    padding: 2%;
+    font-size: 14px;
+    font-family: $body-font;
+    line-height: 1.5em;
   }
 }
