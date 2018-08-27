@@ -18,6 +18,7 @@
   <h1>Sign up to continue.</h1>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.input :clubhouse_name, :label => 'Clubhouse Name *' %>
             <%= f.input :email,
                         required: true,
                         autofocus: true ,
@@ -34,5 +35,6 @@
           </div>
         <% end %>
     </div>
-  </div>
+</div>
+
 

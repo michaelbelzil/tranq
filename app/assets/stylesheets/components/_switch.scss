@@ -5,5 +5,5 @@ html, body{
   transition: all 3s ease-in-out;
 }
 .d-none {
-  display: none;
+  display: none !important;
 }

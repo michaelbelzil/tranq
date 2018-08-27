@@ -87,14 +87,14 @@
       <% unless current_user == @tranq %>
         <li class ="navbar__specific--friend navbar__specific__item">
           <%= link_to tranq_path(current_user) do %>
-            <div class="navbar_button">Back to Clubhouse #<%= current_user.id %></div>
+            <div class="navbar_button">Back to <%= current_user.clubhouse_name %></div>
           <% end %>
         </li>
       <% end %>
       <% @friends.each do |friend| %>
         <li class ="navbar__specific--friend navbar__specific__item" data-friend-id="<%= friend.id %>">
           <%= link_to(tranq_visit_path(current_user, friend_id: friend.id), method: :patch, remote: true) do %>
-            <div class="navbar_button friend_button">Visit Clubhouse #<%= friend.id %></div>
+            <div class="navbar_button friend_button">Visit <%= friend.clubhouse_name %></div>
           <% end %>
         </li>
       <% end  %>
@@ -110,11 +110,24 @@
           <div class="navbar_button" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
         <% end %>
       </li>
+
       <li class ="navbar__specific--setting navbar__specific__item">
           <div class="navbar_button toggle-img" id="toggle-night" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
       <li class ="navbar__specific--setting navbar__specific__item">
           <div class="navbar_button d-none toggle-img" id="toggle-day" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+
+      <li class ="navbar__specific--setting navbar__specific__item">
+        <input type="button" value="PLAY"  onclick="play()">
+        <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
       </li>
+
+
+      <li class ="navbar__specific--setting navbar__specific__item" id="toggle-day" >
+          <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
+>>>>>>> b90417f8185f5c5192794725328283886f945847
+      </li>
+      <li class ="navbar__specific--setting navbar__specific__item d-none" id="toggle-night">
+          <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
       </li>
     </ul>
   </div>

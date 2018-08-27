@@ -14,7 +14,6 @@ categories.each do |category|
   god.table = blank;
   god.send(category + "=", blank)
   god.tucked_in = true
+  god.clubhouse_name = "Omnipresent"
 end
-p god
 p god.save
-

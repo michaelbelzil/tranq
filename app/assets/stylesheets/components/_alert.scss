@@ -8,10 +8,13 @@
   border-radius: 0;
   border: 4px solid $graydark1;
   border-right: none;
+  position: relative;
+  z-index: 8;
+  font-size: 14px;
 }
 .alert-info {
   background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
 }
 .alert-warning {
-  background: $red;
+  background: $red1;
 }
