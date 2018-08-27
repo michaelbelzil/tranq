@@ -6,6 +6,14 @@
       <!-- lights off effect -->
         <div id="overlay"></div>
       <%= render 'partials/added__items' %>
+      <div>
+        <%= render 'shared/switch' %>
+        <div class="tranq-container">
+          <%= image_tag('tranq_home.png', id: "tranq") %>
+            <div class="gauge-container">
+              <div id='myChart' style="background: transparent !important"><a class="zc-ref"></a></div>
+          </div>
+        </div>
 
         <!-- progress bar -->
         <div class="progress">
@@ -29,4 +37,3 @@
   </div>
 </div>
 <%= render "partials/modal_canvas" %>
-

@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   validates :happiness, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
   # validate :items_are_correct_category
+
   after_initialize :starting_values
 
   def starting_values
