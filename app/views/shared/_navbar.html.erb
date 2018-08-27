@@ -70,16 +70,18 @@
       <% unless current_user == @tranq %>
         <li class ="navbar__specific--friend navbar__specific__item">
           <%= link_to tranq_path(current_user) do %>
-            <div class="navbar_button">Back to Clubhouse #<%= current_user.id %></div>
+            <div class="navbar_button">Back to <%= current_user.clubhouse_name %></div>
           <% end %>
         </li>
       <% end %>
       <% @friends.each do |friend| %>
-        <li class ="navbar__specific--friend navbar__specific__item">
-          <%= link_to tranq_path(friend) do %>
-            <div class="navbar_button">Visit Clubhouse #<%= friend.id %></div>
-          <% end %>
-        </li>
+        <% unless friend == current_user %>
+          <li class ="navbar__specific--friend navbar__specific__item">
+            <%= link_to tranq_path(friend) do %>
+              <div class="navbar_button">Visit <%= friend.clubhouse_name %></div>
+            <% end %>
+          </li>
+        <% end %>
       <% end  %>
 
       <!-- Setting mode items -->
