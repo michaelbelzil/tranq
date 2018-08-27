@@ -123,7 +123,7 @@ function changeCanvas(elmnt) {
     },
     {
       "id": "option-plant",
-      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535063578/Template%20tranq/ponr8h6y6t5llft2w5zg.png",
+      "url": "https://res.cloudinary.com/sarneijim/image/upload/v1535318467/o9zatxlntzshjq3ovnrc.png",
       "width": 500,
       "height": 700
     },

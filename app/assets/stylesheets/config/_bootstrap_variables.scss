@@ -10,12 +10,12 @@ $body-bg:                 #d4d4d4;
 $font-size-base: 18px;
 
 // Colors
-$gray-base:       $gray;
-$brand-primary:   $blue;
-$brand-success:   $green;
-$brand-info:      $yellow;
-$brand-danger:    $red;
-$brand-warning:   $orange;
+$gray-base:       $graylight1;
+$brand-primary:   $pinklight1;
+$brand-success:   $green1;
+$brand-info:      $blue1;
+$brand-danger:    $red1;
+$brand-warning:   $red1;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
@@ -29,14 +29,14 @@ $border-radius-small: 2px;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: $red;
+  color: $graydark1;
 }
 
 .was-validated .form-control:invalid,
 .form-control.is-invalid,
 .was-validated .custom-select:invalid,
 .custom-select.is-invalid {
-  border-color: $red;
+  border-color: $graydark1;
 }
 
 .was-validated .form-control:invalid ~ .invalid-feedback,
@@ -53,4 +53,13 @@ $border-radius-small: 2px;
 // Override other variables below!
 .progress {
   margin-bottom: 0 !important;
+}
+
+.text-muted {
+  opacity: 0.4;
+  color: $pinklight1 !important;
+}
+
+.invalid-feedback {
+  color: $red1;
 }

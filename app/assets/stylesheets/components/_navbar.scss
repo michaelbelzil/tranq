@@ -46,10 +46,10 @@
   overflow: hidden;
   list-style-type: none;
   width: 80%;
-  height: 100px;
+  height: 15%;
   margin: 10px 10%;
   display: none;
-  background: $tranq1;
+  background: transparent;
   border-radius: 25%;
   opacity: 0.85;
     &:hover {
@@ -61,7 +61,7 @@
     text-decoration: none;
   }
   div {
-    height: 100px;
+    height: 80px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -81,11 +81,11 @@ img.navbar__specific--decorate{
 
 .navbar_button {
   width: 100%;
-  background: $tranq1;
+  background: transparent;
+  cursor: pointer;
 }
 
 .toolbar__item{
-  width: auto;
   height: 100px;
   background-size: contain;
   background-repeat: no-repeat;

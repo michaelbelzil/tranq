@@ -1,20 +1,24 @@
 .space {
-  width: Calc(100% - 200px);
+  width: Calc(100% - 215px);
   background: $tranq1;
-  position: relative;
   max-height: 100vh;
-  overflow-y: scroll;
+  position: relative;
+}
+.added__items{
+  position: relative;
+  z-index: 6;
 }
 
 #overlay {
   position: absolute;
+  z-index: 7;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: inherit;
   width: 100%;
-  opacity: 80;
+  opacity: 0;
   background: rgb(85,85,80);
   background: radial-gradient(ellipse 600px 600px at 33% 36%, rgba(85, 85, 80, 0.0648634454) -20%, rgba(0, 0, 0, 0.7007177871) 43%, rgba(47, 46, 35, 0.9192051821) 350%, black 450%);
   transition: opacity 5s;
@@ -28,3 +32,36 @@
   position: relative;
 }
 
+.show-wrapper {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.bg-msg {
+  opacity: 0.1;
+  transition: opacity 3s;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  width: calc(100% - 215px);
+  z-index: 1;
+  padding: 2%;
+  padding-top: 0;
+  color: $graylight1;
+  &:hover {
+    opacity: 0.8;
+  }
+  img {
+    width: 100%;
+    height: auto;
+
+  }
+  .surprise-text {
+    padding: 2%;
+    font-size: 14px;
+    font-family: $body-font;
+    line-height: 1.5em;
+  }
+}

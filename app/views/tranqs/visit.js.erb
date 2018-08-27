@@ -1,0 +1,3 @@
+<% @categories.each do |category| %>
+  $(".added__items .toolbar__item--<%= category %>").css("background-image", "url(<%= @friend.send(category).photo %>)");
+<% end %>

@@ -3,6 +3,8 @@
   <%= render 'shared/navbar' %>
   <div class="content expanded">
     <div class ="space">
+      <!-- lights off effect -->
+        <div id="overlay"></div>
       <%= render 'partials/added__items' %>
       <div>
         <%= render 'shared/switch' %>
@@ -13,10 +15,7 @@
           </div>
         </div>
 
-
-
-
-
+        <!-- progress bar -->
         <div class="progress">
           <% if @happiness >= 75 %>
             <div class="progress-bar progress-bar-success" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -27,15 +26,14 @@
           <% elsif @happiness < 25 %>
             <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           <% end %>
-
         </div>
 
-        <div id="overlay"></div>
-      </div>
+
+
+    </div>
+    <div class="bg-msg">
+      <%= render 'partials/small_surprise' %>
     </div>
   </div>
 </div>
-
-<!-- <p>You have this much health: <span id="js-happiness"><%= @happiness %></span></p> -->
-
 <%= render "partials/modal_canvas" %>
