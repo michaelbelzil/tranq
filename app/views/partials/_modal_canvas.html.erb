@@ -49,6 +49,7 @@
 
               <%= form_tag(items_create_path, style: "display: none;") do %>
                 <%= text_field_tag(:category, "head") %>
+                <%= text_field_tag(:owner, "private") %>
                 <%= text_field_tag(:photo) %>
                 <%= submit_tag "Submit ID", :id => "submit_modal" %>
               <% end %>

@@ -3,19 +3,19 @@ class TranqsController < ApplicationController
   def show
     # items
     @items = Item.all
-    @heads = Item.head_items
-    @faces = Item.face_items
-    @necks = Item.neck_items
-    @bodies = Item.body_items
-    @couches = Item.couch_items
-    @tables = Item.table_items
-    @side_tables = Item.side_table_items
-    @windows = Item.window_items
-    @plants = Item.plant_items
-    @floors = Item.floor_items
-    @walls = Item.wall_items
+    @heads = Item.head_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @faces = Item.face_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @necks = Item.neck_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @bodies = Item.body_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @couches = Item.couch_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @tables = Item.table_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @side_tables = Item.side_table_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @windows = Item.window_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @plants = Item.plant_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @floors = Item.floor_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @walls = Item.wall_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
 
-    
+
     # friends
     @friends = User.all.sample(5)
     @categories = Item.select(:category).map(&:category).uniq
