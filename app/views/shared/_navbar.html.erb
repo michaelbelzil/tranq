@@ -114,7 +114,7 @@
       </li>
       <!-- settings: sound -->
       <li class ="navbar__specific--setting navbar__specific__item">
-        <input type="button" value="PLAY"  onclick="play()">
+        <div class="navbar_button" onclick="play()" style="background-image: url('<%= image_path("button_sound.png") %>')"></div>
         <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
       </li>
 
