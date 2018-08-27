@@ -6,7 +6,16 @@
       <%= render 'partials/added__items' %>
       <div>
         <%= render 'shared/switch' %>
-        <%= image_tag('tranq_home.png', id: "tranq") %>
+        <div class="tranq-container">
+          <%= image_tag('tranq_home.png', id: "tranq") %>
+            <div class="gauge-container">
+              <div id='myChart' style="background: transparent !important"><a class="zc-ref"></a></div>
+          </div>
+        </div>
+
+
+
+
 
         <div class="progress">
           <% if @happiness >= 75 %>
