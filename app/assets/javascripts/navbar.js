@@ -5,7 +5,6 @@ friend = $(".navbar").data( "friend");
 // Couch / House button toggle
 if (me === friend) {
   home = $('#home_option');
-  console.log(home);
   home.parent().remove();
 } else {
   couch = $('#decoration_option');
