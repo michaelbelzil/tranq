@@ -105,12 +105,14 @@
           <div class="navbar_button" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
         <% end %>
       </li>
+      <!-- settings: light switch -->
       <li class ="navbar__specific--setting navbar__specific__item" id="toggle-day" >
           <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
       </li>
-      <li class ="navbar__specific--setting navbar__specific__item" id="toggle-night" >
+      <li class ="navbar__specific--setting navbar__specific__item d-none" id="toggle-night" >
           <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
       </li>
+      <!-- settings: sound -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <input type="button" value="PLAY"  onclick="play()">
         <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
