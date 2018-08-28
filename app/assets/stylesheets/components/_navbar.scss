@@ -2,20 +2,23 @@
   background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
   border: 4px solid $graydark1;
   border-radius: 0;
-  height: Calc(100vh);
+  height: 100vh;
   width: 215px;
   margin-bottom: 0;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 9;
-
 }
+
+// game mode icons <ul>
 .navbar__list{
   display: flex;
   padding: 0;
   flex-wrap: wrap;
 }
+
+// game mode icons <li>
 .navbar__list__item {
    list-style-type: none;
    margin: 5%;
@@ -25,13 +28,8 @@
     width: 35px;
    }
 }
-.navbar__specific--parent{
-   height: Calc(100% - 160px);
-   width: 100%;
-   overflow: hidden;
-   position: relative;
 
-}
+// list of options for each game mode <ul>
 .navbar__specific{
   position: absolute;
   top: 0;
@@ -42,14 +40,26 @@
   padding: 0;
   margin: 0;
 }
+
+// wrapper for list of options for each game mode <div>
+.navbar__specific--parent{
+   height: Calc(100% - 160px);
+   width: 100%;
+   overflow: hidden;
+   position: relative;
+}
+
+
+// options displayed after game mode choice
 .navbar__specific__item{
+  cursor: pointer;
   overflow: hidden;
   list-style-type: none;
   width: 80%;
   height: 15%;
   margin: 10px 10%;
   display: none;
-  background: transparent;
+  background: red;
   border-radius: 25%;
   opacity: 0.85;
     &:hover {
@@ -71,27 +81,45 @@
   }
 }
 
-.navbar__specific--feed{
-  display: flex;
-}
-
-img.navbar__specific--decorate{
-  width: 100%;
-}
-
-.navbar_button {
-  width: 100%;
-  background: transparent;
-  cursor: pointer;
-}
-
+// friend mode options (text)
 .friend_button {
   color: $tranq1;
   font-size: 0.7em;
 }
 
+// decorate mode categories
+.navbar__specific__item--generic{
+
+}
+// decorate mode options
 .toolbar__item{
   height: 100px;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+
+// THIS SHOULD BE USELESS
+//
+
+// options that are images (lumped in with navbar__specific__item)
+// .navbar_button {
+//   width: 100%;
+
+// }
+
+// .navbar__specific--feed{
+//   display: flex;
+// }
+
+// img.navbar__specific--decorate{
+//   // width: 100%;
+// }
+
+// .navbar__specific--friend{
+
+// }
+
+// .navbar__specific--setting{
+
+// }
