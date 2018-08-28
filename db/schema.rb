@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_202415) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "last_fed"
-    t.integer "happiness"
+    t.datetime "last_fed", default: Time.now
+    t.integer "happiness", default: 100
     t.boolean "tucked_in"
     t.bigint "head_item_id"
     t.bigint "face_item_id"

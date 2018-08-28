@@ -61,7 +61,7 @@
     text-decoration: none;
   }
   div {
-    height: 80%;
+    height: 80px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -83,6 +83,11 @@ img.navbar__specific--decorate{
   width: 100%;
   background: transparent;
   cursor: pointer;
+}
+
+.friend_button {
+  color: $tranq1;
+  font-size: 0.7em;
 }
 
 .toolbar__item{

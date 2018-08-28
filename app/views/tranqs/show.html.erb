@@ -3,11 +3,19 @@
   <%= render 'shared/navbar' %>
   <div class="content expanded">
     <div class ="space">
+      <!-- lights off effect -->
+        <div id="overlay"></div>
       <%= render 'partials/added__items' %>
       <div>
         <%= render 'shared/switch' %>
+        <div class="tranq-container">
+          <%= image_tag('tranq_home.png', id: "tranq") %>
+            <div class="gauge-container">
+              <div id='myChart' style="background: transparent !important"><a class="zc-ref"></a></div>
+          </div>
+        </div>
 
-
+        <!-- progress bar -->
         <div class="progress">
           <% if @happiness >= 75 %>
             <div class="progress-bar progress-bar-success" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -18,11 +26,13 @@
           <% elsif @happiness < 25 %>
             <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           <% end %>
-
         </div>
 
-        <div id="overlay"></div>
-      </div>
+
+
+    </div>
+    <div class="bg-msg">
+      <%= render 'partials/small_surprise' %>
     </div>
   </div>
 </div>
