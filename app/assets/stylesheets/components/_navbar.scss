@@ -49,6 +49,10 @@
    position: relative;
 }
 
+// this shows marshmallow by default on reload
+.navbar__specific--feed{
+  display: flex;
+}
 
 // options displayed after game mode choice
 .navbar__specific__item{
@@ -72,6 +76,7 @@
   }
   div {
     height: 80px;
+    width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -108,9 +113,7 @@
 
 // }
 
-// .navbar__specific--feed{
-//   display: flex;
-// }
+
 
 // img.navbar__specific--decorate{
 //   // width: 100%;
