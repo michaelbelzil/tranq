@@ -106,12 +106,16 @@
         <% end %>
       </li>
       <!-- settings: light switch -->
-      <li class ="navbar__specific--setting navbar__specific__item" id="toggle-day" >
-          <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')"></div>
-      </li>
-      <li class ="navbar__specific--setting navbar__specific__item d-none" id="toggle-night" >
-          <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
-      </li>
+
+      <%= link_to tranq_tuck_in_path(@tranq), method: :patch, remote: true do %>
+        <li class ="navbar__specific--setting navbar__specific__item <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
+            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
+        </li>
+        <li class ="navbar__specific--setting navbar__specific__item <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
+            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+        </li>
+      <% end %>
+
       <!-- settings: sound -->
       <li class ="navbar__specific--setting navbar__specific__item">
         <div class="" onclick="play()" style="background-image: url('<%= image_path("button_sound.png") %>')"></div>
