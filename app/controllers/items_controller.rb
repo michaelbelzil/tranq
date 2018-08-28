@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
     favourite.item = item
     favourite.save
 
-    binding.pry
     redirect_to tranq_path(current_user)
 
   end

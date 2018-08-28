@@ -40,13 +40,16 @@ class TranqsController < ApplicationController
   def interact
     friend = User.find(params[:friend_id])
     item_copy = friend.send(params[:category])
-
-    favourite = Favourite.new()
-    favourite.user = current_user
-    favourite.item = item_copy
-    favourite.save
+    user_favourites = Favourite.all.select { |element| element.user_id == current_user.id && element.item_id == item_copy.id}
+    @category = "nocopia"
+    if user_favourites.empty?
+      favourite = Favourite.new()
+      favourite.user = current_user
+      favourite.item = item_copy
+      favourite.save
+      current_user.send(params[:category] + "=", item_copy)
+    end
     @category = params[:category]
-    @user = params[:friend_id]
   end
 
   def get_happiness
