@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   #mount_uploader :photo, ItemUploader
   mount_base64_uploader :photo, ItemUploader
+  has_many :favourites
+  has_many :users, through: :favourites
 
   scope :head_items, -> { where(category: "head") }
   scope :face_items, -> { where(category: "face") }
