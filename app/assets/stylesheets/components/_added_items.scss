@@ -1,4 +1,3 @@
-
 .added__items .toolbar__item{
   position: absolute;
   background-size: 100% 100%;
@@ -8,77 +7,78 @@
 // For each type of element
 .added__items .toolbar__item--head{
 
-  width: 25%;
-  height: 29%;
+  width: 30.09%;
+  height: 37.50%;
   left: 18.5%;
-  top: 10%
+  top: 9.6%
 }
 
 .added__items .toolbar__item--face{
-  width: 9%;
-  height: 16%;
+  width: 24.72%;
+  height: 40.00%;
   left: 28%;
   top: 18%;
 }
 
 .added__items .toolbar__item--neck{
-  width: 25%;
-  height: 25%;
+  width: 29.66%;
+  height: 30.00%;
   left: 21%;
   top: 25%;
 }
 
 .added__items .toolbar__item--body{
-  top: 26%;
+  width: 24.72%;
+  height: 40.00%;
   left: 21.3%;
-  width: 25%;
-  height: 41%;
+  top: 26%;
 }
 
 .added__items .toolbar__item--couch{
+  width: 43.26%;
+  height: 35.00%;
   top: 28%;
   left: 14.8%;
-  width: 61.5%;
-  height: 48.8%;
+
 }
 .added__items .toolbar__item--table{
-  width: 43%;
-  height: 40%;
+  width: 43.26%;
+  height: 35.00%;
   left: 27%;
   top: 60%;
 }
 
 .added__items .toolbar__item--side_table{
-  width: 21.5%;
-  height: 34.5%;
+  width: 24.72%;
+  height: 40.00%;
   left: 0;
   top: 41%;
 }
 
 .added__items .toolbar__item--window{
-  width: 62.2%;
-  height: 40%;
+  width: 43.26%;
+  height: 28.00%;
   left: 14.5%;
   top: 0;
 }
 
 .added__items .toolbar__item--plant{
-  width: 31%;
-  height: 70%;
+  width: 30.09%;
+  height: 70.00%;
   right: 0;
   top: 5.5%;
 }
 
 .added__items .toolbar__item--floor{
-  width: 31.3%;
-  height: 25%;
+  width: 30.09%;
+  height: 25.00%;
   left: 0;
   bottom: 0;
 }
 
 .added__items .toolbar__item--wall{
-  width: 31%;
-  height: 60%;
+  width: 30.09%;
+  height: 60.00%;
   right: 0;
   top: 0;
 }
