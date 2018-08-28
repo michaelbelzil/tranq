@@ -91,6 +91,10 @@ $('#draw_tool').on('click', function (e) {
         currentlyDrawing = true;
         var canvasX = e.clientX - this.offsetLeft - $(".modal-dialog").offset().left;
         var canvasY = e.clientY - this.offsetTop - $(".modal-dialog").offset().top;
+        // Smartphone
+        //var canvasX = e.touches[0].pageX - this.offsetLeft - $(".modal-dialog").offset().left;
+        //var canvasY = e.touches[0].pageY - this.offsetTop - $(".modal-dialog").offset().top;
+        // on first click, e.preventDefault();
         ctx.beginPath();
         ctx.arc(canvasX, canvasY, markerWidth/2, 0, Math.PI * 2);
         ctx.fillStyle = currentColor;
@@ -101,6 +105,10 @@ $('#draw_tool').on('click', function (e) {
       function draw(e) {
         var canvasX = e.clientX - this.offsetLeft - $(".modal-dialog").offset().left;
         var canvasY = e.clientY - this.offsetTop - $(".modal-dialog").offset().top;
+        // Smartphone
+        //var canvasX = e.touches[0].pageX - this.offsetLeft - $(".modal-dialog").offset().left;
+        //var canvasY = e.touches[0].pageY - this.offsetTop - $(".modal-dialog").offset().top;
+
         if(currentlyDrawing) {
           ctx.strokeStyle = currentColor;
           ctx.fillStyle = currentColor;
