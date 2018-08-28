@@ -3,18 +3,23 @@ class TranqsController < ApplicationController
   def show
     # items
     @items = Item.all
-    @heads = Item.head_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @faces = Item.face_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @necks = Item.neck_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @bodies = Item.body_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @couches = Item.couch_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @tables = Item.table_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @side_tables = Item.side_table_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @windows = Item.window_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @plants = Item.plant_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @floors = Item.floor_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
-    @walls = Item.wall_items.select { |element| element.user_id == current_user.id || element.owner == "public" }
+    @favourites = Favourite.all.select { |element| element.user_id == current_user.id}
+    @items = [];
+    @favourites.each do |favorite|
+      @items << favorite.item
+    end
 
+    @heads = @items.select { |element| element.category == "head" }
+    @faces = @items.select { |element| element.category == "face" }
+    @necks = @items.select { |element| element.category == "neck" }
+    @bodies = @items.select { |element| element.category == "body" }
+    @couches = @items.select { |element| element.category == "couch" }
+    @tables = @items.select { |element| element.category == "table" }
+    @side_tables = @items.select { |element| element.category == "side_table" }
+    @windows = @items.select { |element| element.category == "window" }
+    @plants = @items.select { |element| element.category == "plant" }
+    @floors = @items.select { |element| element.category == "floor" }
+    @walls = @items.select { |element| element.category == "wall" }
 
     # friends
     @friends = User.all.sample(5)
@@ -24,7 +29,6 @@ class TranqsController < ApplicationController
 
     # @tranq.last_fed
     @happiness = @tranq.compute_happiness
-
   end
 
   def visit

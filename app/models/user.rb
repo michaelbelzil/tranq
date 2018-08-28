@@ -3,7 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :items
+
+  has_many :favourites
+  has_many :items, through: :favourites
+
   belongs_to :head, :class_name => 'Item', foreign_key: :head_item_id, optional: true
   belongs_to :face, :class_name => 'Item', foreign_key: :face_item_id, optional: true
   belongs_to :neck, :class_name => 'Item', foreign_key: :neck_item_id, optional: true
