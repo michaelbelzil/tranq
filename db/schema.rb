@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2018_08_27_202415) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "favourites", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "user_id"
@@ -42,8 +51,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_202415) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "last_fed", default: Time.now
-    t.integer "happiness", default: 100
+    t.datetime "last_fed"
+    t.integer "happiness"
     t.boolean "tucked_in"
     t.bigint "head_item_id"
     t.bigint "face_item_id"
@@ -72,6 +81,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_202415) do
     t.index ["window_item_id"], name: "index_users_on_window_item_id"
   end
 
+  add_foreign_key "favorites", "items"
+  add_foreign_key "favorites", "users"
   add_foreign_key "favourites", "items"
   add_foreign_key "favourites", "users"
   add_foreign_key "items", "users"
