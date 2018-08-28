@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   patch "tranqs/:id/feed", to: "tranqs#feed", as: 'tranq_feed'
   patch "tranqs/:id/tuck_in", to: "tranqs#tuck_in", as: 'tranq_tuck_in'
   patch "tranqs/:id/visit", to: "tranqs#visit", as: 'tranq_visit'
+  patch "tranqs/:id/interact", to: "tranqs#interact", as: 'tranq_interact'
   patch "tranqs/:id", to: "tranqs#update"
 
 
