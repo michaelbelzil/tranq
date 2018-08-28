@@ -1,0 +1,8 @@
+var jsCategories = <%= @categories.inspect.html_safe %>;
+jsCategories.forEach(function(category) {
+  $('.added__items .toolbar__item--' + category).click(function(e) {
+    console.log(category);
+
+    $('toolbar__item toolbar__item--side_table')
+  });
+});

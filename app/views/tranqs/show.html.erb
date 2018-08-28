@@ -1,10 +1,20 @@
 <%= render 'shared/flashes' %>
+
+<%# link_to("click", tranq_interac_path(current_user, category: 1), method: :patch, remote: true)%>
+
+<%= link_to(tranq_interac_path(current_user, category: "table"), method: :patch, remote: true) do %>
+  <div class="toolbar__item toolbar__item--table"  style="background-image: url('<%= cl_image_path current_user.send("table").photo %>')">
+  </div>
+<% end %>
+
 <div class="show-wrapper">
   <%= render 'shared/navbar' %>
   <div class="content expanded">
     <div class ="space">
       <!-- lights off effect -->
-        <div id="overlay"></div>
+      <h2 class="name__house"><%= @current_user.clubhouse_name %></h2>
+      <h2 class="id__house hidden "><%= @current_user.id %></h2>
+      <div id="overlay"></div>
       <%= render 'partials/added__items' %>
 
         <!-- progress bar -->
@@ -19,8 +29,6 @@
             <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
           <% end %>
         </div>
-
-
 
     </div>
     <div class="bg-msg">

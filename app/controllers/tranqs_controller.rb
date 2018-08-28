@@ -36,6 +36,10 @@ class TranqsController < ApplicationController
     @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
   end
 
+  def interac
+    raise
+  end
+
   def get_happiness
     @happiness = @tranq.compute_happiness
   end

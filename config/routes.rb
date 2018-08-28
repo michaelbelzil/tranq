@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'tranqs/:id', to: 'items#create'
   patch "tranqs/:id/feed", to: "tranqs#feed", as: 'tranq_feed'
   patch "tranqs/:id/visit", to: "tranqs#visit", as: 'tranq_visit'
+  patch "tranqs/:id/interac", to: "tranqs#interac", as: 'tranq_interac'
   patch "tranqs/:id", to: "tranqs#update"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
