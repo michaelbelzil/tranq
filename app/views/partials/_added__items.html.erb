@@ -1,19 +1,9 @@
 <div class = "added__items">
 <%= image_tag('tranq_home.png', id: "tranq") %>
   <% @categories.each do |category| %>
-
-
-
-      <%= link_to(tranq_interac_path(current_user, category: category), method: :patch, remote: true) do %>
+      <%= link_to(tranq_interact_path(current_user, category: category), id: "#{category}-interact-link", method: :patch, remote: true) do %>
         <div class="toolbar__item toolbar__item--<%=category%>"  style="background-image: url('<%= cl_image_path @user.send(category).photo %>')">
         </div>
       <% end %>
-
-
-
-
-
-
-
   <% end %>
 </div>

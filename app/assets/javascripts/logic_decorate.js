@@ -1,4 +1,4 @@
-$( ".toolbar__item").each(function() {
+$( ".navbar .toolbar__item").each(function() {
   $(this).on("click", function(event){
     $(event.target).removeClass(function (index, classNames) {
       var current_classes = classNames.split(" ");

@@ -29,6 +29,7 @@ class TranqsController < ApplicationController
 
     # @tranq.last_fed
     @happiness = @tranq.compute_happiness
+    @current_user = current_user
   end
 
   def visit
@@ -36,8 +37,16 @@ class TranqsController < ApplicationController
     @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
   end
 
-  def interac
-    raise
+  def interact
+    friend = User.find(params[:friend_id])
+    item_copy = friend.send(params[:category])
+
+    favourite = Favourite.new()
+    favourite.user = current_user
+    favourite.item = item_copy
+    favourite.save
+    @category = params[:category]
+    @user = params[:friend_id]
   end
 
   def get_happiness
