@@ -1,5 +1,5 @@
 class TranqsController < ApplicationController
-  before_action :set_tranq, only: [:show, :update, :feed]
+  before_action :set_tranq, only: [:show, :update, :feed, :tuck_in]
   def show
     # items
     @items = Item.all
@@ -78,6 +78,11 @@ class TranqsController < ApplicationController
   def feed
     @tranq.feed!
     @happiness = @tranq.happiness
+  end
+
+  def tuck_in
+    @tranq.tucked_in = !@tranq.tucked_in
+    @tranq.save
   end
 
   def create

@@ -25,6 +25,12 @@
   pointer-events: none;
 }
 
+.tucked-true {
+  #overlay {
+    opacity: 1;
+  }
+}
+
 #tranq {
   width: 100%;
 }

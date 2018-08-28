@@ -1,7 +1,12 @@
+let timeCounter = 0;
+
 setInterval(() => {
-  const oldHealth = parseInt(health.style.width.replace("%", ""));
-  const newHealth = oldHealth - 1;
-  health.style.width = `${newHealth}%`;
+  timeCounter++;
+
+  if (timeCounter % 10 == 0 || time === "day") {
+    const oldHealth = parseInt(health.style.width.replace("%", ""));
+    const newHealth = oldHealth - 1;
+    health.style.width = `${newHealth}%`;
 
     if (newHealth >= 75) {
       health.classList.remove(health.classList[1])
@@ -16,6 +21,12 @@ setInterval(() => {
       health.classList.remove(health.classList[1])
       health.classList.add("progress-bar-danger")
     }
+  }
+}, 400)
 
-}, 1000)
 
+
+// function healthLogic() {
+//  if (event.currentTarget.id === "toggle-day")
+
+// }
