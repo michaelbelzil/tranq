@@ -31,23 +31,24 @@ h2 {
   color: $pinklight1;
 }
 
-a {
-  &:hover {
-    text-decoration: none;
-    color: $pinklight1;
-  }
-}
-
-h3, a {
-  font-family: 'Inknut Antiqua', serif;
-  font-variant: small-caps;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
+// h3, a {
+//   font-family: 'Inknut Antiqua', serif;
+//
+//   font-weight: 600;
+//
+// }
 
 /* form */
 
 .form {
+  a {
+    font-variant: small-caps;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
   max-width: 400px;
   min-width: 290px;
   width: 70%;
