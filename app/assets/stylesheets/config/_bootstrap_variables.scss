@@ -7,7 +7,7 @@
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
 $body-bg:                 #d4d4d4;
-$font-size-base: 18px;
+$font-size-base: 16px;
 
 // Colors
 $gray-base:       $graylight1;
@@ -63,4 +63,8 @@ $border-radius-small: 2px;
 
 .invalid-feedback {
   color: $red1;
+}
+
+p {
+  margin: 0 !important;
 }
