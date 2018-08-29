@@ -15,4 +15,6 @@ class Item < ApplicationRecord
   scope :plant_items, -> { where(category: "plant") }
   scope :floor_items, -> { where(category: "floor") }
   scope :wall_items, -> { where(category: "wall") }
+
+  CATEGORIES = %w(head face neck body couch table side_table window plant floor wall)
 end
