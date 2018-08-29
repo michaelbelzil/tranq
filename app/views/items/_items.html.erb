@@ -1,6 +1,10 @@
 <% items.each do |item| %>
-  <li class ="navbar__specific--decorate navbar__specific__item navbar__specific__item--<%= item.category %>">
-    <%= link_to tranq_path(@tranq, item_id: item.id, category: item.category), method: :patch do %>
+  <% favourite = Favourite.find_by(user_id: current_user.id, item_id: item.id) %>
+  <li class ="navbar__specific--decorate navbar__specific__item item-li navbar__specific__item--<%= item.category %>" id="favourite-<%= favourite.id %>">
+    <%= link_to(tranq_path(@tranq, item_id: item.id, category: item.category), { method: :patch }) do %>
+      <div class="delete_button">
+        <%= link_to("X", favourite_path(favourite), { method: :delete, remote: true }) %>
+      </div>
       <div class="toolbar__item toolbar__item--<%= item.category %>" style="background-image: url('<%= image_path(item.photo) %>')">
       </div>
     <% end %>
