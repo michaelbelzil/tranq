@@ -1,0 +1,5 @@
+if("<%= @action %>" == "new"){
+  var clone = $(".navbar__specific__item--<%= @category %>").last().clone().appendTo(".<%= @category %>_items")
+  clone.attr("id","favourite-<%= @new_item.id %>");
+  clone.find(".toolbar__item").css('background-image', 'url(<%= @new_item.photo %>)')
+}

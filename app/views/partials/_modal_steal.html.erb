@@ -16,17 +16,18 @@
           </div>
         </div>
         <div id="footer_canvas">
-          <a class="buttons">
+          <a id= "add_favourites" class="buttons">
             <i class="fas fa-check"></i>
           </a>
           <a class="buttons">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </a>
 
-          <%= form_tag(items_create_path, style: "display: none;") do %>
-            <%= text_field_tag(:action) %>
+          <%= form_tag(favourites_create_path, style: "display: none;", remote: true) do %>
+            <%= text_field_tag(:action_favourite) %>
             <%= text_field_tag(:item_id) %>
-            <%= submit_tag "Add item", :id => "add_item" %>
+            <%= text_field_tag(:category_favourite) %>
+            <%= submit_tag "Add item", :id => "form_favourite" %>
           <% end %>
         </div>
 
