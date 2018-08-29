@@ -15,8 +15,8 @@ var myConfig = {
     backgroundColor: 'transparent'
   },
   plotarea:{
-    marginTop:200,
-    marginLeft: 200,
+    marginTop:0,
+    marginLeft: 0,
     alpha: 0,
   },
   plot:{
@@ -116,8 +116,8 @@ var myConfig = {
 zingchart.render({
   id : 'myChart',
   data : myConfig,
-  height: 300,
-  width: '50%'
+  height: 100,
+  width: 500
 });
 
 // }, 5000)
