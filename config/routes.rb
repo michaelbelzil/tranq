@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   patch "tranqs/:id/visit", to: "tranqs#visit", as: 'tranq_visit'
   patch "tranqs/:id", to: "tranqs#update"
 
+  delete "favourites/:id", to: "favourites#destroy", as: 'favourite'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
