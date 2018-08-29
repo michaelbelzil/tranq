@@ -9,5 +9,32 @@ jsCategories.forEach(function(category) {
 });*/
 
 
-var category = "<%= @category %>"
-console.log(category)
+if("<%= @action %>" !== ""){
+  $("#stealed-item").attr("src","<%= @item_copy.photo %>");
+  $("#stealed-text p").html("<%= @text %>")
+  $("#steal-link-modal").trigger('click');
+  $('#action').val("<%= @action %>");
+  $('#item_id').val("<%= @item_copy.id %>");
+
+
+
+
+item = canvasJSON.filter(
+  function(canvasJSON){ return canvasJSON.id == "option-"+"<%= @item_copy.category %>"}
+);
+
+background = $("#stealed-background");
+
+background.css("background-image", "url(" + item[0].url +")");
+
+var lastClass = $("#stealed-background").attr('class').split(' ').pop();
+$("#stealed-background").removeClass(lastClass);
+
+background.addClass(item[0].id);
+
+
+
+
+}
+
+
