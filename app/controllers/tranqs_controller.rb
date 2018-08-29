@@ -41,7 +41,7 @@ class TranqsController < ApplicationController
     friend = User.find(params[:friend_id])
     @item_copy = friend.send(params[:category])
     user_favourites = Favourite.all.select { |element| element.user_id == current_user.id && element.item_id == @item_copy.id}
-
+    @category = params[:category]
     if(@item_copy.owner == "blank" || current_user == friend)
       @action = ""
     elsif (user_favourites.empty?)
@@ -51,13 +51,13 @@ class TranqsController < ApplicationController
       @action = "upload"
       @text = "Do you want use this item?"
     end
-    #@category = "nocopia"
+
     #if user_favourites.empty?
      # favourite = Favourite.new()
      # favourite.user = current_user
      # favourite.item = @item_copy
      # favourite.save
-     # current_user.send(params[:category] + "=", @item_copy)
+     # current_user.send( + "=", @item_copy)
     #end
     #@category = params[:category]
 
