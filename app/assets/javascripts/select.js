@@ -72,7 +72,6 @@ function closeAllSelect(elmnt) {
 
 function changeCanvas(elmnt) {
   /*a function that change background and size of canvas*/
-
   item = canvasJSON.filter(
     function(canvasJSON){ return canvasJSON.id == elmnt.id }
   );
