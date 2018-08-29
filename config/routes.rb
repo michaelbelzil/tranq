@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   patch "tranqs/:id/interact", to: "tranqs#interact", as: 'tranq_interact'
   patch "tranqs/:id", to: "tranqs#update"
 
+  get 'favourites/create'
+  post 'favourites/create'
+  patch "favourites/create"
+
   delete "favourites/:id", to: "favourites#destroy", as: 'favourite'
 
 

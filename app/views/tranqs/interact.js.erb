@@ -10,27 +10,33 @@ jsCategories.forEach(function(category) {
 
 
 if("<%= @action %>" !== ""){
+  //Change modal values
   $("#stealed-item").attr("src","<%= @item_copy.photo %>");
   $("#stealed-text p").html("<%= @text %>")
+
+  item = canvasJSON.filter(
+    function(canvasJSON){ return canvasJSON.id == "option-"+"<%= @item_copy.category %>"}
+  );
+  background = $("#stealed-background");
+  background.css("background-image", "url(" + item[0].url +")");
+  var lastClass = $("#stealed-background").attr('class').split(' ').pop();
+  $("#stealed-background").removeClass(lastClass);
+  background.addClass(item[0].id);
+
+  // Open modal
   $("#steal-link-modal").trigger('click');
-  $('#action').val("<%= @action %>");
+  // Change dates form
+  $('#action_favourite').val("<%= @action %>");
   $('#item_id').val("<%= @item_copy.id %>");
+  $('#category_favourite').val("<%= @category %>");
+  // Triger bottom modal
 
+  function saveFavourite() {
+      $("#form_favourite").trigger('click');
+      $("#myStealModal button").trigger('click');
 
-
-
-item = canvasJSON.filter(
-  function(canvasJSON){ return canvasJSON.id == "option-"+"<%= @item_copy.category %>"}
-);
-
-background = $("#stealed-background");
-
-background.css("background-image", "url(" + item[0].url +")");
-
-var lastClass = $("#stealed-background").attr('class').split(' ').pop();
-$("#stealed-background").removeClass(lastClass);
-
-background.addClass(item[0].id);
+  }
+  document.getElementById("add_favourites").addEventListener('click', saveFavourite);
 
 
 
