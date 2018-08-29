@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="myStealModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+      </div>
+      <div class="modal-body">
+        <div id="stealed-text" class="text">
+          <p>Some amazing text than it is going to change</p>
+        </div>
+        <div id="stealed-main">
+          <div id = "stealed-background" class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png')">
+            <img id = "stealed-item" src="https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png" alt="">
+          </div>
+        </div>
+        <div id="footer_canvas">
+          <a class="buttons">
+            <i class="fas fa-check"></i>
+          </a>
+          <a class="buttons">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </a>
+
+          <%= form_tag(items_create_path, style: "display: none;") do %>
+            <%= text_field_tag(:action) %>
+            <%= text_field_tag(:item_id) %>
+            <%= submit_tag "Add item", :id => "add_item" %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

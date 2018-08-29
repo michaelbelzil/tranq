@@ -1,7 +1,7 @@
 <% @categories.each do |category| %>
   $(".name__house").html("<%= @friend.clubhouse_name %>");
   $(".id__house").html("<%= @friend.id %>");
-  href = $("#head-interact-link").attr("href").split('&')[0] + "&friend_id=<%= @friend.id %>";
+  href = $("#<%= category %>-interact-link").attr("href").split('&')[0] + "&friend_id=<%= @friend.id %>";
   $("#<%= category %>-interact-link").attr("href", href);
   $(".added__items .toolbar__item--<%= category %>").css("background-image", "url(<%= @friend.send(category).photo %>)");
 <% end %>
