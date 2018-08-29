@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :items, through: :favourites
 
   before_validation :starting_values, on: :create
+  after_create :starting_categories
 
   belongs_to :head, :class_name => 'Item', foreign_key: :head_item_id, optional: true
   belongs_to :face, :class_name => 'Item', foreign_key: :face_item_id, optional: true
@@ -24,22 +25,36 @@ class User < ApplicationRecord
   validates :happiness, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }
   # validate :items_are_correct_category
 
+  def starting_categories
+     Item::CATEGORIES.each do |category|
+      item = Item.find_by(category: category, owner: "blank")
+      Favourite.create(user: self, item: item)
+    end
+  end
+
   def starting_values
     self.happiness = 100
     self.last_fed = Time.now
     self.tucked_in = true
 
-    self.head = Item.head_items.find { |element| element.owner == "blank" }
-    self.face = Item.face_items.find { |element| element.owner == "blank" }
-    self.neck = Item.neck_items.find { |element| element.owner == "blank" }
-    self.body = Item.body_items.find { |element| element.owner == "blank" }
-    self.couch = Item.couch_items.find { |element| element.owner == "blank" }
-    self.table = Item.table_items.find { |element| element.owner == "blank" }
-    self.side_table = Item.side_table_items.find { |element| element.owner == "blank" }
-    self.window = Item.window_items.find { |element| element.owner == "blank" }
-    self.plant = Item.plant_items.find { |element| element.owner == "blank" }
-    self.floor = Item.floor_items.find { |element| element.owner == "blank" }
-    self.wall = Item.wall_items.find { |element| element.owner == "blank" }
+    Item::CATEGORIES.each do |category|
+      item = Item.find_by(category: category, owner: "blank")
+      self.send("#{category}=", item)
+    end
+
+    #self.head = Item.head_items.find { |element| element.owner == "blank" }
+    #self.face = Item.face_items.find { |element| element.owner == "blank" }
+    #self.neck = Item.neck_items.find { |element| element.owner == "blank" }
+    #self.body = Item.body_items.find { |element| element.owner == "blank" }
+    #self.couch = Item.couch_items.find { |element| element.owner == "blank" }
+    #self.table = Item.table_items.find { |element| element.owner == "blank" }
+    #self.side_table = Item.side_table_items.find { |element| element.owner == "blank" }
+    #self.window = Item.window_items.find { |element| element.owner == "blank" }
+    #self.plant = Item.plant_items.find { |element| element.owner == "blank" }
+    #self.floor = Item.floor_items.find { |element| element.owner == "blank" }
+    #self.wall = Item.wall_items.find { |element| element.owner == "blank" }
+
+    # Favourite.new(user=curenn item =selg)
   end
 
   def items_are_correct_category

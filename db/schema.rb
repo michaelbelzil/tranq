@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_171428) do
     t.bigint "floor_item_id"
     t.bigint "wall_item_id"
     t.string "clubhouse_name"
+    t.integer "points", default: 0
     t.index ["body_item_id"], name: "index_users_on_body_item_id"
     t.index ["couch_item_id"], name: "index_users_on_couch_item_id"
     t.index ["email"], name: "index_users_on_email", unique: true
