@@ -1,5 +1,21 @@
 <div class = "added__items">
-<%= image_tag('tranq_home.png', id: "tranq") %>
+  <%= image_tag('tranq_home.png', id: "tranq") %>
+
+  <!-- Magic -->
+  <!-- settings: light switch -->
+    <div class="magic">
+      <%= link_to tranq_tuck_in_path(@tranq), method: :patch, remote: true do %>
+        <div class ="magic__item__switch <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
+            <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
+        </div>
+        <div class ="magic__item__switch <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
+            <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+        </div>
+      <% end %>
+    </div>
+
+
+
   <% @categories.each do |category| %>
       <%= link_to(tranq_interact_path(current_user, category: category), id: "#{category}-interact-link", method: :patch, remote: true) do %>
         <div class="toolbar__item toolbar__item--<%=category%>"  style="background-image: url('<%= cl_image_path @user.send(category).photo %>')">
