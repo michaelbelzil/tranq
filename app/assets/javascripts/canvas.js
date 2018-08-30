@@ -179,6 +179,7 @@ $('#draw_tool').on('click', function (e) {
 
         if(canvas.toDataURL() != blank.toDataURL()){
           $("#submit_modal").trigger('click');
+          $("#myModal .close").trigger('click');
         }
 
       }
