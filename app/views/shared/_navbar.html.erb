@@ -30,6 +30,20 @@
           <%= image_tag("button_wrench.png") %>
         <% end %>
       </li>
+
+
+      <!-- progress bar -->
+        <div class="progress">
+          <% if @happiness >= 75 %>
+            <div class="progress-bar progress-bar-success" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <% elsif @happiness >= 50 %>
+            <div class="progress-bar progress-bar-info" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <% elsif @happiness >= 25 %>
+            <div class="progress-bar progress-bar-warning" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <% elsif @happiness < 25 %>
+            <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <% end %>
+        </div>
     </ul>
 
 
@@ -41,6 +55,32 @@
         <%= link_to tranq_feed_path(current_user.id), method: :patch, remote: true do %>
           <div class="" style="background-image: url('<%= image_path("button_marshmallow.png") %>')"></div>
         <% end %>
+      </li>
+
+
+
+
+      <!-- Setting mode items -->
+      <li class ="navbar__specific--feed navbar__specific__item">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <div class="" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
+        <% end %>
+      </li>
+      <!-- settings: light switch -->
+
+      <%= link_to tranq_tuck_in_path(@tranq), method: :patch, remote: true do %>
+        <li class ="navbar__specific--feed navbar__specific__item <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
+            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
+        </li>
+        <li class ="navbar__specific--feed navbar__specific__item <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
+            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+        </li>
+      <% end %>
+
+      <!-- settings: sound -->
+      <li class ="navbar__specific--feed navbar__specific__item">
+        <div class="" onclick="play()" style="background-image: url('<%= image_path("button_sound.png") %>')"></div>
+        <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
       </li>
 
 
@@ -99,28 +139,7 @@
         </li>
       <% end  %>
 
-      <!-- Setting mode items -->
-      <li class ="navbar__specific--setting navbar__specific__item">
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <div class="" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
-        <% end %>
-      </li>
-      <!-- settings: light switch -->
 
-      <%= link_to tranq_tuck_in_path(@tranq), method: :patch, remote: true do %>
-        <li class ="navbar__specific--setting navbar__specific__item <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
-            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
-        </li>
-        <li class ="navbar__specific--setting navbar__specific__item <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
-            <div class="navbar_button toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
-        </li>
-      <% end %>
-
-      <!-- settings: sound -->
-      <li class ="navbar__specific--setting navbar__specific__item">
-        <div class="" onclick="play()" style="background-image: url('<%= image_path("button_sound.png") %>')"></div>
-        <audio id="audio" src="<%= asset_path('rain.mp3') %>" ></audio>
-      </li>
 
     </ul>
   </div>

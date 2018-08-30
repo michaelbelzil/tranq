@@ -38,11 +38,11 @@ class TranqsController < ApplicationController
   end
 
   def interact
-    friend = User.find(params[:friend_id])
-    @item_copy = friend.send(params[:category])
+    @friend = User.find(params[:friend_id])
+    @item_copy = @friend.send(params[:category])
     user_favourites = Favourite.all.select { |element| element.user_id == current_user.id && element.item_id == @item_copy.id}
     @category = params[:category]
-    if(@item_copy.owner == "blank" || current_user == friend)
+    if(@item_copy.owner == "blank" || current_user == @friend)
       @action = ""
     elsif (user_favourites.empty?)
       @action = "new"

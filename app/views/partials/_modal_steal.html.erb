@@ -4,7 +4,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
         <div id="stealed-text" class="text">
@@ -19,13 +19,11 @@
           <a id= "add_favourites" class="buttons">
             <i class="fas fa-check"></i>
           </a>
-          <a class="buttons">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </a>
 
           <%= form_tag(favourites_create_path, style: "display: none;", remote: true) do %>
             <%= text_field_tag(:action_favourite) %>
             <%= text_field_tag(:item_id) %>
+            <%= text_field_tag(:friend_id) %>
             <%= text_field_tag(:category_favourite) %>
             <%= submit_tag "Add item", :id => "form_favourite" %>
           <% end %>

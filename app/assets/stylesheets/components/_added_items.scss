@@ -6,13 +6,11 @@
 
 // For each type of element
 .added__items .toolbar__item--head{
-
   width: 24.72%;
   height: 30%;
   left: 19.78%;
   top: 9%;
   z-index: 9;
-
 }
 
 .added__items .toolbar__item--face{
@@ -34,8 +32,8 @@
 .added__items .toolbar__item--body{
   width: 24.72%;
   height: 40%;
-  top: 25%;
   left: 21.01%;
+  top: 25%;
   z-index: 6;
 }
 
@@ -46,6 +44,7 @@
   top: 27.50%;
   z-index: 5;
 }
+
 .added__items .toolbar__item--table{
   width: 49.44%;
   height: 40%;
@@ -79,17 +78,17 @@
 }
 
 .added__items .toolbar__item--floor{
-  width: 30.90%;
+  width: 30.9023%;
   height: 25%;
   left: 0;
-  bottom: 0;
+  top: 75%;
   z-index: 4;
 }
 
 .added__items .toolbar__item--wall{
   width: 30.9%;
   height: 60%;
-  right: 0;
+  left: 69.09%;
   top: 0;
   z-index: 1;
 }
