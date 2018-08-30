@@ -4,6 +4,16 @@
   max-height: 100vh;
   position: relative;
 }
+.house{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  z-index: 7;
+  h2{
+    margin: 10px;
+  }
+}
 .added__items{
   position: relative;
   z-index: 6;
