@@ -22,7 +22,7 @@ setInterval(() => {
       health.classList.add("progress-bar-danger")
     }
   }
-}, 5000)
+}, 10000)
 
 
 

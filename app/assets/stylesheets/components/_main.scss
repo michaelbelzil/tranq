@@ -1,5 +1,4 @@
 .space {
-  width: Calc(100% - 215px);
   background: $tranq1;
   max-height: 100vh;
   position: relative;
@@ -61,7 +60,6 @@
   align-items: top;
   justify-content: center;
   flex-direction: column;
-  width: calc(100% - 215px);
   z-index: 1;
   padding: 2%;
   padding-top: 20px;

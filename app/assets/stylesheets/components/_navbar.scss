@@ -4,10 +4,8 @@
   background: $tranq1;
   // border: 4px solid $graydark1;
   border-radius: 0;
-  height: 100vh;
   width: 215px;
   margin-bottom: 0;
-  position: fixed;
   top: 0;
   right: 0;
   z-index: 9;
@@ -153,3 +151,14 @@
 // .navbar__specific--setting{
 
 // }
+
+.small__icons--navbar{
+  display:flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 218px;
+  .navbar__specific__item {
+    width: 15%
+  }
+}
