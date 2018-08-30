@@ -111,12 +111,16 @@
 }
 
 .item-li {
-  position: relative
+  display: flex;
+  // justify-content: space-between;
+
 }
 
 .delete_button{
-  bottom: 10px;
-  right:10px;
+  // margin-left: 80px;
+  max-width: 60px;
+  // flex-shrink: 1;
+  // flex-basis: 10px;
 }
 
 
