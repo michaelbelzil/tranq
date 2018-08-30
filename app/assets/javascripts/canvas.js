@@ -97,6 +97,7 @@ $('#draw_tool').on('click', function (e) {
       function selectColor(e) {
 
         currentColor = e.target.style.background;
+        debugger;
       }
 
       //drawing
@@ -179,6 +180,7 @@ $('#draw_tool').on('click', function (e) {
 
         if(canvas.toDataURL() != blank.toDataURL()){
           $("#submit_modal").trigger('click');
+          $("#myModal .close").trigger('click');
         }
 
       }

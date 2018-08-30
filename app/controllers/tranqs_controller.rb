@@ -93,6 +93,9 @@ class TranqsController < ApplicationController
   def feed
     @tranq.feed!
     @happiness = @tranq.happiness
+    current_user.points -= 1
+    current_user.save
+    @points = current_user.points
   end
 
   def tuck_in
