@@ -46,10 +46,10 @@ class TranqsController < ApplicationController
       @action = ""
     elsif (user_favourites.empty?)
       @action = "new"
-      @text = "Do you want save this new item?"
+      @text = "Bring this item back to your clubhouse?"
     else
       @action = "upload"
-      @text = "Do you want use this item?"
+      @text = "Would you like to use this item?"
     end
 
     #if user_favourites.empty?
@@ -101,13 +101,6 @@ class TranqsController < ApplicationController
   def tuck_in
     @tranq.tucked_in = !@tranq.tucked_in
     @tranq.save
-  end
-
-  def create
-    # Unless @restaurant.valid?, #save will return false,
-    # and @restaurant is not persisted.
-    # TODO: present the form again with error messages.
-
   end
 
   private
