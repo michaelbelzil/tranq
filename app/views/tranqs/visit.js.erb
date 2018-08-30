@@ -1,6 +1,14 @@
+if("<%= @friend.id %>" == "<%= current_user.id %>"){
+  $(".space").addClass("my-space");
+  $(".space").removeClass("other-space");
+}else{
+  $(".space").removeClass("my-space");
+  $(".space").addClass("other-space");
+}
 <% @categories.each do |category| %>
   $(".name__house").html("<%= @friend.clubhouse_name %>");
   $(".id__house").html("<%= @friend.id %>");
+  $(".points__house").html("<%= @friend.points %>");
   href = $("#<%= category %>-interact-link").attr("href").split('&')[0] + "&friend_id=<%= @friend.id %>";
   $("#<%= category %>-interact-link").attr("href", href);
   $(".added__items .toolbar__item--<%= category %>").css("background-image", "url(<%= @friend.send(category).photo %>)");

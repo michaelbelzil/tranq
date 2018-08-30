@@ -4,21 +4,23 @@
   background: $tranq1;
   // border: 4px solid $graydark1;
   border-radius: 0;
-  height: 100vh;
   width: 215px;
   margin-bottom: 0;
-  position: fixed;
   top: 0;
   right: 0;
   z-index: 9;
+  border-left: 1px solid $graylight1;
 }
 
 // game mode icons <ul>
 .navbar__list{
   display: flex;
-  padding: 8%;
   flex-wrap: wrap;
   margin-bottom: 0;
+  // background: #fbf8e8;
+  // border: 1px solid #bb7d80;
+  border-radius: 5px;
+  padding: 5px 5px 20px;
 }
 
 // game mode icons <li>
@@ -26,7 +28,7 @@
    list-style-type: none;
    margin: 5%;
    text-align:center;
-   width: 40%;
+   width: 15%;
    img {
     width: 35px;
    }
@@ -46,10 +48,10 @@
 
 // wrapper for list of options for each game mode <div>
 .navbar__specific--parent{
-   height: Calc(100% - 160px);
-   width: 100%;
-   overflow: hidden;
-   position: relative;
+  height: Calc(100% - 145px);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 // this shows marshmallow by default on reload
@@ -150,3 +152,26 @@
 // .navbar__specific--setting{
 
 // }
+
+.small__icons--navbar{
+  display:flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 190px;
+  margin: 0 11px;
+  .navbar__specific__item {
+    width: 15%;
+    div {
+      height: 30px;
+
+    }
+  }
+
+}
+.name__house{
+  margin: 5px;
+  font-size: 30px;
+  text-align:center;
+}
+

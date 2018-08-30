@@ -1,0 +1,24 @@
+.magic{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+.magic__item__switch{
+    position: absolute;
+    top: 28%;
+    left: 6.2%;
+    width: 3%;
+    height: 5%;
+  .toggle-img{
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+}
