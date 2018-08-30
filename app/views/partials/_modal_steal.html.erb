@@ -26,6 +26,7 @@
           <%= form_tag(favourites_create_path, style: "display: none;", remote: true) do %>
             <%= text_field_tag(:action_favourite) %>
             <%= text_field_tag(:item_id) %>
+            <%= text_field_tag(:friend_id) %>
             <%= text_field_tag(:category_favourite) %>
             <%= submit_tag "Add item", :id => "form_favourite" %>
           <% end %>
