@@ -97,6 +97,7 @@ $('#draw_tool').on('click', function (e) {
       function selectColor(e) {
 
         currentColor = e.target.style.background;
+        debugger;
       }
 
       //drawing
