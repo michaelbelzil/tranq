@@ -48,7 +48,7 @@
               <i class="fas fa-check"></i>
             </a>
 
-              <%= form_tag(items_create_path, style: "display: none;") do %>
+              <%= form_tag(items_create_path, style: "display: none;", remote: true) do %>
                 <%= text_field_tag(:category, "head") %>
                 <%= text_field_tag(:owner, "private") %>
                 <%= text_field_tag(:photo) %>

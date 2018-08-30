@@ -1,5 +1,21 @@
+//Change page without upload
+$(".added__items .toolbar__item--<%= @category %>").css('background-image', 'url(<%= @new_item.photo %>)');
+
 if("<%= @action %>" == "new"){
+  // Change counter
+  init = $(".points__house").text();
+  $(".points__house").text("<%= @friend.points %>");
+  pointCounter(Number(init));
+
+
+  // Change navbar
   var clone = $(".navbar__specific__item--<%= @category %>").last().clone().appendTo(".<%= @category %>_items")
   clone.attr("id","favourite-<%= @new_item.id %>");
-  clone.find(".toolbar__item").css('background-image', 'url(<%= @new_item.photo %>)')
+  clone.find(".toolbar__item").css('background-image', 'url(<%= @new_item.photo %>)');
+  clone.find("a").attr("href","/tranqs/<%= current_user.id %>?category=<%= @category %>&item_id=<%= @new_item.id %>");
+
+
+  logicDecorate();
 }
+
+
