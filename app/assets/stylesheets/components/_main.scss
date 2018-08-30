@@ -5,13 +5,22 @@
 }
 .points__house{
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 7.97%;
   height: 4.4%;
   left: 3.89%;
   top: 15.1%;
   z-index: 7;
-  margin: 10px 15px;
+  background: transparent;
+  h2 {
+    margin: 0;
+    font-family: monospace;
+    color: $graylight1;
+    font-size: 2vw;
+    font-weight: 600;
+  }
 }
 .added__items{
   position: relative;
