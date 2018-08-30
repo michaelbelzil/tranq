@@ -16,9 +16,12 @@
 // game mode icons <ul>
 .navbar__list{
   display: flex;
-  padding: 8%;
   flex-wrap: wrap;
   margin-bottom: 0;
+  // background: #fbf8e8;
+  // border: 1px solid #bb7d80;
+  border-radius: 5px;
+  padding: 5px 5px 20px;
 }
 
 // game mode icons <li>
@@ -26,7 +29,7 @@
    list-style-type: none;
    margin: 5%;
    text-align:center;
-   width: 40%;
+   width: 15%;
    img {
     width: 35px;
    }

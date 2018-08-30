@@ -19,18 +19,7 @@
 
       <%= render 'partials/added__items' %>
 
-        <!-- progress bar -->
-        <div class="progress">
-          <% if @happiness >= 75 %>
-            <div class="progress-bar progress-bar-success" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness >= 50 %>
-            <div class="progress-bar progress-bar-info" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness >= 25 %>
-            <div class="progress-bar progress-bar-warning" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness < 25 %>
-            <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% end %>
-        </div>
+
 
     </div>
     <div class="bg-msg">
