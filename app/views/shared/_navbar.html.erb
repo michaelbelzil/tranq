@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class ="navbar" data-me="<%= current_user.id %>" data-friend="<%= @tranq.id %>" >
-    <h2 class="name__house"><%= @current_user.clubhouse_name %></h2>
+    <h2 class="name__house"><%= @current_user.clubhouse_name.titleize %></h2>
     <ul class ="navbar__list">
       <li class ="navbar__list__item">
         <%= link_to(tranq_visit_path(current_user, friend_id: current_user.id), method: :patch, remote: true, id: "feed_option") do %>
