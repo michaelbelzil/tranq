@@ -48,7 +48,7 @@
 
 // wrapper for list of options for each game mode <div>
 .navbar__specific--parent{
-  height: Calc(100% - 145px);
+  height: Calc(100% - 170px);
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -168,6 +168,12 @@
     }
   }
 
+}
+.name__div{
+  height: 66px;
+  display: flex;
+  justify-content:  center;
+  align-items: center;
 }
 .name__house{
   margin: 5px;
