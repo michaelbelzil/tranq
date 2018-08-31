@@ -33,9 +33,9 @@ class User < ApplicationRecord
   end
 
   def starting_values
-    self.happiness = 100
+    self.happiness = 75
     self.last_fed = Time.now
-    self.tucked_in = true
+    self.tucked_in = false
 
     Item::CATEGORIES.each do |category|
       item = Item.find_by(category: category, owner: "blank")
@@ -71,15 +71,23 @@ class User < ApplicationRecord
     end
 
     self.last_fed = Time.now
-    save
-    self
+    self.save
   end
 
   def compute_happiness
     # binding.pry
-    self.happiness = [(self.happiness - ((Time.now - self.last_fed)/4)).ceil, 0].max
-    save
-    self.happiness
+    if self.tucked_in
+      cicle_time = 1000
+    else
+      cicle_time = 10
+    end
+    self.happiness = [(self.happiness - ((Time.now - self.last_fed)/cicle_time)).ceil, 0].max
+    self.save
+    if self.happiness == 0
+      self.points = self.points * 0.8
+      self.save
+    end
+    @happiness = self.happiness
   end
 end
 

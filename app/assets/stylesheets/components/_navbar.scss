@@ -47,7 +47,7 @@
 
 // wrapper for list of options for each game mode <div>
 .navbar__specific--parent{
-  height: Calc(100% - 145px);
+  height: Calc(100% - 170px);
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -93,16 +93,41 @@
     justify-content: center;
     align-items: center;
   }
+  .delete_button{
+    height:auto;
+    margin: 0;
+    text-align:center;
+    position: absolute;
+    bottom: 5px;
+    display: none;
+  }
   p {
-      width: 100%;
-      text-align: center;
-      padding: 12% 4%;
-    }
+    width: 100%;
+    text-align: center;
+    padding: 12% 4%;
+  }
 }
 
 // decorate mode categories
-.navbar__specific__item--generic{
+.navbar__specific--decorate{
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  &:hover{
+    .delete_button{
+      display:flex;
+    }
 
+
+   }
+}
+
+
+.navbar__specific--decorate.blank:hover {
+  .delete_button{
+    display:none;
+  }
 }
 // decorate mode options
 .toolbar__item{
@@ -115,6 +140,14 @@
   display: flex;
   // justify-content: space-between;
 
+}
+
+.delete_button{
+  // margin-left: 80px;
+  max-width: 60px;
+  // display: hidden;
+  // flex-shrink: 1;
+  // flex-basis: 10px;
 }
 
 .delete_button {
@@ -137,9 +170,15 @@
   }
 
 }
+.name__div{
+  height: 66px;
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+}
+
 .name__house{
   margin: 5px;
   font-size: 30px;
   text-align: center;
 }
-

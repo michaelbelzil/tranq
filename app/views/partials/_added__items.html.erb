@@ -3,23 +3,32 @@
 
   <!-- Magic -->
   <!-- settings: light switch -->
-    <div class="magic">
-      <%= link_to tranq_tuck_in_path(@tranq), method: :patch, remote: true do %>
-        <div class ="magic__item__switch <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
-            <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
-        </div>
-        <div class ="magic__item__switch <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
-            <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
-        </div>
-      <% end %>
+  <div class="magic">
+    <div class ="magic__item__switch <%= "d-none" if @tranq.tucked_in %>" id="toggle-day">
+        <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_day.png") %>')" ></div>
     </div>
+    <div class ="magic__item__switch <%= "d-none" unless @tranq.tucked_in %>" id="toggle-night" >
+        <div class="toggle-img" style="background-image: url('<%= image_path("button_switch_night.png") %>')"></div>
+    </div>
+    <!--
+    <div class="magic__item__window">
+      <span class="weather__weekday">Friday</span>
+      <div class="weather__img">
+        <img src="http://openweathermap.org/img/w/01d.png" alt="">
+      </div>
+      <div class="weather__temp">
+        <span class="weather__temp--min">24º</span>
+        <span class="weather__temp--max">36º</span>
+      </div>
 
-
+    </div>
+     -->
+  </div>
 
   <% @categories.each do |category| %>
-      <%= link_to(tranq_interact_path(current_user, category: category), id: "#{category}-interact-link", method: :patch, remote: true) do %>
-        <div class="toolbar__item toolbar__item--<%=category%>"  style="background-image: url('<%= cl_image_path @user.send(category).photo %>')">
-        </div>
-      <% end %>
+    <%= link_to(tranq_interact_path(current_user, category: category), id: "#{category}-interact-link", method: :patch, remote: true) do %>
+      <div class="toolbar__item toolbar__item--<%=category%>"  style="background-image: url('<%= cl_image_path @user.send(category).photo %>')">
+      </div>
+    <% end %>
   <% end %>
 </div>

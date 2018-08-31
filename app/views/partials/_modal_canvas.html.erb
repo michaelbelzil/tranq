@@ -21,21 +21,18 @@
               <div class="color" id="green" style="background: #74994C"></div>
               <div class="color" id="blue" style="background: #447799"></div>
               <div class="color" id="purple" style="background: #946c74"></div>
-              <div class="color color-selected" id="white" style="background: #F2EEE8"></div>
+              <div class="color" id="white" style="background: #F2EEE8"></div>
               <div class="color" id="gray" style="background:#56545B"></div>
-              <div class="color" id="black" style="background: #343434"></div>
+              <div class="color color-selected" id="black" style="background: #343434"></div>
             </div>
           </div>
-
           <div class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/www-michaelbelzil-com/image/upload/v1535639890/tranq/head-400W-300H-320L-90T.png')">
-            <canvas id="canvas" width="500" height="375" style="cursor: url(<%= image_url('paint-brush.png') %>), crosshair"></canvas>
+            <canvas id="canvas" width="500" height="375"></canvas>
           </div>
 
 
           <div id="footer_canvas">
-            <a id="clear" class="buttons">
-              <i class="fas fa-eraser"></i>
-            </a>
+
             <a id="download" class="buttons">
               <i class="fas fa-download"></i>
             </a>
@@ -44,11 +41,18 @@
               <label class="label-upload-photo" for="upload-photo"><i class="fas fa-upload"></i></label>
               <input type="file" name="photo" id="upload-photo" />
             </a>
+            <a id="clear" class="buttons">
+              <i class="fa fa-trash"></i>
+            </a>
+            <a id="pen" class="buttons">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a id="eraser" class="buttons">
+              <i class="fas fa-eraser"></i>
+            </a>
             <a id="save" class="buttons">
-
               <i class="fas fa-check"></i>
             </a>
-
               <%= form_tag(items_create_path, style: "display: none;", remote: true) do %>
                 <%= text_field_tag(:category, "head") %>
                 <%= text_field_tag(:owner, "private") %>

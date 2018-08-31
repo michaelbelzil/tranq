@@ -13,7 +13,7 @@ xhrObject.onreadystatechange = function() {
 
 xhrObject.open(
   "GET",
-  "http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=11d5e7a550fcaae59fb10ddf7480530a",
+  "http://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=11d5e7a550fcaae59fb10ddf7480530a",
   true
 );
 xhrObject.send();

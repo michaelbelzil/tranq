@@ -2,7 +2,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class ="navbar" data-me="<%= current_user.id %>" data-friend="<%= @tranq.id %>" >
-    <h2 class="name__house"><%= @current_user.clubhouse_name.titleize %></h2>
+    <div class="name__div">
+      <h2 class="name__house"><%= @current_user.clubhouse_name.titleize %></h2>
+    </div>
     <ul class ="navbar__list">
       <li class ="navbar__list__item">
         <%= link_to(tranq_visit_path(current_user, friend_id: current_user.id), method: :patch, remote: true, id: "feed_option") do %>
@@ -67,12 +69,9 @@
 
         <li class ="navbar__specific--feed navbar__specific__item">
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <div class="" style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
+            <div class=""  title="Goodbye Tranq! 🥔"  style="background-image: url('<%= image_path("button_logout.png") %>')"></div>
           <% end %>
         </li>
-
-
-
       </div>
 
 

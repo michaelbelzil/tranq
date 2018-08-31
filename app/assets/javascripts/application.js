@@ -3,7 +3,7 @@
 
 //= require_tree .
 
-const showWrapper2 = document.querySelector(".show-wrapper");
+var showWrapper2 = document.querySelector(".show-wrapper");
 
 let time;
 
@@ -16,5 +16,5 @@ if (showWrapper2.classList.contains("tucked-true")) {
 $(document).ready(function() {
   setTimeout(function() {
     $('.alert').slideUp()
-  }, 5000)
+  }, 10000)
 })
