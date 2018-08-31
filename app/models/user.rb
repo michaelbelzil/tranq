@@ -35,7 +35,7 @@ class User < ApplicationRecord
   def starting_values
     self.happiness = 100
     self.last_fed = Time.now
-    self.tucked_in = true
+    self.tucked_in = false
 
     Item::CATEGORIES.each do |category|
       item = Item.find_by(category: category, owner: "blank")
