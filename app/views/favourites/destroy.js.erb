@@ -1,7 +1,14 @@
-favourite = document.querySelector("#favourite-<%=@favourite.id%>");
-favourite.remove();
 
-<% if @current_item %>
-  canvas_area = document.querySelector(".added__items .toolbar__item--<%=@select_category%>")
-  canvas_area.remove();
-<% end %>
+
+function destroyFunc(){
+  favourite = document.querySelector("#favourite-<%=@favourite.id%>");
+  favourite.remove();
+
+  <% if @current_item %>
+    canvas_area = document.querySelector(".added__items .toolbar__item--<%=@select_category%>")
+    canvas_area.remove();
+  <% end %>
+}
+
+
+destroyFunc();
