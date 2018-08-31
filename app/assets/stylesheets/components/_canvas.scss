@@ -194,9 +194,18 @@
 }
 
 #canvas {
+  cursor: url(../assets/paint-brush.png), crosshair;
   // cursor: asset-url("button_draw.png");
  // cursor: url("../../images/button_draw.png"), auto;
 }
 
+#canvas.delete {
+  cursor: url(../assets/eraser_cursor.png), crosshair;
+}
+
 // cursor: url("../../images/paintbrush.png"), auto;
  // cursor: url(../../images/paintbrush.png), auto;
+
+#pen{
+  display:none
+}
