@@ -3,7 +3,7 @@
 
 //= require_tree .
 
-const showWrapper2 = document.querySelector(".show-wrapper");
+var showWrapper2 = document.querySelector(".show-wrapper");
 
 let time;
 

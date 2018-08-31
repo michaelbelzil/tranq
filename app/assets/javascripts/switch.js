@@ -1,7 +1,7 @@
-const dayToggle = document.getElementById("toggle-day");
-const nightToggle = document.getElementById("toggle-night");
-const overlay = document.getElementById("overlay");
-const showWrapper = document.querySelector(".show-wrapper");
+var dayToggle = document.getElementById("toggle-day");
+var nightToggle = document.getElementById("toggle-night");
+var overlay = document.getElementById("overlay");
+var showWrapper = document.querySelector(".show-wrapper");
 
 nightToggle.addEventListener("click", function() {
     time = "day";
