@@ -1,6 +1,7 @@
 var currentColor = "black";
 
 $('#draw_tool').on('click', function (e) {
+    document.getElementById("canvas").classList.remove("delete");
     setTimeout(function(){
 
       //primary variables
@@ -118,6 +119,11 @@ $('#draw_tool').on('click', function (e) {
           e.preventDefault();
         }
         ctx.beginPath();
+        if(mode == "pen"){
+          ctx.globalCompositeOperation="source-over";
+        } else if (mode == "eraser") {
+          ctx.globalCompositeOperation="destination-out";
+        }
         ctx.arc(canvasX, canvasY, markerWidth/2, 0, Math.PI * 2);
         ctx.fillStyle = currentColor;
         ctx.fill();
@@ -217,6 +223,21 @@ $('#draw_tool').on('click', function (e) {
         //call its drawImage() function passing it the source canvas directly
         destCtx.drawImage(canvas, 0, 0);
       }
+
+      var mode = "pen";
+      function changeMode(e, newMode){
+        mode = newMode;
+        if (mode == "eraser") {
+          document.getElementById("canvas").classList.add("delete");
+          document.getElementById("pen").style.display = "flex";
+          document.getElementById("eraser").style.display = "none";
+        } else {
+          document.getElementById("canvas").classList.remove("delete");
+          document.getElementById("pen").style.display = "none";
+          document.getElementById("eraser").style.display = "flex";
+        }
+      }
+
       ///---EVENTS---///
 
       //slider
@@ -247,6 +268,10 @@ $('#draw_tool').on('click', function (e) {
       document.getElementById("clear").addEventListener('click', clearCanvas);
       document.getElementById("upload").addEventListener('click', uploadImage);
       document.getElementById("save").addEventListener('click', saveCanvas);
+
+      // modes
+      document.getElementById("pen").addEventListener('click', function(){changeMode(event, "pen");});
+      document.getElementById("eraser").addEventListener('click', function(){changeMode(event, "eraser");});
 
       // Upload image
 

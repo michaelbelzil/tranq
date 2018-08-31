@@ -84,7 +84,7 @@ class User < ApplicationRecord
     self.happiness = [(self.happiness - ((Time.now - self.last_fed)/cicle_time)).ceil, 0].max
     self.save
     if self.happiness == 0
-      self.points = 0
+      self.points = self.points * 0.8
       self.save
     end
     @happiness = self.happiness

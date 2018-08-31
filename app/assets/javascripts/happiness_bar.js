@@ -19,8 +19,8 @@ setInterval(() => {
     } else if (newHealth < 25) {
       health.classList.remove(health.classList[1])
       health.classList.add("progress-bar-danger")
-      if(newHealth = 25) {
-        $(".points__house").html() = 0;
+      if(newHealth == 0) {
+        $(".points__house").html() = Number($(".points__house").html())*0.8;
       }
     }
   }

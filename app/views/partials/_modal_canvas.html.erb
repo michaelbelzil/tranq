@@ -28,13 +28,13 @@
           </div>
 
           <div class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/www-michaelbelzil-com/image/upload/v1535565297/head-400W-300H-320L-90T.png')">
-            <canvas id="canvas" width="500" height="375" style="cursor: url(<%= image_url('paint-brush.png') %>), crosshair"></canvas>
+            <canvas id="canvas" width="500" height="375"></canvas>
           </div>
 
 
           <div id="footer_canvas">
             <a id="clear" class="buttons">
-              <i class="fas fa-eraser"></i>
+              <i class="fa fa-trash"></i>
             </a>
             <a id="download" class="buttons">
               <i class="fas fa-download"></i>
@@ -48,7 +48,12 @@
 
               <i class="fas fa-check"></i>
             </a>
-
+            <a id="pen" class="buttons">
+              <i class="fa fa-pencil"></i>
+            </a>
+            <a id="eraser" class="buttons">
+              <i class="fas fa-eraser"></i>
+            </a>
               <%= form_tag(items_create_path, style: "display: none;", remote: true) do %>
                 <%= text_field_tag(:category, "head") %>
                 <%= text_field_tag(:owner, "private") %>
