@@ -1,6 +1,6 @@
 .draw__color{
   display: flex;
-  height: 30px;
+  height: 40px;
   align-items: stretch;
   justify-content: stretch;
   width: 100%
@@ -9,12 +9,14 @@
   width: 100%;
   margin: 3px 3px 10px 3px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #slider_track {
   position: relative;
   width: 94%;
   margin: auto;
+  margin-bottom: -5px;
 
   top: 18%;
 
@@ -98,6 +100,7 @@
 .canvas_div{
   font-size: 0;
   margin: auto;
+  margin-top: 8px;
 }
 
 // Modal
@@ -142,9 +145,11 @@
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  opacity: 0.4;
+  border: 1px solid black;
+  height: 105%;
+  margin-top: -4px;
+  // opacity: 0.4;
   // box-shadow: inset 0 0 2px 1px rgba(0,0,0,.6), inset 0 0 20px 8px rgba(0,0,0,.25);
-  border: 1px, solid, black;
   // border-width:;
 }
 
