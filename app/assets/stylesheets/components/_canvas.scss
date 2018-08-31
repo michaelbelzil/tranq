@@ -102,6 +102,9 @@
   margin: auto;
   margin-top: 8px;
 }
+#myStealModal .canvas_div:hover{
+  cursor: pointer;
+}
 
 // Modal
 
@@ -212,4 +215,7 @@
 
 #pen{
   display:none
+}
+#save{
+  color: $green;
 }
