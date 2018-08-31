@@ -1,15 +1,14 @@
 .navbar{
   color: $pinklight1;
-  // background: linear-gradient(355deg, $pinkdark1 0%, $pinklight1 100%);
   background: $tranq1;
-  // border: 4px solid $graydark1;
   border-radius: 0;
   width: 215px;
   margin-bottom: 0;
   top: 0;
   right: 0;
   z-index: 9;
-  border-left: 1px solid $graylight1;
+  border-left: 1px solid gray;
+  min-height: 310px;
 }
 
 // game mode icons <ul>
@@ -124,39 +123,13 @@
   // display: hidden;
   // flex-shrink: 1;
   // flex-basis: 10px;
+.delete_button {
+  text-align: center;
 }
 
-
-// THIS SHOULD BE USELESS
-//
-// .friend_button {
-//   // color: $tranq1;
-//   font-size: 0.7em;
-// }
-
-// options that are images (lumped in with navbar__specific__item)
-// .navbar_button {
-//   width: 100%;
-
-// }
-
-
-
-// img.navbar__specific--decorate{
-//   // width: 100%;
-// }
-
-// .navbar__specific--friend{
-
-// }
-
-// .navbar__specific--setting{
-
-// }
-
 .small__icons--navbar{
-  display:flex;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-around;
   position: absolute;
   bottom: 0;
   width: 190px;
@@ -164,7 +137,7 @@
   .navbar__specific__item {
     width: 15%;
     div {
-      height: 30px;
+      height: 35px;
 
     }
   }
@@ -173,6 +146,6 @@
 .name__house{
   margin: 5px;
   font-size: 30px;
-  text-align:center;
+  text-align: center;
 }
 
