@@ -1,18 +1,20 @@
 <% items.each do |item| %>
   <% favourite = Favourite.find_by(user_id: current_user.id, item_id: item.id) %>
-  <li class ="navbar__specific--decorate navbar__specific__item item-li navbar__specific__item--<%= item.category %>" id="favourite-<%= favourite.id %>">
-    <%= link_to(tranq_path(@tranq, item_id: item.id, category: item.category), { method: :patch, remote: true }) do %>
 
-      <div class="toolbar__item toolbar__item--<%= item.category %>" style="background-image: url('<%= image_path(item.photo) %>')">
+    <li class ="navbar__specific--decorate navbar__specific__item item-li navbar__specific__item--<%= item.category %>" id="favourite-<%= favourite.id %>">
+      <%= link_to(tranq_path(@tranq, item_id: item.id, category: item.category), { method: :patch, remote: true }) do %>
+
+        <div class="toolbar__item toolbar__item--<%= item.category %>" style="background-image: url('<%= image_path(item.photo) %>')">
+        </div>
+
+      <% end %>
+
+      <div class="delete_button">
+          <%= link_to(favourite_path(favourite), { method: :delete, remote: true }) do %>
+          <i class="far fa-times-circle"></i>
+          <% end %>
       </div>
 
-    <% end %>
+    </li>
 
-    <div class="delete_button">
-        <%= link_to(favourite_path(favourite), { method: :delete, remote: true }) do %>
-        <i class="far fa-times-circle"></i>
-        <% end %>
-    </div>
-
-  </li>
 <% end %>
