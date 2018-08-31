@@ -113,12 +113,5 @@ var myConfig = {
   ]
 };
 
-zingchart.render({
-  id : 'myChart',
-  data : myConfig,
-  height: 100,
-  width: 500
-});
-
 // }, 5000)
 
