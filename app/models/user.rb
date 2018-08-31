@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def starting_values
-    self.happiness = 100
+    self.happiness = 75
     self.last_fed = Time.now
     self.tucked_in = false
 
