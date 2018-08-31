@@ -23,10 +23,3 @@ setInterval(() => {
     }
   }
 }, 10000)
-
-
-
-// function healthLogic() {
-//  if (event.currentTarget.id === "toggle-day")
-
-// }
