@@ -36,14 +36,23 @@ $('#draw_tool').on('click', function (e) {
       ///---FUNCTIONS---///
 
       //slider
-      function grab_slider(e) {
-        mouseX = e.pageX;
+      function grabSlider(e, laptop) {
+        if (laptop === true) {
+          mouseX = e.pageX;
+        } else { //smartphone
+          mouseX = e.touches[0].pageX;
+        }
         currentlySliding = true;
       }
 
-      function drag_slider(e) {
+      function dragSlider(e, laptop) {
         if (currentlySliding) {
-          var mouseXChange = e.pageX - mouseX;
+          var mouseXChange;
+          if (laptop === true) {
+            mouseXChange = e.pageX - mouseX;
+          } else { //smartphone
+            mouseXChange = e.touches[0].pageX - mouseX;
+          }
           if (sliderLeft + mouseXChange < sliderLeftMin) {
             slider.style.left = sliderLeftMin + "px";
           } else if (sliderLeft + mouseXChange > sliderLeftMax) {
@@ -54,13 +63,18 @@ $('#draw_tool').on('click', function (e) {
         }
       }
 
-      function drop_slider(e) {
+      function dropSlider(e) {
         sliderLeft = $("#slider").position().left;
         updateMarker();
         currentlySliding = false;
       }
-      function click_slider(e) {
-        mouseX = e.pageX - $("#slider_track").offset().left + $("#slider_track").position().left;
+      function clickSlider(e) {
+        if (e.pageX == null) { //smartphone
+          console.log("smartphone");
+          mouseX = e.touches[0].pageX - $("#slider_track").offset().left + $("#slider_track").position().left;
+        } else {
+          mouseX = e.pageX - $("#slider_track").offset().left + $("#slider_track").position().left;
+        }
         $("#slider").css({left: mouseX});
         sliderLeft = $("#slider").position().left;
         updateMarker();
@@ -83,18 +97,26 @@ $('#draw_tool').on('click', function (e) {
       function selectColor(e) {
 
         currentColor = e.target.style.background;
+
+        document.querySelector(".color-selected").classList.remove("color-selected");
+        e.target.classList.add("color-selected");
+
       }
 
       //drawing
 
-      function markerDown(e) {
+      function markerDown(e, laptop) {
         currentlyDrawing = true;
-        var canvasX = e.clientX - this.offsetLeft - $(".modal-dialog").offset().left;
-        var canvasY = e.clientY - this.offsetTop - $(".modal-dialog").offset().top;
-        // Smartphone
-        //var canvasX = e.touches[0].pageX - this.offsetLeft - $(".modal-dialog").offset().left;
-        //var canvasY = e.touches[0].pageY - this.offsetTop - $(".modal-dialog").offset().top;
-        // on first click, e.preventDefault();
+        var canvasX;
+        var canvasY;
+        if (laptop === true) {
+          canvasX = e.clientX - canvas.offsetLeft - $(".modal-dialog").offset().left;
+          canvasY = e.clientY - canvas.offsetTop - $(".modal-dialog").offset().top;
+        } else {// Smartphone
+          canvasX = e.touches[0].pageX - canvas.offsetLeft - $(".modal-dialog").offset().left;
+          canvasY = e.touches[0].pageY - canvas.offsetTop - $(".modal-dialog").offset().top;
+          e.preventDefault();
+        }
         ctx.beginPath();
         ctx.arc(canvasX, canvasY, markerWidth/2, 0, Math.PI * 2);
         ctx.fillStyle = currentColor;
@@ -102,12 +124,16 @@ $('#draw_tool').on('click', function (e) {
         ctx.beginPath();
       }
 
-      function draw(e) {
-        var canvasX = e.clientX - this.offsetLeft - $(".modal-dialog").offset().left;
-        var canvasY = e.clientY - this.offsetTop - $(".modal-dialog").offset().top;
-        // Smartphone
-        //var canvasX = e.touches[0].pageX - this.offsetLeft - $(".modal-dialog").offset().left;
-        //var canvasY = e.touches[0].pageY - this.offsetTop - $(".modal-dialog").offset().top;
+      function draw(e,laptop) {
+        var canvasX = 0;
+        var canvasY = 0;
+        if (laptop === true) {
+          canvasX = e.clientX - canvas.offsetLeft - $(".modal-dialog").offset().left;
+          canvasY = e.clientY - canvas.offsetTop - $(".modal-dialog").offset().top;
+        } else {// Smartphone
+          canvasX = e.touches[0].pageX - canvas.offsetLeft - $(".modal-dialog").offset().left;
+          canvasY = e.touches[0].pageY - canvas.offsetTop - $(".modal-dialog").offset().top;
+        }
 
         if(currentlyDrawing) {
           ctx.strokeStyle = currentColor;
@@ -157,6 +183,7 @@ $('#draw_tool').on('click', function (e) {
 
         if(canvas.toDataURL() != blank.toDataURL()){
           $("#submit_modal").trigger('click');
+          $("#myModal .close").trigger('click');
         }
 
       }
@@ -193,26 +220,26 @@ $('#draw_tool').on('click', function (e) {
       ///---EVENTS---///
 
       //slider
-      slider.addEventListener("mousedown", grab_slider);
-      document.addEventListener("mousemove", drag_slider);
-      document.addEventListener("mouseup", drop_slider);
+      slider.addEventListener("mousedown", function(){grabSlider(event, true);});
+      document.addEventListener("mousemove", function(){dragSlider(event, true);});
+      document.addEventListener("mouseup", dropSlider);
 
-      slider.addEventListener("touchstart", grab_slider);
-      document.addEventListener("touchmove", drag_slider);
-      document.addEventListener("touchend", drop_slider);
+      slider.addEventListener("touchstart", function(){grabSlider(event, false);});
+      document.addEventListener("touchmove",  function(){dragSlider(event, false);});
+      document.addEventListener("touchend", dropSlider);
 
-      sliderTrack.addEventListener('click', click_slider);
+      sliderTrack.addEventListener('click', clickSlider);
 
       //color selection
       bindColors();
 
       //drawing
-      canvas.addEventListener("mousedown", markerDown);
-      canvas.addEventListener("mousemove", draw);
+      canvas.addEventListener("mousedown", function(){markerDown(event, true);});
+      canvas.addEventListener("mousemove", function(){draw(event, true);});
       document.addEventListener("mouseup", markerUp);
 
-      canvas.addEventListener("touchstart", markerDown);
-      canvas.addEventListener("touchmove", draw);
+      canvas.addEventListener("touchstart", function(){markerDown(event, false);});
+      canvas.addEventListener("touchmove", function(){draw(event, false);});
       document.addEventListener("touchend", markerUp);
 
       //image actions

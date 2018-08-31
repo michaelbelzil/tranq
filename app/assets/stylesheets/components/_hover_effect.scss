@@ -1,9 +1,7 @@
-.hover-on-tranq {
-  border-radius: 25px;
-  border: 5px solid $pinklight1;
+.hover-on-tranq, .other-space .toolbar__item:hover{
+  border-radius: 10px;
   transition: all 0.5s ease-in-out;
   margin-top: 1px;
   margin-left: 1px;
+  border: 2px dashed rgba(187, 125, 128, .5);
 }
-
-

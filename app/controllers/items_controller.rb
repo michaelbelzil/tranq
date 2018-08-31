@@ -20,8 +20,12 @@ class ItemsController < ApplicationController
     favourite.item = item
     favourite.save
 
-    redirect_to tranq_path(current_user)
-
+    current_user.points += 20
+    current_user.save
+    @points = current_user.points
+    @item = item
+    @category = item.category
+    @url= item.photo.metadata["url"]
   end
 
   private

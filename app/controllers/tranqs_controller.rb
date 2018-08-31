@@ -38,18 +38,18 @@ class TranqsController < ApplicationController
   end
 
   def interact
-    friend = User.find(params[:friend_id])
-    @item_copy = friend.send(params[:category])
+    @friend = User.find(params[:friend_id])
+    @item_copy = @friend.send(params[:category])
     user_favourites = Favourite.all.select { |element| element.user_id == current_user.id && element.item_id == @item_copy.id}
     @category = params[:category]
-    if(@item_copy.owner == "blank" || current_user == friend)
+    if(@item_copy.owner == "blank" || current_user == @friend)
       @action = ""
     elsif (user_favourites.empty?)
       @action = "new"
-      @text = "Do you want save this new item?"
+      @text = "Bring this item back to your clubhouse?"
     else
       @action = "upload"
-      @text = "Do you want use this item?"
+      @text = "Would you like to use this item?"
     end
 
     #if user_favourites.empty?
@@ -93,18 +93,14 @@ class TranqsController < ApplicationController
   def feed
     @tranq.feed!
     @happiness = @tranq.happiness
+    current_user.points -= 1
+    current_user.save
+    @points = current_user.points
   end
 
   def tuck_in
     @tranq.tucked_in = !@tranq.tucked_in
     @tranq.save
-  end
-
-  def create
-    # Unless @restaurant.valid?, #save will return false,
-    # and @restaurant is not persisted.
-    # TODO: present the form again with error messages.
-
   end
 
   private

@@ -1,0 +1,7 @@
+.main-container{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.expanded{
+  width: Calc(100% - 215px);
+}

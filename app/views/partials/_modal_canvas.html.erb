@@ -26,8 +26,9 @@
               <div class="color" id="black" style="background: #343434"></div>
             </div>
           </div>
-          <div class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png')">
-            <canvas id="canvas" width="500" height="375"></canvas>
+
+          <div class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/www-michaelbelzil-com/image/upload/v1535565297/head-400W-300H-320L-90T.png')">
+            <canvas id="canvas" width="500" height="375" style="cursor: url(<%= image_url('paint-brush.png') %>), crosshair"></canvas>
           </div>
 
 
@@ -48,7 +49,7 @@
               <i class="fas fa-check"></i>
             </a>
 
-              <%= form_tag(items_create_path, style: "display: none;") do %>
+              <%= form_tag(items_create_path, style: "display: none;", remote: true) do %>
                 <%= text_field_tag(:category, "head") %>
                 <%= text_field_tag(:owner, "private") %>
                 <%= text_field_tag(:photo) %>

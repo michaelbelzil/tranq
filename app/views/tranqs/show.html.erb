@@ -1,41 +1,29 @@
 <%= render 'shared/flashes' %>
 
 <%# link_to("click", tranq_interac_path(current_user, category: 1), method: :patch, remote: true)%>
-
+<h1 class="sr-only">Tranq</h1>
 <div class="show-wrapper tucked-<%= @tranq.tucked_in %>">
+  <div class="main-container">
+     <%= render 'shared/navbar' %>
+    <div class="content expanded">
 
-  <%= render 'shared/navbar' %>
-  <div class="content expanded">
-
-    <div class ="space">
-
-      <!-- lights off effect -->
-      <h2 class="name__house"><%= @current_user.clubhouse_name %></h2>
-      <h2 class="id__house hidden "><%= current_user.id %></h2>
-      <div id="overlay"></div>
-
-      <%= render 'partials/added__items' %>
-
-        <!-- progress bar -->
-        <div class="progress">
-          <% if @happiness >= 75 %>
-            <div class="progress-bar progress-bar-success" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness >= 50 %>
-            <div class="progress-bar progress-bar-info" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness >= 25 %>
-            <div class="progress-bar progress-bar-warning" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% elsif @happiness < 25 %>
-            <div class="progress-bar progress-bar-danger" id="health" role="progressbar" style="width: <%= @happiness %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          <% end %>
+      <div class ="space my-space">
+        <div class="points__house">
+          <h2><%= @current_user.points %></h2>
         </div>
+        <div id="overlay"></div>
 
+        <%= render 'partials/added__items' %>
+      </div>
     </div>
+  </div>
+  <div class="secret-container">
     <div class="bg-msg">
       <%= render 'partials/small_surprise' %>
     </div>
   </div>
 </div>
- <div class="" id="steal-link-modal" data-toggle="modal" data-target="#myStealModal">asdzewqaedsfewq</div>
+ <div class="hidden" id="steal-link-modal" data-toggle="modal" data-target="#myStealModal"></div>
 <%= render "partials/modal_canvas" %>
 
 <%= render "partials/modal_steal" %>
