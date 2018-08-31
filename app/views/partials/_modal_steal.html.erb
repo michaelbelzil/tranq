@@ -11,14 +11,16 @@
           <p>Item copying text</p>
         </div>
         <div id="stealed-main">
-          <div id = "stealed-background" class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png')">
+          <a id= "add_favourites" class="buttons">
+            <div id = "stealed-background" class="canvas_div option-head" style="background-image: url('https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png')">
             <img id = "stealed-item" src="https://res.cloudinary.com/sarneijim/image/upload/v1535131568/Template%20tranq/e6alfxygo4qjmxvinrl4.png" alt="">
           </div>
+          </a>
+
+
         </div>
         <div id="footer_canvas">
-          <a id= "add_favourites" class="buttons">
-            <i class="fas fa-check"></i>
-          </a>
+
 
           <%= form_tag(favourites_create_path, style: "display: none;", remote: true) do %>
             <%= text_field_tag(:action_favourite) %>

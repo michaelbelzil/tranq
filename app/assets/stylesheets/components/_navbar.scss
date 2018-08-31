@@ -118,11 +118,15 @@
     .delete_button{
       display:flex;
     }
-    &:first-child{
-      .delete_button{
-        display:none;
-      }
-    }
+
+
+   }
+}
+
+
+.navbar__specific--decorate.blank:hover {
+  .delete_button{
+    display:none;
   }
 }
 // decorate mode options
