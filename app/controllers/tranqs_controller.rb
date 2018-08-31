@@ -22,7 +22,7 @@ class TranqsController < ApplicationController
     @walls = @items.select { |element| element.category == "wall" }
 
     # friends
-    @friends = User.all.sample(5)
+    @friends = User.all.sample(15)
     @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
     @user = User.find(params[:id])
     # happiness
