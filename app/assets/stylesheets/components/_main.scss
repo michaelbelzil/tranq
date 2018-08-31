@@ -14,12 +14,12 @@
   top: 15.1%;
   z-index: 7;
   background: transparent;
+  font-family: monospace !important;
+  color: $graylight1 !important;
+  margin: 0;
+  font-size: 2vw;
+  font-weight: 600;
   h2 {
-    margin: 0;
-    font-family: monospace;
-    color: $graylight1;
-    font-size: 2vw;
-    font-weight: 600;
   }
 }
 .added__items{
@@ -83,8 +83,10 @@
   }
   .surprise-text {
     padding: 2%;
-    font-size: 14px;
+    font-size: 17px;
     font-family: $body-font;
     line-height: 1.5em;
+    align: center;
+    font-family: 'Cedarville Cursive', cursive;
   }
 }
