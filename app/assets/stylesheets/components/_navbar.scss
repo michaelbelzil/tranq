@@ -1,3 +1,7 @@
+.hilite {
+  border-bottom: 4px solid $pinklight1;
+}
+
 .navbar{
   color: $pinklight1;
   background: $tranq1;
@@ -25,11 +29,12 @@
 // game mode icons <li>
 .navbar__list__item {
    list-style-type: none;
-   margin: 5%;
    text-align:center;
-   width: 15%;
+   width: 23%;
+   margin: 0 1%;
+   padding: 2% 0;
    img {
-    width: 35px;
+    width: 75%;
    }
 }
 
