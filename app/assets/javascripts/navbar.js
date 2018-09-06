@@ -20,6 +20,7 @@ $( "#feed_option" ).click(function() {
       $(this).hide()
     }
   });
+  $("navbar__list li").css('display', 'none');
 });
 $( "#decoration_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
@@ -38,6 +39,7 @@ $( "#friend_option" ).click(function() {
       $(this).hide()
     }
   });
+  $("#decoration_option").hidden();
 });
 $( "#setting_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
