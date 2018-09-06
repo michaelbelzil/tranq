@@ -4,8 +4,8 @@ setInterval(() => {
   timeCounter++;
 
   if (timeCounter % 100 == 0 || time === "day") {
-    const oldHealth = parseInt(health.style.width.replace("%", ""));
-    const newHealth = oldHealth - 1;
+    var oldHealth = parseInt(health.style.width.replace("%", ""));
+    var newHealth = oldHealth - 1;
     health.style.width = `${newHealth}%`;
     if (newHealth >= 75) {
       health.classList.remove(health.classList[1])

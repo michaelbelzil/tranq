@@ -1,7 +1,7 @@
 // setInterval(() => {
 window.feed = function(callback) {
-  const oldHealth = parseInt(health.style.width.replace("%", ""));
-  const newHealth = oldHealth - 1;
+  var oldHealth = parseInt(health.style.width.replace("%", ""));
+  var newHealth = oldHealth - 1;
 
   var tick = {};
   tick.plot0 = newHealth+1;
