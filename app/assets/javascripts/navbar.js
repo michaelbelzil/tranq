@@ -20,6 +20,8 @@ $( "#feed_option" ).click(function() {
       $(this).hide()
     }
   });
+  $(".navbar__list").find("a").removeClass("hilite");
+  $(this).addClass("hilite");
 });
 $( "#decoration_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
@@ -29,6 +31,8 @@ $( "#decoration_option" ).click(function() {
       $(this).hide()
     }
   });
+  $(".navbar__list").find("a").removeClass("hilite");
+  $(this).addClass("hilite");
 });
 $( "#friend_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
@@ -38,16 +42,15 @@ $( "#friend_option" ).click(function() {
       $(this).hide()
     }
   });
+  $(".navbar__list").find("a").removeClass("hilite");
+  $(this).addClass("hilite");
 });
-$( "#setting_option" ).click(function() {
-  $(".navbar__specific__item").each(function(){
-    if($(this).hasClass("navbar__specific--setting")){
-      $(this).css('display', 'flex');
-    }else{
-      $(this).hide()
-    }
-  });
-});
+
+// This code highlights the pencil icon when the modal is opened
+// $( "#draw_option" ).click(function() {
+//   $(".navbar__list").children().removeClass("hilite");
+//   $(this).parent().addClass("hilite");
+// });
 
 //Select items from decorate mode categories
 $( ".navbar__specific__item--generic" ).each(function() {
