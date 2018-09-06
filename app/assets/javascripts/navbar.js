@@ -20,8 +20,10 @@ $( "#feed_option" ).click(function() {
       $(this).hide()
     }
   });
+
   $(".navbar__list").find("a").removeClass("hilite");
   $(this).addClass("hilite");
+
 });
 $( "#decoration_option" ).click(function() {
   $(".navbar__specific__item").each(function(){
