@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
     favourite.item = item
     favourite.save
 
-    current_user.points += 20
+    current_user.points += 200
     current_user.save
     @points = current_user.points
     @item = item

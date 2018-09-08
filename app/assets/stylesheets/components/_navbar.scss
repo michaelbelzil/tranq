@@ -168,6 +168,10 @@
   margin: 0 11px;
   .navbar__specific__item {
     width: 15%;
+    opacity: 1;
+    &:hover {
+      background: transparent;
+    }
     div {
       height: 35px;
 

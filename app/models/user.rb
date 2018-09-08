@@ -75,13 +75,12 @@ class User < ApplicationRecord
   end
 
   def compute_happiness
-    # binding.pry
     if self.tucked_in
-      cicle_time = 1000
+      cycle_time = 10000
     else
-      cicle_time = 10
+      cycle_time = 500
     end
-    self.happiness = [(self.happiness - ((Time.now - self.last_fed)/cicle_time)).ceil, 0].max
+    self.happiness = [(self.happiness - ((Time.now - self.last_fed)/cycle_time)).ceil, 0].max
     self.save
     if self.happiness == 0
       self.points = self.points * 0.8

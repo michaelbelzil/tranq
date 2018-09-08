@@ -11,15 +11,15 @@ class FavouritesController < ApplicationController
       if ( current_user.id != @new_item.user_id)
         creator = User.find(@new_item.user_id)
         if creator == @friend
-          @friend.points += 150
+          @friend.points += 250
           @friend.save
         else
-          creator.points += 100
+          creator.points += 200
           creator.save
           @friend.points += 50
           @friend.save
         end
-        current_user.points += 1
+        current_user.points += 10
         current_user.save
 
       end

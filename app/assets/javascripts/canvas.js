@@ -159,24 +159,24 @@ $('#draw_tool').on('click', function (e) {
       }
 
       //image actions
-      function downloadImage() {
-        var image = canvas.toDataURL("image/png");
-        var download = document.getElementById("download");
-        download.href = image;
-        download.download = 'drawing.png';
-      }
+      // function downloadImage() {
+      //   var image = canvas.toDataURL("image/png");
+      //   var download = document.getElementById("download");
+      //   download.href = image;
+      //   download.download = 'drawing.png';
+      // }
 
       function clearCanvas() {
         ctx.fillStyle = "transparent";
         ctx.fillRect(0,0,canvas.width, canvas.height);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
-      function uploadImage() {
-        var image = canvas.toDataURL("image/png");
-        var download = document.getElementById("download");
-        download.href = image;
-        download.download = 'drawing.png';
-      }
+      // function uploadImage() {
+      //   var image = canvas.toDataURL("image/png");
+      //   var download = document.getElementById("download");
+      //   download.href = image;
+      //   download.download = 'drawing.png';
+      // }
 
 
       function saveCanvas() {
@@ -229,12 +229,12 @@ $('#draw_tool').on('click', function (e) {
         mode = newMode;
         if (mode == "eraser") {
           document.getElementById("canvas").classList.add("delete");
-          document.getElementById("pen").style.display = "flex";
+          document.getElementById("pen").style.display = "block";
           document.getElementById("eraser").style.display = "none";
         } else {
           document.getElementById("canvas").classList.remove("delete");
           document.getElementById("pen").style.display = "none";
-          document.getElementById("eraser").style.display = "flex";
+          document.getElementById("eraser").style.display = "block";
         }
       }
 
@@ -263,10 +263,10 @@ $('#draw_tool').on('click', function (e) {
       canvas.addEventListener("touchmove", function(){draw(event, false);});
       document.addEventListener("touchend", markerUp);
 
-      //image actions
-      document.getElementById("download").addEventListener('click', downloadImage);
+      // //image actions
+      // document.getElementById("download").addEventListener('click', downloadImage);
       document.getElementById("clear").addEventListener('click', clearCanvas);
-      document.getElementById("upload").addEventListener('click', uploadImage);
+      // document.getElementById("upload").addEventListener('click', uploadImage);
       document.getElementById("save").addEventListener('click', saveCanvas);
 
       // modes
@@ -275,7 +275,7 @@ $('#draw_tool').on('click', function (e) {
 
       // Upload image
 
-      document.getElementById("upload-photo").addEventListener("change", readURL);
+      // document.getElementById("upload-photo").addEventListener("change", readURL);
 
     }, 300);
 });
