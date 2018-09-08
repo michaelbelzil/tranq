@@ -22,7 +22,7 @@ class TranqsController < ApplicationController
     @walls = @items.select { |element| element.category == "wall" }
 
     # friends
-    @friends = User.order(points: :desc).limit(20)
+    @friends = User.order(points: :desc).limit(25)
     @categories = ["head", "face", "neck", "body", "plant", "couch", "table", "side_table", "window", "floor", "wall"]
     @user = User.find(params[:id])
     # happiness
@@ -46,10 +46,10 @@ class TranqsController < ApplicationController
       @action = ""
     elsif (user_favourites.empty?)
       @action = "new"
-      @text = "Bring this item back to your clubhouse?"
+      @text = "Click the item to bring it back to your Clubhouse"
     else
       @action = "upload"
-      @text = "Would you like to use this item?"
+      @text = "Click the item to use it in your Clubhouse"
     end
 
     #if user_favourites.empty?
