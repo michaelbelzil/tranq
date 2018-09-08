@@ -45,15 +45,19 @@
           <% end %>
             <a id="clear" class="buttons">
               <i class="fa fa-trash"></i>
+              <p>Restart</p>
             </a>
             <a id="pen" class="buttons">
               <i class="fa fa-pencil"></i>
+              <p>Paintbrush</p>
             </a>
             <a id="eraser" class="buttons">
               <i class="fas fa-eraser"></i>
+              <p>Eraser</p>
             </a>
             <a id="save" class="buttons">
               <i class="fas fa-check"></i>
+              <p>Save</p>
             </a>
               <%= form_tag(items_create_path, style: "display: none;", remote: true) do %>
                 <%= text_field_tag(:category, "head") %>

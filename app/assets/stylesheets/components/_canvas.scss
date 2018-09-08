@@ -217,6 +217,17 @@
   display:none
 }
 
+#save {
+  i {
+    &:hover {
+      color: #6ba829;
+    }
+  }
+}
 .buttons {
   font-size: 6rem;
+  text-align: center;
+  p {
+    font-size: 1.5rem;
+  }
 }

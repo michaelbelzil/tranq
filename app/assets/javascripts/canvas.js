@@ -229,12 +229,12 @@ $('#draw_tool').on('click', function (e) {
         mode = newMode;
         if (mode == "eraser") {
           document.getElementById("canvas").classList.add("delete");
-          document.getElementById("pen").style.display = "flex";
+          document.getElementById("pen").style.display = "block";
           document.getElementById("eraser").style.display = "none";
         } else {
           document.getElementById("canvas").classList.remove("delete");
           document.getElementById("pen").style.display = "none";
-          document.getElementById("eraser").style.display = "flex";
+          document.getElementById("eraser").style.display = "block";
         }
       }
 
